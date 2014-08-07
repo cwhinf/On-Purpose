@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */; };
-		7E4CD1E41991B13D00631BC3 /* SingleMetricHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD1E31991B13D00631BC3 /* SingleMetricHeaderTableViewCell.m */; };
 		7E90E552198DBAE300969FB6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E551198DBAE300969FB6 /* Accounts.framework */; };
 		7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E553198DBAE900969FB6 /* Social.framework */; };
 		7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */; };
@@ -20,7 +19,6 @@
 		7E90E56B198DD3EB00969FB6 /* BEMAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E565198DD3EB00969FB6 /* BEMAnimations.m */; };
 		7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E567198DD3EB00969FB6 /* BEMCircle.m */; };
 		7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E569198DD3EB00969FB6 /* BEMLine.m */; };
-		7E90E570198DD42400969FB6 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E56F198DD42400969FB6 /* StatsViewController.m */; };
 		7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */; };
 		7EB8BEED198D81E100C06CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEC198D81E100C06CFF /* Foundation.framework */; };
 		7EB8BEEF198D81E100C06CFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEE198D81E100C06CFF /* CoreGraphics.framework */; };
@@ -53,8 +51,6 @@
 /* Begin PBXFileReference section */
 		7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricTableViewController.h; sourceTree = "<group>"; };
 		7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricTableViewController.m; sourceTree = "<group>"; };
-		7E4CD1E21991B13D00631BC3 /* SingleMetricHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricHeaderTableViewCell.h; sourceTree = "<group>"; };
-		7E4CD1E31991B13D00631BC3 /* SingleMetricHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricHeaderTableViewCell.m; sourceTree = "<group>"; };
 		7E90E551198DBAE300969FB6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7E90E553198DBAE900969FB6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -73,8 +69,6 @@
 		7E90E567198DD3EB00969FB6 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
 		7E90E568198DD3EB00969FB6 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
 		7E90E569198DD3EB00969FB6 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
-		7E90E56E198DD42400969FB6 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
-		7E90E56F198DD42400969FB6 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricViewController.h; sourceTree = "<group>"; };
 		7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricViewController.m; sourceTree = "<group>"; };
 		7EB8BEE9198D81E100C06CFF /* OnPurpose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPurpose.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +162,7 @@
 		7EB8BEF2198D81E100C06CFF /* OnPurpose */ = {
 			isa = PBXGroup;
 			children = (
+				7ECC9C7C199304E7002925D0 /* Libraries */,
 				7EB8BEFB198D81E100C06CFF /* AppDelegate.h */,
 				7EB8BEFC198D81E100C06CFF /* AppDelegate.m */,
 				7E90E559198DC21F00969FB6 /* Constants.h */,
@@ -175,24 +170,7 @@
 				7EB8BEFE198D81E100C06CFF /* Main.storyboard */,
 				7E90E55F198DD3D700969FB6 /* MetricsViewController.h */,
 				7E90E560198DD3D700969FB6 /* MetricsViewController.m */,
-				7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */,
-				7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */,
-				7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */,
-				7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */,
-				7E4CD1E21991B13D00631BC3 /* SingleMetricHeaderTableViewCell.h */,
-				7E4CD1E31991B13D00631BC3 /* SingleMetricHeaderTableViewCell.m */,
-				7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */,
-				7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */,
-				7E90E56E198DD42400969FB6 /* StatsViewController.h */,
-				7E90E56F198DD42400969FB6 /* StatsViewController.m */,
-				7E90E562198DD3EB00969FB6 /* BEMSimpleLineGraphView.h */,
-				7E90E563198DD3EB00969FB6 /* BEMSimpleLineGraphView.m */,
-				7E90E564198DD3EB00969FB6 /* BEMAnimations.h */,
-				7E90E565198DD3EB00969FB6 /* BEMAnimations.m */,
-				7E90E566198DD3EB00969FB6 /* BEMCircle.h */,
-				7E90E567198DD3EB00969FB6 /* BEMCircle.m */,
-				7E90E568198DD3EB00969FB6 /* BEMLine.h */,
-				7E90E569198DD3EB00969FB6 /* BEMLine.m */,
+				7ECC9C7B199304CB002925D0 /* Single Metric */,
 				7E90E55C198DD34200969FB6 /* AddMetricsViewController.h */,
 				7E90E55D198DD34200969FB6 /* AddMetricsViewController.m */,
 				7EB8BF04198D81E100C06CFF /* Images.xcassets */,
@@ -236,6 +214,42 @@
 				7ECC9C771992C876002925D0 /* expandArrow.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		7ECC9C7A199304AD002925D0 /* BEMSimpleLineGraph */ = {
+			isa = PBXGroup;
+			children = (
+				7E90E562198DD3EB00969FB6 /* BEMSimpleLineGraphView.h */,
+				7E90E563198DD3EB00969FB6 /* BEMSimpleLineGraphView.m */,
+				7E90E564198DD3EB00969FB6 /* BEMAnimations.h */,
+				7E90E565198DD3EB00969FB6 /* BEMAnimations.m */,
+				7E90E566198DD3EB00969FB6 /* BEMCircle.h */,
+				7E90E567198DD3EB00969FB6 /* BEMCircle.m */,
+				7E90E568198DD3EB00969FB6 /* BEMLine.h */,
+				7E90E569198DD3EB00969FB6 /* BEMLine.m */,
+			);
+			name = BEMSimpleLineGraph;
+			sourceTree = "<group>";
+		};
+		7ECC9C7B199304CB002925D0 /* Single Metric */ = {
+			isa = PBXGroup;
+			children = (
+				7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */,
+				7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */,
+				7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */,
+				7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */,
+				7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */,
+				7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */,
+			);
+			name = "Single Metric";
+			sourceTree = "<group>";
+		};
+		7ECC9C7C199304E7002925D0 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				7ECC9C7A199304AD002925D0 /* BEMSimpleLineGraph */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,14 +356,12 @@
 				7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */,
 				7EB8BEFD198D81E100C06CFF /* AppDelegate.m in Sources */,
 				7EB8BEF9198D81E100C06CFF /* main.m in Sources */,
-				7E4CD1E41991B13D00631BC3 /* SingleMetricHeaderTableViewCell.m in Sources */,
 				7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */,
 				7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */,
 				7E90E56A198DD3EB00969FB6 /* BEMSimpleLineGraphView.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
 				7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */,
-				7E90E570198DD42400969FB6 /* StatsViewController.m in Sources */,
 				7E90E56B198DD3EB00969FB6 /* BEMAnimations.m in Sources */,
 				7E90E55E198DD34200969FB6 /* AddMetricsViewController.m in Sources */,
 				7E90E561198DD3D700969FB6 /* MetricsViewController.m in Sources */,

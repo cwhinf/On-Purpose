@@ -318,18 +318,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [super prepareForSegue:segue sender:sender];
-    
-    if ([segue.identifier isEqualToString:@"showStats"]) {
-        StatsViewController *controller = segue.destinationViewController;
-        controller.standardDeviation = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculateLineGraphStandardDeviation] floatValue]];
-        controller.average = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculatePointValueAverage] floatValue]];
-        controller.median = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculatePointValueMedian] floatValue]];
-        controller.mode = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculatePointValueMode] floatValue]];
-        controller.minimum = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculateMinimumPointValue] floatValue]];
-        controller.maximum = [NSString stringWithFormat:@"%.2f", [[self.sleepGraph calculateMaximumPointValue] floatValue]];
-        controller.snapshotImage = [self.sleepGraph graphSnapshotImage];
-    }
-    else if ([segue.identifier isEqualToString:@"showSleepMetric"]) {
+
+    if ([segue.identifier isEqualToString:@"showSleepMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.sleepArray;
         singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;

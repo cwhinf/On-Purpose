@@ -7,7 +7,6 @@
 //
 
 #import "SingleMetricTableViewController.h"
-#import "SingleMetricHeaderTableViewCell.h"
 #import "SingleMetricViewController.h"
 #import "SingleMetricDayCell.h"
 

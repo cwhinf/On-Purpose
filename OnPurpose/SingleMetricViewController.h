@@ -9,7 +9,6 @@
 #import <Parse/Parse.h>
 
 #import "BEMSimpleLineGraphView.h"
-#import "StatsViewController.h"
 
 @interface SingleMetricViewController : UIViewController <BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
