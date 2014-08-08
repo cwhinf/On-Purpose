@@ -36,6 +36,7 @@
 		7EB8BF24198D963700C06CFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BF23198D963700C06CFF /* Parse.framework */; };
 		7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */; };
 		7ECC9C781992C876002925D0 /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC9C771992C876002925D0 /* expandArrow.png */; };
+		7ECC9C92199593F4002925D0 /* forecastOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC9C91199593F4002925D0 /* forecastOverlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricDayCell.h; sourceTree = "<group>"; };
 		7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricDayCell.m; sourceTree = "<group>"; };
 		7ECC9C771992C876002925D0 /* expandArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandArrow.png; sourceTree = "<group>"; };
+		7ECC9C91199593F4002925D0 /* forecastOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forecastOverlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				7EB8BEEB198D81E100C06CFF /* Frameworks */,
 				7EB8BEEA198D81E100C06CFF /* Products */,
 				7ECC9C791992C87C002925D0 /* Icons */,
+				7ECC9C90199593CF002925D0 /* Graphics */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +255,14 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		7ECC9C90199593CF002925D0 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				7ECC9C91199593F4002925D0 /* forecastOverlay.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +344,7 @@
 			files = (
 				7EB8BF05198D81E100C06CFF /* Images.xcassets in Resources */,
 				7ECC9C781992C876002925D0 /* expandArrow.png in Resources */,
+				7ECC9C92199593F4002925D0 /* forecastOverlay.png in Resources */,
 				7EB8BEF7198D81E100C06CFF /* InfoPlist.strings in Resources */,
 				7EB8BF00198D81E100C06CFF /* Main.storyboard in Resources */,
 			);

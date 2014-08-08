@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) NSMutableArray *ArrayOfValues;
 @property (strong, nonatomic) NSMutableArray *ArrayOfDates;
+@property (strong, nonatomic) NSMutableArray *metricDaysArray;
 @property (strong, nonatomic) UIColor *graphColor;
 @property (strong, nonatomic) NSString *graphName;
 

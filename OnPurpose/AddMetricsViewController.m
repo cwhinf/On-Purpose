@@ -21,6 +21,9 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *creativitySelector;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *eatingSelector;
 
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+
 
 - (IBAction)addPressed:(id)sender;
 
@@ -91,6 +94,9 @@
     [metrics setObject:[NSNumber numberWithInteger:self.activitySelector.selectedSegmentIndex + 1] forKey:metricsActivityKey];
     [metrics setObject:[NSNumber numberWithInteger:self.creativitySelector.selectedSegmentIndex + 1] forKey:metricsCreativityKey];
     [metrics setObject:[NSNumber numberWithInteger:self.eatingSelector.selectedSegmentIndex + 1] forKey:metricsEatingKey];
+    
+    [metrics setObject:[self.datePicker date] forKey:metricsDayKey];
+    
     
     [metrics saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {

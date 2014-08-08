@@ -53,7 +53,8 @@
     totalNumber = 0;
     
     
-    self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    //self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    
     
     self.cellHeight = [[NSMutableArray alloc] initWithCapacity:self.ArrayOfValues.count];
     
@@ -127,6 +128,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SingleMetricDayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dayCell" forIndexPath:indexPath];
+    
+    /*
     if (indexPath.item == 0) {
         [cell.dayLabel setText:@"January 1st"];
     }
@@ -139,6 +142,25 @@
     else {
         [cell.dayLabel setText:[NSString stringWithFormat:@"January %ldth", (long)(indexPath.item + 1)]];
     }
+     */
+    
+    NSDate *date = [self.metricDaysArray objectAtIndex:indexPath.item];
+    NSDateFormatter *prefixDateFormatter = [[NSDateFormatter alloc] init];
+    [prefixDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    //[prefixDateFormatter setDateFormat:@"h:mm a EEEE MMMM d"];
+    [prefixDateFormatter setDateFormat:@"MMMM d"];
+    NSString *prefixDateString = [prefixDateFormatter stringFromDate:date];
+    NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
+    [monthDayFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [monthDayFormatter setDateFormat:@"d"];
+    int date_day = [[monthDayFormatter stringFromDate:date] intValue];
+    NSString *suffix_string = @"|st|nd|rd|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|st|nd|rd|th|th|th|th|th|th|th|st";
+    NSArray *suffixes = [suffix_string componentsSeparatedByString: @"|"];
+    NSString *suffix = [suffixes objectAtIndex:date_day];
+    NSString *dateString = [prefixDateString stringByAppendingString:suffix];
+    [cell.dayLabel setText:dateString];
+    
+    
     [cell.valueLabel setText:[NSString stringWithFormat:@"%@.0", (NSNumber *)[self.ArrayOfValues objectAtIndex:indexPath.item]]];
     [cell.valueLabel setTextColor:self.graphColor];
     

@@ -39,6 +39,7 @@
     self.activityArray = [[NSMutableArray alloc] init];
     self.creativityArray = [[NSMutableArray alloc] init];
     self.eatingArray = [[NSMutableArray alloc] init];
+    self.metricDaysArray = [[NSMutableArray alloc] init];
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
     
@@ -127,7 +128,7 @@
     if ([PFUser currentUser]) {
         PFQuery *metricsQuery = [PFQuery queryWithClassName:metricsClassKey];
         [metricsQuery whereKey:metricsUserKey equalTo:[PFUser currentUser]];
-        [metricsQuery orderByDescending:metricsCreatedAtKey];
+        [metricsQuery orderByAscending:metricsDayKey];
         [metricsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             for (PFObject *object in objects) {
                 [self.sleepArray addObject:(NSNumber *)[object objectForKey:metricsSleepKey]];
@@ -135,6 +136,7 @@
                 [self.activityArray addObject:(NSNumber *)[object objectForKey:metricsActivityKey]];
                 [self.creativityArray addObject:(NSNumber *)[object objectForKey:metricsCreativityKey]];
                 [self.eatingArray addObject:(NSNumber *)[object objectForKey:metricsEatingKey]];
+                [self.metricDaysArray addObject:(NSDate *)[object objectForKey:metricsDayKey]];
             }
             totalNumber = self.sleepArray.count;
             [self refresh:nil];
@@ -211,6 +213,25 @@
 #pragma mark - Graph Actions
 
 - (IBAction)refresh:(id)sender {
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setMinimumFractionDigits:1];
+
+    NSNumber *average = [self.sleepArray valueForKeyPath:@"@avg.self"];
+    [self.sleepValueLabel setText:[formatter stringFromNumber:average]];
+    
+    average = [self.presenceArray valueForKeyPath:@"@avg.self"];
+    [self.presenceValueLabel setText:[formatter stringFromNumber:average]];
+    
+    average = [self.activityArray valueForKeyPath:@"@avg.self"];
+    [self.activityValueLabel setText:[formatter stringFromNumber:average]];
+    
+    average = [self.creativityArray valueForKeyPath:@"@avg.self"];
+    [self.creativityValueLabel setText:[formatter stringFromNumber:average]];
+    
+    average = [self.eatingArray valueForKeyPath:@"@avg.self"];
+    [self.eatingValueLabel setText:[formatter stringFromNumber:average]];
 
     [self.sleepGraph reloadGraph];
     [self.presenceGraph reloadGraph];
@@ -322,30 +343,35 @@
     if ([segue.identifier isEqualToString:@"showSleepMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.sleepArray;
+        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
         singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;
         singleMetricTableViewController.graphName = @"Sleep";
     }
     else if ([segue.identifier isEqualToString:@"showPresenceMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.presenceArray;
+        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
         singleMetricTableViewController.graphColor = self.presenceGraph.backgroundColor;
         singleMetricTableViewController.graphName = @"Presence";
     }
     else if ([segue.identifier isEqualToString:@"showActivityMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.activityArray;
+        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
         singleMetricTableViewController.graphColor = self.activityGraph.backgroundColor;
         singleMetricTableViewController.graphName = @"Activity";
     }
     else if ([segue.identifier isEqualToString:@"showCreativityMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.creativityArray;
+        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
         singleMetricTableViewController.graphColor = self.creativityGraph.backgroundColor;
         singleMetricTableViewController.graphName = @"Creativity";
     }
     else if ([segue.identifier isEqualToString:@"showEatingMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
         singleMetricTableViewController.ArrayOfValues = self.eatingArray;
+        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
         singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
         singleMetricTableViewController.graphName = @"Eating";
     }

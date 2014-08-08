@@ -19,11 +19,25 @@
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *creativityGraph;
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *eatingGraph;
 
+@property (strong, nonatomic) IBOutlet UILabel *sleepValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *presenceValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *activityValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *creativityValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *eatingValueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *purposeValueLabel;
+
+
+
+
+
+
+
 @property (strong, nonatomic) NSMutableArray *sleepArray;
 @property (strong, nonatomic) NSMutableArray *presenceArray;
 @property (strong, nonatomic) NSMutableArray *activityArray;
 @property (strong, nonatomic) NSMutableArray *creativityArray;
 @property (strong, nonatomic) NSMutableArray *eatingArray;
+@property (strong, nonatomic) NSMutableArray *metricDaysArray;
 
 
 @property (strong, nonatomic) NSMutableArray *ArrayOfDates;

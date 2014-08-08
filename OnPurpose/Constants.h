@@ -23,6 +23,7 @@ extern NSString *const metricsPresenceKey;
 extern NSString *const metricsActivityKey;
 extern NSString *const metricsCreativityKey;
 extern NSString *const metricsEatingKey;
+extern NSString *const metricsDayKey;
 
 
 

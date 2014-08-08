@@ -25,7 +25,7 @@ NSString *const metricsPresenceKey = @"presence";
 NSString *const metricsActivityKey = @"activity";
 NSString *const metricsCreativityKey = @"creativity";
 NSString *const metricsEatingKey = @"eating";
-
+NSString *const metricsDayKey = @"day";
 
 
 

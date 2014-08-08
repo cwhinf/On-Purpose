@@ -259,7 +259,7 @@
             
             [dataPoints addObject:[NSNumber numberWithFloat:dotValue]];
             
-            positionOnXAxis = (self.frame.size.width/(numberOfPoints))*i;
+            positionOnXAxis = (self.frame.size.width/(numberOfPoints - .5))*i;
             if (minValue == maxValue) positionOnYAxis = self.frame.size.height/2;
             else positionOnYAxis = ((self.frame.size.height - padding) - ((dotValue - minValue) / ((maxValue - minValue) / (self.frame.size.height - padding))) + padding/2);
             if ([self.delegate respondsToSelector:@selector(numberOfGapsBetweenLabelsOnLineGraph:)] || [self.delegate respondsToSelector:@selector(numberOfGapsBetweenLabels)])

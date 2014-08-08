@@ -19,12 +19,18 @@
 @property (strong, nonatomic) UIColor *graphColor;
 @property (strong, nonatomic) NSString *graphName;
 
+
+@property (strong, nonatomic) IBOutlet UIView *averageLineView;
+
+
+
+
 @property (strong, nonatomic) IBOutlet UILabel *labelValues;
 @property (strong, nonatomic) IBOutlet UILabel *labelDates;
 
-@property (strong, nonatomic) IBOutlet UILabel *avgLabel;
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *avgButton;
 
 
 
@@ -32,6 +38,7 @@
 
 
 
+- (IBAction)averagePressed:(id)sender;
 
 
 - (IBAction)refresh:(id)sender;

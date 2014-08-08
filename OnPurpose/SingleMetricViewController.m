@@ -11,13 +11,18 @@
 #import "SingleMetricViewController.h"
 #import "Constants.h"
 
+#define AVERAGELINEANIMATIONDURATION 1.0
 
 @interface SingleMetricViewController () {
     int previousStepperValue;
     int totalNumber;
+    CGRect aveStartingPos;
 }
 
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
+
+@property (strong, nonatomic) NSNumber *average;
+
 
 @end
 
@@ -35,7 +40,8 @@
     totalNumber = 0;
     
     
-    self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    //self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    self.ArrayOfDates = [NSArray arrayWithObjects:@"",  @"", @"",  @"", @"",  @"", @"",  @"", @"", @"", @"", @"", @"",  nil];
     
     /* This is commented out because the graph is created in the interface with this sample app. However, the code remains as an example for creating the graph using code.
      BEMSimpleLineGraphView *myGraph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 60, 320, 250)];
@@ -58,8 +64,6 @@
     self.myGraph.max = graphMax;
     
     // The labels to report the values of the graph when the user touches it
-    [self.labelValues setText:self.graphName];
-    
     [self.labelValues setTextColor:self.graphColor];
     
     //set navController color and font
@@ -76,13 +80,31 @@
     [self.backButton setTitleTextAttributes:backButtonAttricbutes forState:UIControlStateNormal];
     
     //set label colors
-    [self.avgLabel setTextColor:self.graphColor];
+    [self.avgButton setTitleColor:self.graphColor forState:UIControlStateNormal];
     [self.predictionLabel setTextColor:self.graphColor];
-    
     
     self.myGraph.backgroundColor = self.graphColor;
     
-
+    //set label text
+    [self.labelValues setText:self.graphName];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setMinimumFractionDigits:1];
+    
+    self.average = [self.ArrayOfValues valueForKeyPath:@"@avg.self"];
+    [self.avgButton setTitle:[formatter stringFromNumber:self.average] forState:UIControlStateNormal];
+    
+    
+    UIColor *topColor = [UIColor colorWithRed:1 green:0.92 blue:0.56 alpha:1];
+    UIColor *bottomColor = [UIColor colorWithRed:0.18 green:0.18 blue:0.18 alpha:1];
+    /*
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = cell.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor]CGColor], (id)[[UIColor redColor]CGColor], nil];
+    [cell.layer addSublayer:gradient];
+    */
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +112,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    
+    aveStartingPos = self.averageLineView.frame;
+    [self.averageLineView setHidden:YES];
+    
+    [self showAverageLine];
+    
+}
+
 #pragma mark - Graph Actions
+
+- (IBAction)averagePressed:(id)sender {
+    
+    if (self.averageLineView.frame.origin.y == aveStartingPos.origin.y) {
+        [self showAverageLine];
+    }
+    else {
+        [self hideAverageLine];
+    }
+    
+}
 
 - (IBAction)refresh:(id)sender {
     /*
@@ -141,6 +183,31 @@
     
     previousStepperValue = self.graphObjectIncrement.value;
 }*/
+
+- (void) showAverageLine {
+    
+    [self.averageLineView setHidden:NO];
+    [UIView transitionWithView:self.view duration:AVERAGELINEANIMATIONDURATION options:UIViewAnimationTransitionNone animations:^{
+        CGFloat avgLineYVal = 273.75 - ([self.average floatValue] * 48.75) - 15.0;
+        CGRect avgLineRect = CGRectMake(0, avgLineYVal, self.averageLineView.frame.size.width, self.averageLineView.frame.size.height);
+        self.averageLineView.frame = avgLineRect;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
+- (void) hideAverageLine {
+    
+    [UIView transitionWithView:self.view duration:AVERAGELINEANIMATIONDURATION options:UIViewAnimationTransitionNone animations:^{
+        self.averageLineView.frame = aveStartingPos;
+    } completion:^(BOOL finished) {
+        [self.averageLineView setHidden:YES];
+    }];
+    
+}
+
+
 
 - (IBAction)displayStatistics:(id)sender {
     [self performSegueWithIdentifier:@"showStats" sender:self];
