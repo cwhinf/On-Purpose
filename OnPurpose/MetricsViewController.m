@@ -283,7 +283,13 @@
 }
 
 - (IBAction)metricButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:@"showMetric" sender:sender];
+    
+    if (self.paperFoldNavController.paperFoldView.state == FoldStateClosed) {
+        [self performSegueWithIdentifier:@"showMetric" sender:sender];
+    }
+    else {
+        [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
+    }
 }
 
 - (IBAction)displayStatistics:(id)sender {
