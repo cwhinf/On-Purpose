@@ -12,6 +12,7 @@
 #import "MetricsViewController.h"
 #import "SingleMetricViewController.h"
 #import "SingleMetricTableViewController.h"
+#import "PaperFoldTabBarController.h"
 #import "Constants.h"
 
 
@@ -20,7 +21,11 @@
     int totalNumber;
 }
 
+
+
+@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
+
 
 @end
 
@@ -32,6 +37,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
+    self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
     
     
     self.sleepArray = [[NSMutableArray alloc] init];
@@ -53,7 +60,7 @@
         
         //totalNumber = totalNumber + [[self.sleepArray objectAtIndex:i] intValue]; // All of the values added together
     }*/
-    self.ArrayOfDates = [NSArray arrayWithObjects:@"",  @"", @"",  @"", @"",  @"", @"",  @"", @"", @"", @"", @"", @"",  nil];
+    //self.ArrayOfDates = [NSArray arrayWithObjects: @"", @"T",  @"W", @"T",  @"F", @"S",  @"S", @"", @"", @"", @"", @"",  nil];
     
     /* This is commented out because the graph is created in the interface with this sample app. However, the code remains as an example for creating the graph using code.
      BEMSimpleLineGraphView *sleepGraph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 60, 320, 250)];
@@ -169,14 +176,11 @@
     }
     [self refresh:nil];
     
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0],
-                                                           NSForegroundColorAttributeName,
-                                                           [UIFont fontWithName:@"Helvetica Neune Light" size:27],
-                                                           NSFontAttributeName,
-                                                           nil]];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
+                                       self.navigationController.navigationBar.titleTextAttributes];
+    [attributes setObject:[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0] forKey:@"NSColor"];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
-    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -212,6 +216,16 @@
 
 #pragma mark - Graph Actions
 
+- (IBAction)menuPressed:(id)sender {
+    
+    if (self.paperFoldNavController.paperFoldView.state == PaperFoldStateLeftUnfolded) {
+        [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
+    } else {
+        [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateLeftUnfolded animated:YES];
+    }
+    
+}
+
 - (IBAction)refresh:(id)sender {
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -232,6 +246,17 @@
     
     average = [self.eatingArray valueForKeyPath:@"@avg.self"];
     [self.eatingValueLabel setText:[formatter stringFromNumber:average]];
+    
+    self.ArrayOfDates = [[NSMutableArray alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    
+    [self.ArrayOfDates addObject:@""];
+    for (int i=1; i < self.metricDaysArray.count; i++) {
+        NSString *day = [dateFormatter stringFromDate:[self.metricDaysArray objectAtIndex:i]];
+        [self.ArrayOfDates addObject:[day substringToIndex:1]];
+    }
+    [self.ArrayOfDates addObject:@""];
 
     [self.sleepGraph reloadGraph];
     [self.presenceGraph reloadGraph];
@@ -255,6 +280,10 @@
     }
     
     previousStepperValue = self.graphObjectIncrement.value;
+}
+
+- (IBAction)metricButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"showMetric" sender:sender];
 }
 
 - (IBAction)displayStatistics:(id)sender {
@@ -304,7 +333,7 @@
 #pragma mark - SimpleLineGraph Delegate
 
 - (NSInteger)numberOfGapsBetweenLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
-    return 1;
+    return 0;
 }
 
 - (NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index {
@@ -340,45 +369,57 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [super prepareForSegue:segue sender:sender];
 
-    if ([segue.identifier isEqualToString:@"showSleepMetric"]) {
+    if ([segue.identifier isEqualToString:@"showMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.ArrayOfValues = self.sleepArray;
-        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-        singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;
-        singleMetricTableViewController.graphName = @"Sleep";
+        if ([sender isEqual:self.sleepButton]) {
+            singleMetricTableViewController.ArrayOfValues = self.sleepArray;
+            singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
+            singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;
+            singleMetricTableViewController.graphName = @"Sleep";
+        }
+        else if ([sender isEqual:self.presenceButton]) {
+            singleMetricTableViewController.ArrayOfValues = self.presenceArray;
+            singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
+            singleMetricTableViewController.graphColor = self.presenceGraph.backgroundColor;
+            singleMetricTableViewController.graphName = @"Presence";
+        }
+        else if ([sender isEqual:self.activityButton]) {
+            singleMetricTableViewController.ArrayOfValues = self.activityArray;
+            singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
+            singleMetricTableViewController.graphColor = self.activityGraph.backgroundColor;
+            singleMetricTableViewController.graphName = @"Activity";
+        }
+        else if ([sender isEqual:self.creativityButton]) {
+            singleMetricTableViewController.ArrayOfValues = self.creativityArray;
+            singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
+            singleMetricTableViewController.graphColor = self.creativityGraph.backgroundColor;
+            singleMetricTableViewController.graphName = @"Creativity";
+        }
+        else if ([sender isEqual:self.eatingButton]) {
+            singleMetricTableViewController.ArrayOfValues = self.eatingArray;
+            singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
+            singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
+            singleMetricTableViewController.graphName = @"Eating";
+        }
     }
-    else if ([segue.identifier isEqualToString:@"showPresenceMetric"]) {
-        SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.ArrayOfValues = self.presenceArray;
-        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-        singleMetricTableViewController.graphColor = self.presenceGraph.backgroundColor;
-        singleMetricTableViewController.graphName = @"Presence";
-    }
-    else if ([segue.identifier isEqualToString:@"showActivityMetric"]) {
-        SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.ArrayOfValues = self.activityArray;
-        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-        singleMetricTableViewController.graphColor = self.activityGraph.backgroundColor;
-        singleMetricTableViewController.graphName = @"Activity";
-    }
-    else if ([segue.identifier isEqualToString:@"showCreativityMetric"]) {
-        SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.ArrayOfValues = self.creativityArray;
-        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-        singleMetricTableViewController.graphColor = self.creativityGraph.backgroundColor;
-        singleMetricTableViewController.graphName = @"Creativity";
-    }
-    else if ([segue.identifier isEqualToString:@"showEatingMetric"]) {
-        SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.ArrayOfValues = self.eatingArray;
-        singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-        singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
-        singleMetricTableViewController.graphName = @"Eating";
-    }
+
 }
 
 
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -17,6 +17,7 @@
     int previousStepperValue;
     int totalNumber;
     CGRect aveStartingPos;
+    BOOL averageHidden;
 }
 
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
@@ -34,14 +35,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.ArrayOfDates = [[NSMutableArray alloc] init];
-    
     previousStepperValue = self.graphObjectIncrement.value;
     totalNumber = 0;
     
+    self.ArrayOfDates = [[NSMutableArray alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
     
-    //self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
-    self.ArrayOfDates = [NSArray arrayWithObjects:@"",  @"", @"",  @"", @"",  @"", @"",  @"", @"", @"", @"", @"", @"",  nil];
+    [self.ArrayOfDates addObject:@""];
+    for (int i=1; i < self.metricDaysArray.count; i++) {
+        NSString *day = [dateFormatter stringFromDate:[self.metricDaysArray objectAtIndex:i]];
+        [self.ArrayOfDates addObject:[day substringToIndex:3]];
+    }
+    [self.ArrayOfDates addObject:@""];
+    
+    
+    //self.ArrayOfDates = [NSMutableArray arrayWithObjects:@"", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    //self.ArrayOfDates = [NSArray arrayWithObjects:@"",  @"", @"",  @"", @"",  @"", @"",  @"", @"", @"", @"", @"", @"",  nil];
     
     /* This is commented out because the graph is created in the interface with this sample app. However, the code remains as an example for creating the graph using code.
      BEMSimpleLineGraphView *myGraph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 60, 320, 250)];
@@ -81,7 +91,7 @@
     
     //set label colors
     [self.avgButton setTitleColor:self.graphColor forState:UIControlStateNormal];
-    [self.predictionLabel setTextColor:self.graphColor];
+    [self.forecastButton setTitleColor:self.graphColor forState:UIControlStateNormal];
     
     self.myGraph.backgroundColor = self.graphColor;
     
@@ -115,8 +125,8 @@
 - (void) viewDidAppear:(BOOL)animated {
     
     aveStartingPos = self.averageLineView.frame;
-    [self.averageLineView setHidden:YES];
-    
+    //[self.averageLineView setHidden:YES];
+    averageHidden = YES;
     [self showAverageLine];
     
 }
@@ -125,13 +135,16 @@
 
 - (IBAction)averagePressed:(id)sender {
     
-    if (self.averageLineView.frame.origin.y == aveStartingPos.origin.y) {
+    if (averageHidden) {
         [self showAverageLine];
     }
     else {
         [self hideAverageLine];
     }
     
+}
+
+- (IBAction)forecastPressed:(id)sender {
 }
 
 - (IBAction)refresh:(id)sender {
@@ -186,7 +199,19 @@
 
 - (void) showAverageLine {
     
-    [self.averageLineView setHidden:NO];
+    averageHidden = NO;
+    //self.averageLineView.frame = aveStartingPos;
+    
+    //[self.averageLineView setHidden:NO];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView animateWithDuration:AVERAGELINEANIMATIONDURATION animations:^{
+            CGFloat avgLineYVal = 273.75 - ([self.average floatValue] * 48.75) - 15.0;
+            CGRect avgLineRect = CGRectMake(0, avgLineYVal, self.averageLineView.frame.size.width, self.averageLineView.frame.size.height);
+            self.averageLineView.frame = avgLineRect;
+    } completion:^(BOOL finished) {
+        
+    }];
+        /*
     [UIView transitionWithView:self.view duration:AVERAGELINEANIMATIONDURATION options:UIViewAnimationTransitionNone animations:^{
         CGFloat avgLineYVal = 273.75 - ([self.average floatValue] * 48.75) - 15.0;
         CGRect avgLineRect = CGRectMake(0, avgLineYVal, self.averageLineView.frame.size.width, self.averageLineView.frame.size.height);
@@ -194,15 +219,24 @@
     } completion:^(BOOL finished) {
         
     }];
+         */
     
 }
 
 - (void) hideAverageLine {
     
-    [UIView transitionWithView:self.view duration:AVERAGELINEANIMATIONDURATION options:UIViewAnimationTransitionNone animations:^{
+    averageHidden = YES;
+    /*
+    CGFloat avgLineYVal = 273.75 - ([self.average floatValue] * 48.75) - 15.0;
+    CGRect avgLineRect = CGRectMake(0, avgLineYVal, self.averageLineView.frame.size.width, self.averageLineView.frame.size.height);
+    self.averageLineView.frame = avgLineRect;
+     */
+    
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView animateWithDuration:AVERAGELINEANIMATIONDURATION animations:^{
         self.averageLineView.frame = aveStartingPos;
     } completion:^(BOOL finished) {
-        [self.averageLineView setHidden:YES];
+        //[self.averageLineView setHidden:YES];
     }];
     
 }
@@ -227,7 +261,7 @@
 #pragma mark - SimpleLineGraph Delegate
 
 - (NSInteger)numberOfGapsBetweenLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
-    return 1;
+    return 0;
 }
 
 - (NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index {
@@ -239,17 +273,7 @@
 }
 
 - (void)lineGraph:(BEMSimpleLineGraphView *)graph didReleaseTouchFromGraphWithClosestIndex:(CGFloat)index {
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.labelValues.alpha = 0.0;
-        self.labelDates.alpha = 0.0;
-    } completion:^(BOOL finished){
-        
-        
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.labelValues.alpha = 1.0;
-            self.labelDates.alpha = 1.0;
-        } completion:nil];
-    }];
+    
 }
 
 - (void)lineGraphDidFinishLoading:(BEMSimpleLineGraphView *)graph {

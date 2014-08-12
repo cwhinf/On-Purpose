@@ -14,6 +14,7 @@
 #define HEADERHEIGHT 470
 #define CELLHEIGHT 55
 #define EXPANDEDHEIGHT 140
+#define BLANKCELLHEIGHT 20
 #define degreesToRadians(x)(x * M_PI / 180)
 
 @interface SingleMetricTableViewController ()
@@ -74,6 +75,7 @@
                                            NSFontAttributeName,
                                            nil];
     [self.backButton setTitleTextAttributes:backButtonAttricbutes forState:UIControlStateNormal];
+    
 
     
 }
@@ -96,7 +98,7 @@
     if (section == 0) {
         return 0;
     }
-    else return self.ArrayOfValues.count;
+    else return self.ArrayOfValues.count + 1;
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -106,6 +108,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.singleMetricViewController = [storyboard instantiateViewControllerWithIdentifier:@"SingleMetricViewController"];
         self.singleMetricViewController.ArrayOfValues = self.ArrayOfValues;
+        self.singleMetricViewController.metricDaysArray = self.metricDaysArray;
         self.singleMetricViewController.graphColor = self.graphColor;
         self.singleMetricViewController.graphName = self.graphName;
         
@@ -127,56 +130,53 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SingleMetricDayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dayCell" forIndexPath:indexPath];
-    
-    /*
-    if (indexPath.item == 0) {
-        [cell.dayLabel setText:@"January 1st"];
-    }
-    else if (indexPath.item == 1) {
-        [cell.dayLabel setText:@"January 2nd"];
-    }
-    else if (indexPath.item == 2) {
-        [cell.dayLabel setText:@"January 3rd"];
-    }
-    else {
-        [cell.dayLabel setText:[NSString stringWithFormat:@"January %ldth", (long)(indexPath.item + 1)]];
-    }
-     */
-    
-    NSDate *date = [self.metricDaysArray objectAtIndex:indexPath.item];
-    NSDateFormatter *prefixDateFormatter = [[NSDateFormatter alloc] init];
-    [prefixDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    //[prefixDateFormatter setDateFormat:@"h:mm a EEEE MMMM d"];
-    [prefixDateFormatter setDateFormat:@"MMMM d"];
-    NSString *prefixDateString = [prefixDateFormatter stringFromDate:date];
-    NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
-    [monthDayFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    [monthDayFormatter setDateFormat:@"d"];
-    int date_day = [[monthDayFormatter stringFromDate:date] intValue];
-    NSString *suffix_string = @"|st|nd|rd|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|st|nd|rd|th|th|th|th|th|th|th|st";
-    NSArray *suffixes = [suffix_string componentsSeparatedByString: @"|"];
-    NSString *suffix = [suffixes objectAtIndex:date_day];
-    NSString *dateString = [prefixDateString stringByAppendingString:suffix];
-    [cell.dayLabel setText:dateString];
-    
-    
-    [cell.valueLabel setText:[NSString stringWithFormat:@"%@.0", (NSNumber *)[self.ArrayOfValues objectAtIndex:indexPath.item]]];
-    [cell.valueLabel setTextColor:self.graphColor];
-    
-    if ([(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue] == CELLHEIGHT) {
-        cell.expandArrow.transform = CGAffineTransformMakeRotation(degreesToRadians(0.0f));
+    if (indexPath.item < self.ArrayOfValues.count) {
+        SingleMetricDayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dayCell" forIndexPath:indexPath];
+        
+        cell.clipsToBounds = YES;
+        
+        NSDate *date = [self.metricDaysArray objectAtIndex:indexPath.item];
+        NSDateFormatter *prefixDateFormatter = [[NSDateFormatter alloc] init];
+        [prefixDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        //[prefixDateFormatter setDateFormat:@"h:mm a EEEE MMMM d"];
+        [prefixDateFormatter setDateFormat:@"MMMM d"];
+        NSString *prefixDateString = [prefixDateFormatter stringFromDate:date];
+        NSDateFormatter *monthDayFormatter = [[NSDateFormatter alloc] init];
+        [monthDayFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [monthDayFormatter setDateFormat:@"d"];
+        int date_day = [[monthDayFormatter stringFromDate:date] intValue];
+        NSString *suffix_string = @"|st|nd|rd|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|st|nd|rd|th|th|th|th|th|th|th|st";
+        NSArray *suffixes = [suffix_string componentsSeparatedByString: @"|"];
+        NSString *suffix = [suffixes objectAtIndex:date_day];
+        NSString *dateString = [prefixDateString stringByAppendingString:suffix];
+        [cell.dayLabel setText:dateString];
+        
+        
+        [cell.valueLabel setText:[NSString stringWithFormat:@"%@.0", (NSNumber *)[self.ArrayOfValues objectAtIndex:indexPath.item]]];
+        [cell.valueLabel setTextColor:self.graphColor];
+        
+        if ([(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue] == CELLHEIGHT) {
+            cell.expandArrow.transform = CGAffineTransformMakeRotation(degreesToRadians(0.0f));
+        }
+        else {
+            cell.expandArrow.transform = CGAffineTransformMakeRotation(degreesToRadians(180.0f));
+        }
+        
+        return cell;
     }
     else {
-        cell.expandArrow.transform = CGAffineTransformMakeRotation(degreesToRadians(180.0f));
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"blankCell" forIndexPath:indexPath];
+        return cell;
     }
     
-    return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue];
+    if (indexPath.item < self.ArrayOfValues.count) {
+        return [(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue];
+    }
+    else return BLANKCELLHEIGHT;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

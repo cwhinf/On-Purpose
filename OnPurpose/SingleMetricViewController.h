@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) NSMutableArray *ArrayOfValues;
 @property (strong, nonatomic) NSMutableArray *ArrayOfDates;
+@property (strong, nonatomic) NSMutableArray *metricDaysArray;
 @property (strong, nonatomic) UIColor *graphColor;
 @property (strong, nonatomic) NSString *graphName;
 
@@ -31,6 +32,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *avgButton;
+@property (strong, nonatomic) IBOutlet UIButton *forecastButton;
 
 
 
@@ -39,6 +41,7 @@
 
 
 - (IBAction)averagePressed:(id)sender;
+- (IBAction)forecastPressed:(id)sender;
 
 
 - (IBAction)refresh:(id)sender;

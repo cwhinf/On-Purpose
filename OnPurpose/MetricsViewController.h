@@ -26,6 +26,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *eatingValueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *purposeValueLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *sleepButton;
+@property (strong, nonatomic) IBOutlet UIButton *presenceButton;
+@property (strong, nonatomic) IBOutlet UIButton *activityButton;
+@property (strong, nonatomic) IBOutlet UIButton *creativityButton;
+@property (strong, nonatomic) IBOutlet UIButton *eatingButton;
+@property (strong, nonatomic) IBOutlet UIButton *purposeButton;
 
 
 
@@ -45,8 +51,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelValues;
 @property (strong, nonatomic) IBOutlet UILabel *labelDates;
 
+- (IBAction)menuPressed:(id)sender;
+
 - (IBAction)refresh:(id)sender;
 - (IBAction)addOrRemoveLineFromGraph:(id)sender;
+- (IBAction)metricButtonPressed:(id)sender;
+
+
+
+
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *graphColorChoice;
 @property (weak, nonatomic) IBOutlet UIStepper *graphObjectIncrement;
 

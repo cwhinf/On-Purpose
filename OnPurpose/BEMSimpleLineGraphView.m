@@ -450,7 +450,7 @@
                 UILabel *labelXAxis = [[UILabel alloc] init];
                 labelXAxis.text = xAxisLabel;
                 [labelXAxis sizeToFit];
-                [labelXAxis setCenter:CGPointMake((self.viewForBaselineLayout.frame.size.width/(numberOfPoints-1))*(i*numberOfGaps - 1 - offset), self.frame.size.height - labelXaxisOffset)];
+                [labelXAxis setCenter:CGPointMake((self.viewForBaselineLayout.frame.size.width/(numberOfPoints-.5))*(i*numberOfGaps - 1 - offset), self.frame.size.height - labelXaxisOffset)];
                 labelXAxis.font = self.labelFont;
                 labelXAxis.textAlignment = 1;
                 labelXAxis.textColor = self.colorXaxisLabel;

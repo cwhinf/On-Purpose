@@ -35,8 +35,25 @@
 		7EB8BF18198D81E200C06CFF /* OnPurposeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8BF17198D81E200C06CFF /* OnPurposeTests.m */; };
 		7EB8BF24198D963700C06CFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BF23198D963700C06CFF /* Parse.framework */; };
 		7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */; };
-		7ECC9C781992C876002925D0 /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC9C771992C876002925D0 /* expandArrow.png */; };
-		7ECC9C92199593F4002925D0 /* forecastOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC9C91199593F4002925D0 /* forecastOverlay.png */; };
+		7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C9419980796002925D0 /* JYLegendView.m */; };
+		7ECC9C9819980796002925D0 /* JYRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C9619980796002925D0 /* JYRadarChart.m */; };
+		7ECC9C9C1998151F002925D0 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C9B1998151F002925D0 /* ForecastViewController.m */; };
+		7ECC9CB119981F48002925D0 /* FacingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9C9E19981F48002925D0 /* FacingView.m */; };
+		7ECC9CB219981F48002925D0 /* FoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CA019981F48002925D0 /* FoldView.m */; };
+		7ECC9CB319981F48002925D0 /* MultiFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CA219981F48002925D0 /* MultiFoldView.m */; };
+		7ECC9CB419981F48002925D0 /* PaperFoldNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CA519981F48002925D0 /* PaperFoldNavigationController.m */; };
+		7ECC9CB519981F48002925D0 /* PaperFoldResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC9CA619981F48002925D0 /* PaperFoldResources.bundle */; };
+		7ECC9CB619981F48002925D0 /* PaperFoldSwipeHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CA819981F48002925D0 /* PaperFoldSwipeHintView.m */; };
+		7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CAA19981F48002925D0 /* PaperFoldView.m */; };
+		7ECC9CB819981F48002925D0 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CAC19981F48002925D0 /* ShadowView.m */; };
+		7ECC9CB919981F48002925D0 /* TouchThroughUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CAE19981F48002925D0 /* TouchThroughUIView.m */; };
+		7ECC9CBA19981F48002925D0 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CB019981F48002925D0 /* UIView+Screenshot.m */; };
+		7ED6E7871999665600E202CB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7861999665600E202CB /* MenuViewController.m */; };
+		7ED6E791199977B300E202CB /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78E199977B300E202CB /* expandArrow.png */; };
+		7ED6E792199977B300E202CB /* forecastOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78F199977B300E202CB /* forecastOverlay.png */; };
+		7ED6E7951999785400E202CB /* navMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7941999785400E202CB /* navMenuIcon.png */; };
+		7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */; };
+		7ED6E79A19999C2C00E202CB /* menuOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79919999C2C00E202CB /* menuOverlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,8 +109,42 @@
 		7EB8BF23198D963700C06CFF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricDayCell.h; sourceTree = "<group>"; };
 		7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricDayCell.m; sourceTree = "<group>"; };
-		7ECC9C771992C876002925D0 /* expandArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandArrow.png; sourceTree = "<group>"; };
-		7ECC9C91199593F4002925D0 /* forecastOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forecastOverlay.png; sourceTree = "<group>"; };
+		7ECC9C9319980795002925D0 /* JYLegendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLegendView.h; sourceTree = "<group>"; };
+		7ECC9C9419980796002925D0 /* JYLegendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLegendView.m; sourceTree = "<group>"; };
+		7ECC9C9519980796002925D0 /* JYRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRadarChart.h; sourceTree = "<group>"; };
+		7ECC9C9619980796002925D0 /* JYRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYRadarChart.m; sourceTree = "<group>"; };
+		7ECC9C9A1998151F002925D0 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
+		7ECC9C9B1998151F002925D0 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
+		7ECC9C9D19981F48002925D0 /* FacingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacingView.h; sourceTree = "<group>"; };
+		7ECC9C9E19981F48002925D0 /* FacingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacingView.m; sourceTree = "<group>"; };
+		7ECC9C9F19981F48002925D0 /* FoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldView.h; sourceTree = "<group>"; };
+		7ECC9CA019981F48002925D0 /* FoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldView.m; sourceTree = "<group>"; };
+		7ECC9CA119981F48002925D0 /* MultiFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiFoldView.h; sourceTree = "<group>"; };
+		7ECC9CA219981F48002925D0 /* MultiFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiFoldView.m; sourceTree = "<group>"; };
+		7ECC9CA319981F48002925D0 /* PaperFoldConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldConstants.h; sourceTree = "<group>"; };
+		7ECC9CA419981F48002925D0 /* PaperFoldNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldNavigationController.h; sourceTree = "<group>"; };
+		7ECC9CA519981F48002925D0 /* PaperFoldNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldNavigationController.m; sourceTree = "<group>"; };
+		7ECC9CA619981F48002925D0 /* PaperFoldResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaperFoldResources.bundle; sourceTree = "<group>"; };
+		7ECC9CA719981F48002925D0 /* PaperFoldSwipeHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldSwipeHintView.h; sourceTree = "<group>"; };
+		7ECC9CA819981F48002925D0 /* PaperFoldSwipeHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldSwipeHintView.m; sourceTree = "<group>"; };
+		7ECC9CA919981F48002925D0 /* PaperFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldView.h; sourceTree = "<group>"; };
+		7ECC9CAA19981F48002925D0 /* PaperFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldView.m; sourceTree = "<group>"; };
+		7ECC9CAB19981F48002925D0 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
+		7ECC9CAC19981F48002925D0 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
+		7ECC9CAD19981F48002925D0 /* TouchThroughUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchThroughUIView.h; sourceTree = "<group>"; };
+		7ECC9CAE19981F48002925D0 /* TouchThroughUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchThroughUIView.m; sourceTree = "<group>"; };
+		7ECC9CAF19981F48002925D0 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
+		7ECC9CB019981F48002925D0 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
+		7ECC9CBB19981F8A002925D0 /* swipe_guide.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_guide.psd; sourceTree = "<group>"; };
+		7ECC9CBC19981F8A002925D0 /* swipe_guide2.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_guide2.psd; sourceTree = "<group>"; };
+		7ED6E7851999665600E202CB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		7ED6E7861999665600E202CB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		7ED6E78E199977B300E202CB /* expandArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expandArrow.png; path = Resources/expandArrow.png; sourceTree = "<group>"; };
+		7ED6E78F199977B300E202CB /* forecastOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forecastOverlay.png; path = Resources/forecastOverlay.png; sourceTree = "<group>"; };
+		7ED6E7941999785400E202CB /* navMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navMenuIcon.png; path = Resources/navMenuIcon.png; sourceTree = "<group>"; };
+		7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldTabBarController.h; sourceTree = "<group>"; };
+		7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldTabBarController.m; sourceTree = "<group>"; };
+		7ED6E79919999C2C00E202CB /* menuOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuOverlay.png; path = Resources/menuOverlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +180,11 @@
 			isa = PBXGroup;
 			children = (
 				7EB8BEF2198D81E100C06CFF /* OnPurpose */,
-				7EB8BF11198D81E200C06CFF /* OnPurposeTests */,
-				7EB8BEEB198D81E100C06CFF /* Frameworks */,
 				7EB8BEEA198D81E100C06CFF /* Products */,
 				7ECC9C791992C87C002925D0 /* Icons */,
 				7ECC9C90199593CF002925D0 /* Graphics */,
+				7EB8BF11198D81E200C06CFF /* OnPurposeTests */,
+				7EB8BEEB198D81E100C06CFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,18 +216,24 @@
 		7EB8BEF2198D81E100C06CFF /* OnPurpose */ = {
 			isa = PBXGroup;
 			children = (
-				7ECC9C7C199304E7002925D0 /* Libraries */,
 				7EB8BEFB198D81E100C06CFF /* AppDelegate.h */,
 				7EB8BEFC198D81E100C06CFF /* AppDelegate.m */,
 				7E90E559198DC21F00969FB6 /* Constants.h */,
 				7E90E55A198DC21F00969FB6 /* Constants.m */,
 				7EB8BEFE198D81E100C06CFF /* Main.storyboard */,
+				7ED6E7851999665600E202CB /* MenuViewController.h */,
+				7ED6E7861999665600E202CB /* MenuViewController.m */,
+				7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */,
+				7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */,
 				7E90E55F198DD3D700969FB6 /* MetricsViewController.h */,
 				7E90E560198DD3D700969FB6 /* MetricsViewController.m */,
+				7ECC9C9A1998151F002925D0 /* ForecastViewController.h */,
+				7ECC9C9B1998151F002925D0 /* ForecastViewController.m */,
 				7ECC9C7B199304CB002925D0 /* Single Metric */,
 				7E90E55C198DD34200969FB6 /* AddMetricsViewController.h */,
 				7E90E55D198DD34200969FB6 /* AddMetricsViewController.m */,
 				7EB8BF04198D81E100C06CFF /* Images.xcassets */,
+				7ECC9C7C199304E7002925D0 /* Libraries */,
 				7EB8BEF3198D81E100C06CFF /* Supporting Files */,
 			);
 			path = OnPurpose;
@@ -214,7 +271,8 @@
 		7ECC9C791992C87C002925D0 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				7ECC9C771992C876002925D0 /* expandArrow.png */,
+				7ED6E78E199977B300E202CB /* expandArrow.png */,
+				7ED6E7941999785400E202CB /* navMenuIcon.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -250,6 +308,8 @@
 		7ECC9C7C199304E7002925D0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7ECC9CBD19981F96002925D0 /* PaperFold */,
+				7ECC9C99199807BC002925D0 /* JYRadarChart */,
 				7ECC9C7A199304AD002925D0 /* BEMSimpleLineGraph */,
 			);
 			name = Libraries;
@@ -258,9 +318,58 @@
 		7ECC9C90199593CF002925D0 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				7ECC9C91199593F4002925D0 /* forecastOverlay.png */,
+				7ED6E78F199977B300E202CB /* forecastOverlay.png */,
+				7ED6E79919999C2C00E202CB /* menuOverlay.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		7ECC9C99199807BC002925D0 /* JYRadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				7ECC9C9319980795002925D0 /* JYLegendView.h */,
+				7ECC9C9419980796002925D0 /* JYLegendView.m */,
+				7ECC9C9519980796002925D0 /* JYRadarChart.h */,
+				7ECC9C9619980796002925D0 /* JYRadarChart.m */,
+			);
+			name = JYRadarChart;
+			sourceTree = "<group>";
+		};
+		7ECC9CBD19981F96002925D0 /* PaperFold */ = {
+			isa = PBXGroup;
+			children = (
+				7ECC9C9D19981F48002925D0 /* FacingView.h */,
+				7ECC9C9E19981F48002925D0 /* FacingView.m */,
+				7ECC9C9F19981F48002925D0 /* FoldView.h */,
+				7ECC9CA019981F48002925D0 /* FoldView.m */,
+				7ECC9CA119981F48002925D0 /* MultiFoldView.h */,
+				7ECC9CA219981F48002925D0 /* MultiFoldView.m */,
+				7ECC9CA319981F48002925D0 /* PaperFoldConstants.h */,
+				7ECC9CA419981F48002925D0 /* PaperFoldNavigationController.h */,
+				7ECC9CA519981F48002925D0 /* PaperFoldNavigationController.m */,
+				7ECC9CA619981F48002925D0 /* PaperFoldResources.bundle */,
+				7ECC9CA719981F48002925D0 /* PaperFoldSwipeHintView.h */,
+				7ECC9CA819981F48002925D0 /* PaperFoldSwipeHintView.m */,
+				7ECC9CA919981F48002925D0 /* PaperFoldView.h */,
+				7ECC9CAA19981F48002925D0 /* PaperFoldView.m */,
+				7ECC9CBE19981FAA002925D0 /* Resources */,
+				7ECC9CAB19981F48002925D0 /* ShadowView.h */,
+				7ECC9CAC19981F48002925D0 /* ShadowView.m */,
+				7ECC9CAD19981F48002925D0 /* TouchThroughUIView.h */,
+				7ECC9CAE19981F48002925D0 /* TouchThroughUIView.m */,
+				7ECC9CAF19981F48002925D0 /* UIView+Screenshot.h */,
+				7ECC9CB019981F48002925D0 /* UIView+Screenshot.m */,
+			);
+			name = PaperFold;
+			sourceTree = "<group>";
+		};
+		7ECC9CBE19981FAA002925D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7ECC9CBB19981F8A002925D0 /* swipe_guide.psd */,
+				7ECC9CBC19981F8A002925D0 /* swipe_guide2.psd */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,10 +452,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EB8BF05198D81E100C06CFF /* Images.xcassets in Resources */,
-				7ECC9C781992C876002925D0 /* expandArrow.png in Resources */,
-				7ECC9C92199593F4002925D0 /* forecastOverlay.png in Resources */,
+				7ED6E79A19999C2C00E202CB /* menuOverlay.png in Resources */,
+				7ECC9CB519981F48002925D0 /* PaperFoldResources.bundle in Resources */,
 				7EB8BEF7198D81E100C06CFF /* InfoPlist.strings in Resources */,
+				7ED6E792199977B300E202CB /* forecastOverlay.png in Resources */,
 				7EB8BF00198D81E100C06CFF /* Main.storyboard in Resources */,
+				7ED6E7951999785400E202CB /* navMenuIcon.png in Resources */,
+				7ED6E791199977B300E202CB /* expandArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,17 +478,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */,
+				7ECC9CB319981F48002925D0 /* MultiFoldView.m in Sources */,
 				7EB8BEFD198D81E100C06CFF /* AppDelegate.m in Sources */,
 				7EB8BEF9198D81E100C06CFF /* main.m in Sources */,
 				7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */,
+				7ECC9C9819980796002925D0 /* JYRadarChart.m in Sources */,
+				7ECC9CB219981F48002925D0 /* FoldView.m in Sources */,
 				7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */,
 				7E90E56A198DD3EB00969FB6 /* BEMSimpleLineGraphView.m in Sources */,
+				7ED6E7871999665600E202CB /* MenuViewController.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
+				7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
+				7ECC9CB119981F48002925D0 /* FacingView.m in Sources */,
+				7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */,
+				7ECC9C9C1998151F002925D0 /* ForecastViewController.m in Sources */,
 				7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */,
+				7ECC9CBA19981F48002925D0 /* UIView+Screenshot.m in Sources */,
+				7ECC9CB919981F48002925D0 /* TouchThroughUIView.m in Sources */,
 				7E90E56B198DD3EB00969FB6 /* BEMAnimations.m in Sources */,
 				7E90E55E198DD34200969FB6 /* AddMetricsViewController.m in Sources */,
 				7E90E561198DD3D700969FB6 /* MetricsViewController.m in Sources */,
+				7ECC9CB619981F48002925D0 /* PaperFoldSwipeHintView.m in Sources */,
+				7ECC9CB819981F48002925D0 /* ShadowView.m in Sources */,
+				7ECC9CB419981F48002925D0 /* PaperFoldNavigationController.m in Sources */,
+				7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 #import "AppDelegate.h"
+#import "PaperFoldTabBarController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,25 @@
 {
     // Override point for customization after application launch.
     [Parse setApplicationId:@"RVyFn0t703dpFLBXBIT6TeSPNDY9nylxSd18AseW" clientKey:@"Z4ydB4Xlxd7co4y5en8ieK2XmR5Lg7pE0Iv9lExu"];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    PaperFoldTabBarController *mainTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
+        
+     self.paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:mainTabBarController];
+    mainTabBarController.paperFoldNavController = self.paperFoldNavController;
+    
+    self.menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
+    self.menuViewController.paperFoldNavController = self.paperFoldNavController;
+    
+    [self.paperFoldNavController setLeftViewController:self.menuViewController width:100.0f];
+    
+    self.window.rootViewController = self.paperFoldNavController;
+    
+    
+    
+    
+    
     
     
     return YES;
