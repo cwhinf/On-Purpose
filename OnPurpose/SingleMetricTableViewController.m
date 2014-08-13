@@ -16,6 +16,8 @@
 #define EXPANDEDHEIGHT 140
 #define BLANKCELLHEIGHT 20
 #define degreesToRadians(x)(x * M_PI / 180)
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 @interface SingleMetricTableViewController ()
 
@@ -68,6 +70,7 @@
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
     [attributes setObject:self.graphColor forKey:@"NSColor"];
+    [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     NSDictionary *backButtonAttricbutes = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -212,10 +215,11 @@
 
 
 - (IBAction)backPressed:(id)sender {
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x23bd99);
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
-    [attributes setObject:[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0] forKey:@"NSColor"];
+    [attributes setObject:UIColorFromRGB(0x23bd99) forKey:@"NSColor"];
+    [attributes setObject:[UIFont fontWithName:@"Museo-700" size:27] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     

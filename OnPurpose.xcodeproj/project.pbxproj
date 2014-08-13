@@ -54,6 +54,24 @@
 		7ED6E7951999785400E202CB /* navMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7941999785400E202CB /* navMenuIcon.png */; };
 		7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */; };
 		7ED6E79A19999C2C00E202CB /* menuOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79919999C2C00E202CB /* menuOverlay.png */; };
+		7ED6E79D199AD31D00E202CB /* homeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79C199AD31D00E202CB /* homeScreen.png */; };
+		7ED6E79F199AE25D00E202CB /* homeScreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79E199AE25D00E202CB /* homeScreen2.png */; };
+		7ED6E7A2199AE7CC00E202CB /* Marlboro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A1199AE75400E202CB /* Marlboro.ttf */; };
+		7ED6E7AC199AEE9E00E202CB /* VertigoFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A3199AECE600E202CB /* VertigoFLF-Bold.ttf */; };
+		7ED6E7AD199AEE9E00E202CB /* VertigoFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A4199AECE600E202CB /* VertigoFLF.ttf */; };
+		7ED6E7AE199AEE9E00E202CB /* VertigoPlusFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A5199AECE600E202CB /* VertigoPlusFLF-Bold.ttf */; };
+		7ED6E7AF199AEE9E00E202CB /* VertigoPlusFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A6199AECE600E202CB /* VertigoPlusFLF.ttf */; };
+		7ED6E7B0199AEE9E00E202CB /* EuropeUnderground_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A7199AED0000E202CB /* EuropeUnderground_black.ttf */; };
+		7ED6E7B1199AEE9E00E202CB /* EuropeUnderground_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A8199AED0000E202CB /* EuropeUnderground_light.ttf */; };
+		7ED6E7B2199AEE9E00E202CB /* Life is goofy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7A9199AEE1400E202CB /* Life is goofy.ttf */; };
+		7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7AA199AEE6F00E202CB /* Montserrat-Bold.ttf */; };
+		7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7AB199AEE6F00E202CB /* Montserrat-Regular.ttf */; };
+		7ED6E7B7199AFACE00E202CB /* homeScreen3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7B6199AFACE00E202CB /* homeScreen3.png */; };
+		7ED6E7BE199B056D00E202CB /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7B9199B056D00E202CB /* MDRadialProgressLabel.m */; };
+		7ED6E7BF199B056D00E202CB /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7BB199B056D00E202CB /* MDRadialProgressTheme.m */; };
+		7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */; };
+		7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */; };
+		7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C3199B4C0800E202CB /* Museo-700.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +163,27 @@
 		7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldTabBarController.h; sourceTree = "<group>"; };
 		7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldTabBarController.m; sourceTree = "<group>"; };
 		7ED6E79919999C2C00E202CB /* menuOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuOverlay.png; path = Resources/menuOverlay.png; sourceTree = "<group>"; };
+		7ED6E79C199AD31D00E202CB /* homeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeScreen.png; path = Resources/homeScreen.png; sourceTree = "<group>"; };
+		7ED6E79E199AE25D00E202CB /* homeScreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeScreen2.png; path = Resources/homeScreen2.png; sourceTree = "<group>"; };
+		7ED6E7A1199AE75400E202CB /* Marlboro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marlboro.ttf; sourceTree = "<group>"; };
+		7ED6E7A3199AECE600E202CB /* VertigoFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VertigoFLF-Bold.ttf"; sourceTree = "<group>"; };
+		7ED6E7A4199AECE600E202CB /* VertigoFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VertigoFLF.ttf; sourceTree = "<group>"; };
+		7ED6E7A5199AECE600E202CB /* VertigoPlusFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VertigoPlusFLF-Bold.ttf"; sourceTree = "<group>"; };
+		7ED6E7A6199AECE600E202CB /* VertigoPlusFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VertigoPlusFLF.ttf; sourceTree = "<group>"; };
+		7ED6E7A7199AED0000E202CB /* EuropeUnderground_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EuropeUnderground_black.ttf; sourceTree = "<group>"; };
+		7ED6E7A8199AED0000E202CB /* EuropeUnderground_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EuropeUnderground_light.ttf; sourceTree = "<group>"; };
+		7ED6E7A9199AEE1400E202CB /* Life is goofy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Life is goofy.ttf"; sourceTree = "<group>"; };
+		7ED6E7AA199AEE6F00E202CB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		7ED6E7AB199AEE6F00E202CB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		7ED6E7B6199AFACE00E202CB /* homeScreen3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeScreen3.png; path = Resources/homeScreen3.png; sourceTree = "<group>"; };
+		7ED6E7B8199B056D00E202CB /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
+		7ED6E7B9199B056D00E202CB /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
+		7ED6E7BA199B056D00E202CB /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
+		7ED6E7BB199B056D00E202CB /* MDRadialProgressTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressTheme.m; sourceTree = "<group>"; };
+		7ED6E7BC199B056D00E202CB /* MDRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressView.h; sourceTree = "<group>"; };
+		7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
+		7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-500.otf"; sourceTree = "<group>"; };
+		7ED6E7C3199B4C0800E202CB /* Museo-700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-700.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +221,7 @@
 				7EB8BEF2198D81E100C06CFF /* OnPurpose */,
 				7EB8BEEA198D81E100C06CFF /* Products */,
 				7ECC9C791992C87C002925D0 /* Icons */,
+				7ED6E7A0199AE74100E202CB /* Fonts */,
 				7ECC9C90199593CF002925D0 /* Graphics */,
 				7EB8BF11198D81E200C06CFF /* OnPurposeTests */,
 				7EB8BEEB198D81E100C06CFF /* Frameworks */,
@@ -308,6 +348,7 @@
 		7ECC9C7C199304E7002925D0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7ED6E7C1199B057B00E202CB /* MDRadialProgress */,
 				7ECC9CBD19981F96002925D0 /* PaperFold */,
 				7ECC9C99199807BC002925D0 /* JYRadarChart */,
 				7ECC9C7A199304AD002925D0 /* BEMSimpleLineGraph */,
@@ -318,6 +359,9 @@
 		7ECC9C90199593CF002925D0 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				7ED6E7B6199AFACE00E202CB /* homeScreen3.png */,
+				7ED6E79E199AE25D00E202CB /* homeScreen2.png */,
+				7ED6E79C199AD31D00E202CB /* homeScreen.png */,
 				7ED6E78F199977B300E202CB /* forecastOverlay.png */,
 				7ED6E79919999C2C00E202CB /* menuOverlay.png */,
 			);
@@ -370,6 +414,38 @@
 				7ECC9CBC19981F8A002925D0 /* swipe_guide2.psd */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		7ED6E7A0199AE74100E202CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7ED6E7A1199AE75400E202CB /* Marlboro.ttf */,
+				7ED6E7A3199AECE600E202CB /* VertigoFLF-Bold.ttf */,
+				7ED6E7A4199AECE600E202CB /* VertigoFLF.ttf */,
+				7ED6E7A5199AECE600E202CB /* VertigoPlusFLF-Bold.ttf */,
+				7ED6E7A6199AECE600E202CB /* VertigoPlusFLF.ttf */,
+				7ED6E7A7199AED0000E202CB /* EuropeUnderground_black.ttf */,
+				7ED6E7A8199AED0000E202CB /* EuropeUnderground_light.ttf */,
+				7ED6E7A9199AEE1400E202CB /* Life is goofy.ttf */,
+				7ED6E7AA199AEE6F00E202CB /* Montserrat-Bold.ttf */,
+				7ED6E7AB199AEE6F00E202CB /* Montserrat-Regular.ttf */,
+				7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */,
+				7ED6E7C3199B4C0800E202CB /* Museo-700.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		7ED6E7C1199B057B00E202CB /* MDRadialProgress */ = {
+			isa = PBXGroup;
+			children = (
+				7ED6E7B8199B056D00E202CB /* MDRadialProgressLabel.h */,
+				7ED6E7B9199B056D00E202CB /* MDRadialProgressLabel.m */,
+				7ED6E7BA199B056D00E202CB /* MDRadialProgressTheme.h */,
+				7ED6E7BB199B056D00E202CB /* MDRadialProgressTheme.m */,
+				7ED6E7BC199B056D00E202CB /* MDRadialProgressView.h */,
+				7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */,
+			);
+			name = MDRadialProgress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +527,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */,
+				7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */,
+				7ED6E7AC199AEE9E00E202CB /* VertigoFLF-Bold.ttf in Resources */,
+				7ED6E7AD199AEE9E00E202CB /* VertigoFLF.ttf in Resources */,
+				7ED6E7AE199AEE9E00E202CB /* VertigoPlusFLF-Bold.ttf in Resources */,
+				7ED6E7AF199AEE9E00E202CB /* VertigoPlusFLF.ttf in Resources */,
+				7ED6E7B0199AEE9E00E202CB /* EuropeUnderground_black.ttf in Resources */,
+				7ED6E7B1199AEE9E00E202CB /* EuropeUnderground_light.ttf in Resources */,
+				7ED6E7B2199AEE9E00E202CB /* Life is goofy.ttf in Resources */,
+				7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */,
+				7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */,
+				7ED6E7A2199AE7CC00E202CB /* Marlboro.ttf in Resources */,
+				7ED6E7B7199AFACE00E202CB /* homeScreen3.png in Resources */,
 				7EB8BF05198D81E100C06CFF /* Images.xcassets in Resources */,
 				7ED6E79A19999C2C00E202CB /* menuOverlay.png in Resources */,
 				7ECC9CB519981F48002925D0 /* PaperFoldResources.bundle in Resources */,
@@ -458,7 +547,9 @@
 				7ED6E792199977B300E202CB /* forecastOverlay.png in Resources */,
 				7EB8BF00198D81E100C06CFF /* Main.storyboard in Resources */,
 				7ED6E7951999785400E202CB /* navMenuIcon.png in Resources */,
+				7ED6E79D199AD31D00E202CB /* homeScreen.png in Resources */,
 				7ED6E791199977B300E202CB /* expandArrow.png in Resources */,
+				7ED6E79F199AE25D00E202CB /* homeScreen2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +572,7 @@
 				7ECC9CB319981F48002925D0 /* MultiFoldView.m in Sources */,
 				7EB8BEFD198D81E100C06CFF /* AppDelegate.m in Sources */,
 				7EB8BEF9198D81E100C06CFF /* main.m in Sources */,
+				7ED6E7BF199B056D00E202CB /* MDRadialProgressTheme.m in Sources */,
 				7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */,
 				7ECC9C9819980796002925D0 /* JYRadarChart.m in Sources */,
 				7ECC9CB219981F48002925D0 /* FoldView.m in Sources */,
@@ -489,6 +581,7 @@
 				7ED6E7871999665600E202CB /* MenuViewController.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
 				7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */,
+				7ED6E7BE199B056D00E202CB /* MDRadialProgressLabel.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
 				7ECC9CB119981F48002925D0 /* FacingView.m in Sources */,
 				7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */,
@@ -500,6 +593,7 @@
 				7E90E55E198DD34200969FB6 /* AddMetricsViewController.m in Sources */,
 				7E90E561198DD3D700969FB6 /* MetricsViewController.m in Sources */,
 				7ECC9CB619981F48002925D0 /* PaperFoldSwipeHintView.m in Sources */,
+				7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */,
 				7ECC9CB819981F48002925D0 /* ShadowView.m in Sources */,
 				7ECC9CB419981F48002925D0 /* PaperFoldNavigationController.m in Sources */,
 				7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */,

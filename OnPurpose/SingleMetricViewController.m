@@ -11,6 +11,9 @@
 #import "SingleMetricViewController.h"
 #import "Constants.h"
 
+#import "MDRadialProgressView.h"
+#import "MDRadialProgressTheme.h"
+
 #define AVERAGELINEANIMATIONDURATION 1.0
 
 @interface SingleMetricViewController () {
@@ -22,7 +25,11 @@
 
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
 
+@property (strong, nonatomic) MDRadialProgressView *averageRadialView;
+@property (strong, nonatomic) MDRadialProgressView *forecastRadialView;
+
 @property (strong, nonatomic) NSNumber *average;
+@property (strong, nonatomic) NSNumber *forecast;
 
 
 @end
@@ -76,13 +83,7 @@
     // The labels to report the values of the graph when the user touches it
     [self.labelValues setTextColor:self.graphColor];
     
-    //set navController color and font
-    self.navigationController.navigationBar.tintColor = self.graphColor;
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
-                                       self.navigationController.navigationBar.titleTextAttributes];
-    [attributes setObject:self.graphColor forKey:@"NSColor"];
-    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
-    
+
     NSDictionary *backButtonAttricbutes = [NSDictionary dictionaryWithObjectsAndKeys:
                                            [UIFont fontWithName:@"Helvetica Neue" size:20],
                                            NSFontAttributeName,
@@ -95,15 +96,6 @@
     
     self.myGraph.backgroundColor = self.graphColor;
     
-    //set label text
-    [self.labelValues setText:self.graphName];
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setMaximumFractionDigits:1];
-    [formatter setMinimumFractionDigits:1];
-    
-    self.average = [self.ArrayOfValues valueForKeyPath:@"@avg.self"];
-    [self.avgButton setTitle:[formatter stringFromNumber:self.average] forState:UIControlStateNormal];
     
     
     UIColor *topColor = [UIColor colorWithRed:1 green:0.92 blue:0.56 alpha:1];
@@ -114,6 +106,45 @@
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor]CGColor], (id)[[UIColor redColor]CGColor], nil];
     [cell.layer addSublayer:gradient];
     */
+    
+    
+    //setup average and forecast
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setMinimumFractionDigits:1];
+    
+    UIFont *font = [UIFont fontWithName:@"Montserrat-Regular" size:40];
+    
+    CGRect radialAverageRect;
+    
+    MDRadialProgressTheme *theme = [[MDRadialProgressTheme alloc] init];
+    theme.sliceDividerHidden = YES;
+    theme.completedColor = self.graphColor;
+    theme.incompletedColor = [self.graphColor colorWithAlphaComponent:.5];
+    theme.labelColor = [UIColor clearColor];
+
+    self.average = [self.ArrayOfValues valueForKeyPath:@"@avg.self"];
+    [self.avgButton setTitle:[formatter stringFromNumber:self.average] forState:UIControlStateNormal];
+    [self.avgButton.titleLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(50, 355, 100, 100);
+    self.averageRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
+    self.averageRadialView.progressTotal = 500;
+    self.averageRadialView.progressCounter = 0;
+    [self.view addSubview:self.averageRadialView];
+    
+    
+    self.forecast = [NSNumber numberWithDouble:4.8];
+    [self.forecastButton setTitle:[formatter stringFromNumber:self.forecast] forState:UIControlStateNormal];
+    [self.forecastButton.titleLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(170, 355, 100, 100);
+    self.forecastRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
+    self.forecastRadialView.progressTotal = 500;
+    self.forecastRadialView.progressCounter = 0;
+    [self.view addSubview:self.forecastRadialView];
+    
+    
     
 }
 
@@ -129,7 +160,15 @@
     averageHidden = YES;
     [self showAverageLine];
     
+    self.averageRadialView.progressCounter = 0;
+    [self radialView:self.averageRadialView incrementAverage:self.average];
+    
+    self.forecastRadialView.progressCounter = 0;
+    [self radialView:self.forecastRadialView incrementAverage:self.forecast];
+    
 }
+
+
 
 #pragma mark - Graph Actions
 
@@ -165,21 +204,11 @@
     self.myGraph.backgroundColor = color;
     self.view.tintColor = color;
     self.labelValues.textColor = color;
-    self.navigationController.navigationBar.tintColor = color;
     
     [self.myGraph reloadGraph];
 }
 
-- (IBAction)backPressed:(id)sender {
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
-                                       self.navigationController.navigationBar.titleTextAttributes];
-    [attributes setObject:[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0] forKey:@"NSColor"];
-    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
-    
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 /*
 - (IBAction)addOrRemoveLineFromGraph:(id)sender {
     if (self.graphObjectIncrement.value > previousStepperValue) {
@@ -238,6 +267,25 @@
     } completion:^(BOOL finished) {
         //[self.averageLineView setHidden:YES];
     }];
+    
+}
+
+- (void) radialView:(MDRadialProgressView *) radialView incrementAverage:(NSNumber *) average{
+    
+    if (radialView.progressCounter < [average floatValue] * 100) {
+        radialView.progressCounter = radialView.progressCounter + 5;
+        if (radialView.progressCounter >= [average floatValue] * 100) {
+            radialView.progressCounter = [average floatValue] * 100;
+        }
+        else {
+            double delayInSeconds = .02;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                //code to be executed on the main queue after delay
+                [self radialView:radialView incrementAverage:average];
+            });
+        }
+    }
     
 }
 

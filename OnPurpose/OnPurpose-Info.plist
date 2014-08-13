@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Marlboro.ttf</string>
+		<string>VertigoFLF-Bold.ttf</string>
+		<string>VertigoFLF.ttf</string>
+		<string>VertigoPlusFLF-Bold.ttf</string>
+		<string>VertigoPlusFLF.ttf</string>
+		<string>EuropeUnderground_black.ttf</string>
+		<string>EuropeUnderground_light.ttf</string>
+		<string>Life is goofy.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Museo-500.otf</string>
+		<string>Museo-700.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
