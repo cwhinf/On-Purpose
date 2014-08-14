@@ -74,7 +74,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     NSDictionary *backButtonAttricbutes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                           [UIFont fontWithName:@"Helvetica Neue" size:20],
+                                           [UIFont fontWithName:@"Museo-500" size:20],
                                            NSFontAttributeName,
                                            nil];
     [self.backButton setTitleTextAttributes:backButtonAttricbutes forState:UIControlStateNormal];
@@ -154,7 +154,8 @@
         NSString *dateString = [prefixDateString stringByAppendingString:suffix];
         [cell.dayLabel setText:dateString];
         
-        
+        UIFont *font = [UIFont fontWithName:@"Montserrat-Regular" size:28];
+        [cell.valueLabel setFont:font];
         [cell.valueLabel setText:[NSString stringWithFormat:@"%@.0", (NSNumber *)[self.ArrayOfValues objectAtIndex:indexPath.item]]];
         [cell.valueLabel setTextColor:self.graphColor];
         

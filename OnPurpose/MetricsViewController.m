@@ -353,6 +353,15 @@
     }
     [self.ArrayOfDates addObject:@""];
 
+    
+    [self.view bringSubviewToFront:self.sleepButton];
+    [self.view bringSubviewToFront:self.presenceButton];
+    [self.view bringSubviewToFront:self.activityButton];
+    [self.view bringSubviewToFront:self.creativityButton];
+    [self.view bringSubviewToFront:self.eatingButton];
+    
+    
+    
 }
 
 - (void) radialView:(MDRadialProgressView *) radialView incrementAverage:(NSNumber *) average{

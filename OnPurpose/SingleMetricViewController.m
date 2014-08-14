@@ -83,13 +83,6 @@
     // The labels to report the values of the graph when the user touches it
     [self.labelValues setTextColor:self.graphColor];
     
-
-    NSDictionary *backButtonAttricbutes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                           [UIFont fontWithName:@"Helvetica Neue" size:20],
-                                           NSFontAttributeName,
-                                           nil];
-    [self.backButton setTitleTextAttributes:backButtonAttricbutes forState:UIControlStateNormal];
-    
     //set label colors
     [self.avgButton setTitleColor:self.graphColor forState:UIControlStateNormal];
     [self.forecastButton setTitleColor:self.graphColor forState:UIControlStateNormal];
@@ -109,6 +102,12 @@
     
     
     //setup average and forecast
+    
+    UIFont *labelFont = [UIFont fontWithName:@"Montserrat-Regular" size:23];
+    
+    [self.averageLabel setFont:labelFont];
+    [self.forecastLabel setFont:labelFont];
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:1];
     [formatter setMinimumFractionDigits:1];
@@ -143,6 +142,9 @@
     self.forecastRadialView.progressTotal = 500;
     self.forecastRadialView.progressCounter = 0;
     [self.view addSubview:self.forecastRadialView];
+    
+    [self.view bringSubviewToFront:self.avgButton];
+    [self.view bringSubviewToFront:self.forecastButton];
     
     
     

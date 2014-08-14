@@ -860,14 +860,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="average" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPO-nQ-H2a">
-                                <rect key="frame" x="58" y="310" width="85" height="37"/>
+                                <rect key="frame" x="50" y="310" width="100" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" red="0.6160416666666666" green="0.6160416666666666" blue="0.6160416666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="forecast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSB-Ps-EKT">
-                                <rect key="frame" x="161" y="310" width="118" height="37"/>
+                                <rect key="frame" x="170" y="310" width="100" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" red="0.6160416666666666" green="0.6160416666666666" blue="0.6160416666666666" alpha="1" colorSpace="calibratedRGB"/>
@@ -936,9 +936,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="averageLabel" destination="FPO-nQ-H2a" id="4jP-4T-ObM"/>
                         <outlet property="averageLineView" destination="TWH-GA-FFO" id="arX-ch-2sc"/>
                         <outlet property="avgButton" destination="lkF-MA-6NR" id="5aA-Yb-Ukt"/>
                         <outlet property="forecastButton" destination="gjr-fg-Gwf" id="GEY-VO-6V5"/>
+                        <outlet property="forecastLabel" destination="xSB-Ps-EKT" id="TsS-kz-TUx"/>
                         <outlet property="myGraph" destination="GW2-o0-QpZ" id="Asq-rp-skI"/>
                     </connections>
                 </viewController>

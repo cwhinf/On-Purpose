@@ -31,6 +31,11 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 
+
+@property (strong, nonatomic) IBOutlet UILabel *averageLabel;
+@property (strong, nonatomic) IBOutlet UILabel *forecastLabel;
+
+
 @property (strong, nonatomic) IBOutlet UIButton *avgButton;
 @property (strong, nonatomic) IBOutlet UIButton *forecastButton;
 
