@@ -43,6 +43,8 @@
 @property (strong, nonatomic) NSNumber *creativityAverage;
 @property (strong, nonatomic) NSNumber *eatingAverage;
 
+@property (strong, nonatomic) NSMutableArray *eatingAssesment;
+
 
 @end
 
@@ -53,6 +55,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self setAssesments];
     
     PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
@@ -383,6 +387,46 @@
 
 }
 
+- (void) setAssesments {
+    
+    self.eatingAssesment = [[NSMutableArray alloc] init];
+    
+    NSString *question = @"Do you use olive oil as the principal source of fat for cooking?";
+    [self.eatingAssesment addObject:question];
+    question = @"How much olive oil do you consume PER DAY (including that used in frying, salads and meals eaten away from home)?";
+    [self.eatingAssesment addObject:question];
+    question = @"How many servings of vegetables do you consume PER DAY? [A serving is 200 g.]";
+    [self.eatingAssesment addObject:question];
+    question = @"How many pieces of fruit do you consume PER DAY?";
+    [self.eatingAssesment addObject:question];
+    question = @"How many servings of red meat, hamburger, or sausages do you consume PER DAY?";
+    [self.eatingAssesment addObject:question];
+    question = @"How many servings of butter, margarine, or cream do you consume PER DAY?";
+    [self.eatingAssesment addObject:question];
+    /*
+    question = @"How many carbonated and/or sugar-sweetened beverages do you consume PER DAY?";
+    [self.eatingAssesment addObject:question];
+    question = @"Do you drink wine? How much do you consume PER WEEK? ONE POINT FOR: ≥7 cups";
+    [self.eatingAssesment addObject:question];
+    question = @"How many servings (150 g) of beans, peas, or lentils do you consume PER WEEK? [A serving is 150 g.]";
+    [self.eatingAssesment addObject:question];
+    question = @"How many servings of fish/seafood do you consume PER WEEK? [A serving is 100–150 g of fish, 4–5 pieces or 200 g of seafood]";
+    [self.eatingAssesment addObject:question];
+    question = @"How many times do you consume commercial (not homemade) pastry such as cookies or cake PER WEEK?";
+    [self.eatingAssesment addObject:question];
+    question = @"How many times do you consume nuts PER WEEK?";
+    [self.eatingAssesment addObject:question];
+    question = @"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?";
+    [self.eatingAssesment addObject:question];
+    question = @"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?";
+    [self.eatingAssesment addObject:question];
+     */
+    
+}
+
+
+
+
 - (IBAction)addOrRemoveLineFromGraph:(id)sender {
     if (self.graphObjectIncrement.value > previousStepperValue) {
         // Add line
@@ -412,6 +456,7 @@
 - (IBAction)displayStatistics:(id)sender {
     [self performSegueWithIdentifier:@"showStats" sender:self];
 }
+
 
 #pragma mark - SimpleLineGraph Data Source
 
@@ -499,34 +544,42 @@
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
             //singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;
             singleMetricTableViewController.graphColor = UIColorFromRGB(0xa82d32);
-            singleMetricTableViewController.navigationItem.title = @"Sleep";
+            //singleMetricTableViewController.navigationItem.title = @"Sleep";
+            singleMetricTableViewController.graphName = @"Sleep";
+            singleMetricTableViewController.graphDefinition = @"is a rating on how well you slept. It can be based on hours or anything";
+            
         }
         else if ([sender isEqual:self.presenceButton]) {
             singleMetricTableViewController.ArrayOfValues = self.presenceArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
             //singleMetricTableViewController.graphColor = self.presenceGraph.backgroundColor;
             singleMetricTableViewController.graphColor = UIColorFromRGB(0x3a7ed7);
-            singleMetricTableViewController.navigationItem.title = @"Presence";
+            singleMetricTableViewController.graphName = @"Presence";
+            singleMetricTableViewController.graphDefinition = @"is a rating on how present you are. It can be based on anything";
         }
         else if ([sender isEqual:self.activityButton]) {
             singleMetricTableViewController.ArrayOfValues = self.activityArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
             //singleMetricTableViewController.graphColor = self.activityGraph.backgroundColor;
             singleMetricTableViewController.graphColor = UIColorFromRGB(0xf9af1a);
-            singleMetricTableViewController.navigationItem.title = @"Activity";
+            singleMetricTableViewController.graphName = @"Activity";
+            singleMetricTableViewController.graphDefinition = @"is a rating on how active you are. It can be based on hours or anything";
         }
         else if ([sender isEqual:self.creativityButton]) {
             singleMetricTableViewController.ArrayOfValues = self.creativityArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
             //singleMetricTableViewController.graphColor = self.creativityGraph.backgroundColor;
             singleMetricTableViewController.graphColor = UIColorFromRGB(0x23bd99);
-            singleMetricTableViewController.navigationItem.title = @"Creativity";
+            singleMetricTableViewController.graphName = @"Creativity";
+            singleMetricTableViewController.graphDefinition = @"is a rating on how creative you are. It can be based on anything";
         }
         else if ([sender isEqual:self.eatingButton]) {
             singleMetricTableViewController.ArrayOfValues = self.eatingArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
             //singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0xef643c);            singleMetricTableViewController.navigationItem.title = @"Eating";
+            singleMetricTableViewController.graphColor = UIColorFromRGB(0xef643c);            singleMetricTableViewController.graphName = @"Eating";
+            singleMetricTableViewController.graphDefinition = @"is a rating on how well you ate. It can be based on food or anything";
+            singleMetricTableViewController.assesment = self.eatingAssesment;
         }
     }
 

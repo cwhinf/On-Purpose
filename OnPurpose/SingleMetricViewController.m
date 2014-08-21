@@ -42,10 +42,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    NSString *string = [NSString stringWithFormat:@"%@ %@", self.graphName, self.graphDefinition];
+    NSMutableAttributedString *definitionString = [[NSMutableAttributedString alloc] initWithString:string];
+    [definitionString addAttribute:NSForegroundColorAttributeName value:self.graphColor range:NSMakeRange(0, self.graphName.length)];
+    [definitionString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:130.0/255.0 green:130.0/255.0 blue:130.0/255.0 alpha:1.0] range:NSMakeRange(self.graphName.length, string.length - self.graphName.length)];
+    [definitionString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Museo-500" size:18] range:NSMakeRange(0, string.length)];
+    
+    [self.definitionLabel setAttributedText:definitionString];
+    
+    
     previousStepperValue = self.graphObjectIncrement.value;
     totalNumber = 0;
     
-    self.ArrayOfDates = [[NSMutableArray alloc] init];
+    ;    self.ArrayOfDates = [[NSMutableArray alloc] init];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     
@@ -126,7 +135,7 @@
     [self.avgButton setTitle:[formatter stringFromNumber:self.average] forState:UIControlStateNormal];
     [self.avgButton.titleLabel setFont:font];
     
-    radialAverageRect = CGRectMake(50, 355, 100, 100);
+    radialAverageRect = CGRectMake(50, 440, 100, 100);
     self.averageRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
     self.averageRadialView.progressTotal = 500;
     self.averageRadialView.progressCounter = 0;
@@ -137,7 +146,7 @@
     [self.forecastButton setTitle:[formatter stringFromNumber:self.forecast] forState:UIControlStateNormal];
     [self.forecastButton.titleLabel setFont:font];
     
-    radialAverageRect = CGRectMake(170, 355, 100, 100);
+    radialAverageRect = CGRectMake(170, 440, 100, 100);
     self.forecastRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
     self.forecastRadialView.progressTotal = 500;
     self.forecastRadialView.progressCounter = 0;
@@ -186,6 +195,7 @@
 }
 
 - (IBAction)forecastPressed:(id)sender {
+    [self.singleMetricTableViewController showAssesment];
 }
 
 - (IBAction)refresh:(id)sender {
@@ -236,7 +246,7 @@
     //[self.averageLineView setHidden:NO];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView animateWithDuration:AVERAGELINEANIMATIONDURATION animations:^{
-            CGFloat avgLineYVal = 273.75 - ([self.average floatValue] * 48.75) - 15.0;
+            CGFloat avgLineYVal = 358.75 - ([self.average floatValue] * 48.75) - 15.0;
             CGRect avgLineRect = CGRectMake(0, avgLineYVal, self.averageLineView.frame.size.width, self.averageLineView.frame.size.height);
             self.averageLineView.frame = avgLineRect;
     } completion:^(BOOL finished) {

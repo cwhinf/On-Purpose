@@ -26,6 +26,9 @@
 @property (strong, nonatomic) NSMutableArray *metricDaysArray;
 @property (strong, nonatomic) UIColor *graphColor;
 @property (strong, nonatomic) NSString *graphName;
+@property (strong, nonatomic) NSString *graphDefinition;
+
+@property (strong, nonatomic) NSArray *assesment;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelValues;
 @property (strong, nonatomic) IBOutlet UILabel *labelDates;
@@ -44,6 +47,7 @@
 
 - (IBAction)refresh:(id)sender;
 - (IBAction)backPressed:(id)sender;
+- (void) showAssesment;
 
 - (IBAction)addOrRemoveLineFromGraph:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *graphColorChoice;

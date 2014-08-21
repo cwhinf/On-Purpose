@@ -9,9 +9,10 @@
 #import "SingleMetricTableViewController.h"
 #import "SingleMetricViewController.h"
 #import "SingleMetricDayCell.h"
+#import "ForecastStepsController.h"
 
 
-#define HEADERHEIGHT 470
+#define HEADERHEIGHT 555
 #define CELLHEIGHT 55
 #define EXPANDEDHEIGHT 140
 #define BLANKCELLHEIGHT 20
@@ -48,6 +49,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.navigationItem.title = self.graphName;
     
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
@@ -110,10 +112,12 @@
     if (section == 0) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.singleMetricViewController = [storyboard instantiateViewControllerWithIdentifier:@"SingleMetricViewController"];
+        self.singleMetricViewController.singleMetricTableViewController = self;
         self.singleMetricViewController.ArrayOfValues = self.ArrayOfValues;
         self.singleMetricViewController.metricDaysArray = self.metricDaysArray;
         self.singleMetricViewController.graphColor = self.graphColor;
         self.singleMetricViewController.graphName = self.graphName;
+        self.singleMetricViewController.graphDefinition = self.graphDefinition;
         
         return self.singleMetricViewController.view;;
     }
@@ -228,6 +232,10 @@
 }
 
 
+- (void) showAssesment {
+    [self performSegueWithIdentifier:@"showAssesment" sender:self];
+}
+
 
 #pragma mark - SimpleLineGraph Data Source
 
@@ -271,9 +279,35 @@
     
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showAssesment"]) {
+        ForecastStepsController *forecastStepsController = segue.destinationViewController;
+        forecastStepsController.graphColor = self.graphColor;
+        forecastStepsController.assesment = self.assesment;
+    }
+    
+    
+}
+
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -22,7 +22,8 @@
     
     PaperFoldTabBarController *mainTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
         
-     self.paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:mainTabBarController];
+    self.paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:mainTabBarController];
+    
     mainTabBarController.paperFoldNavController = self.paperFoldNavController;
     
     self.menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];

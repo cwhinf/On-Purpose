@@ -8,9 +8,14 @@
 
 #import <Parse/Parse.h>
 
+#import "SingleMetricTableViewController.h"
 #import "BEMSimpleLineGraphView.h"
 
 @interface SingleMetricViewController : UIViewController <BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+
+@property (strong, nonatomic) SingleMetricTableViewController *singleMetricTableViewController;
+
+@property (strong, nonatomic) IBOutlet UILabel *definitionLabel;
 
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 
@@ -19,6 +24,7 @@
 @property (strong, nonatomic) NSMutableArray *metricDaysArray;
 @property (strong, nonatomic) UIColor *graphColor;
 @property (strong, nonatomic) NSString *graphName;
+@property (strong, nonatomic) NSString *graphDefinition;
 
 
 @property (strong, nonatomic) IBOutlet UIView *averageLineView;
