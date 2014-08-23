@@ -550,7 +550,6 @@
         }
         else
         {
-            
             [self.contentView setTransform:CGAffineTransformMakeTranslation(0, 0)];
             [self.bottomFoldView unfoldWithParentOffset:y];
             [self.topFoldView unfoldWithParentOffset:y];
@@ -560,6 +559,7 @@
             {
                 [self.delegate paperFoldView:self viewDidOffset:CGPointMake(0,y)];
             }
+            
         }
     }
     
@@ -796,10 +796,12 @@
     }
     else if (state==PaperFoldStateLeftUnfolded)
     {
+        self.paperFoldInitialPanDirection = PaperFoldInitialPanDirectionHorizontal;
         self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:_timerStepDuration target:self selector:@selector(unfoldLeftView:) userInfo:nil repeats:YES];
     }
     else if (state==PaperFoldStateRightUnfolded)
     {
+        self.paperFoldInitialPanDirection = PaperFoldInitialPanDirectionHorizontal;
         self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:_timerStepDuration target:self selector:@selector(unfoldRightView:) userInfo:nil repeats:YES];
     }
     else if (state==PaperFoldStateTopUnfolded)

@@ -38,6 +38,10 @@
     [self.navigationItem setTitle:self.graphName];
     [self.scoreValueLabel setTitleColor:self.graphColor forState:UIControlStateNormal];
     
+    
+    [self.scoreValueLabel setFont:[UIFont fontWithName:@"Museo-500" size:68.0f]];
+    [self.finishButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:38.0f]];
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:1];
     [formatter setMinimumFractionDigits:1];
@@ -45,6 +49,8 @@
     //self.score = [self.assesment.answers valueForKeyPath:@"@avg.self"];
     [self computeScore];
     [self.scoreValueLabel setTitle:[formatter stringFromNumber:self.score] forState:UIControlStateNormal];
+    
+    
     
     MDRadialProgressTheme *theme = [[MDRadialProgressTheme alloc] init];
     theme.sliceDividerHidden = YES;

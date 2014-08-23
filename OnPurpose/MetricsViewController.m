@@ -47,6 +47,8 @@
 @property (strong, nonatomic) Assessment *eatingAssessment;
 
 
+@property (strong, nonatomic) PFUser *lastUser;
+
 @end
 
 @implementation MetricsViewController
@@ -153,11 +155,30 @@
     self.labelValues.text = [NSString stringWithFormat:@"%i", [[self.sleepGraph calculatePointValueSum] intValue]];
     self.labelDates.text = @"between 2000 and 2010";
     
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    if ([PFUser currentUser]) {
+    [self checkForUser];
+    if (self.lastUser != [PFUser currentUser]) {
+        self.lastUser = [PFUser currentUser];
+        self.sleepArray = [[NSMutableArray alloc] init];
+        self.presenceArray = [[NSMutableArray alloc] init];
+        self.activityArray = [[NSMutableArray alloc] init];
+        self.creativityArray = [[NSMutableArray alloc] init];
+        self.eatingArray = [[NSMutableArray alloc] init];
+        self.metricDaysArray = [[NSMutableArray alloc] init];
+        self.ArrayOfDates = [[NSMutableArray alloc] init];
+        
         PFQuery *metricsQuery = [PFQuery queryWithClassName:metricsClassKey];
         [metricsQuery whereKey:metricsUserKey equalTo:[PFUser currentUser]];
-        [metricsQuery orderByAscending:metricsDayKey];
+        [metricsQuery orderByDescending:metricsCreatedAtKey];
         [metricsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             for (PFObject *object in objects) {
                 [self.sleepArray addObject:(NSNumber *)[object objectForKey:metricsSleepKey]];
@@ -171,38 +192,12 @@
             [self layoutStats];
             [self refresh:nil];
         }];
-    }
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self checkForUser];
-    if (!self.sleepArray) {
-        PFQuery *metricsQuery = [PFQuery queryWithClassName:metricsClassKey];
-        [metricsQuery whereKey:metricsUserKey equalTo:[PFUser currentUser]];
-        [metricsQuery orderByDescending:metricsCreatedAtKey];
-        [metricsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            for (PFObject *object in objects) {
-                [self.sleepArray addObject:(NSNumber *)[object objectForKey:metricsSleepKey]];
-                [self.presenceArray addObject:(NSNumber *)[object objectForKey:metricsPresenceKey]];
-                [self.activityArray addObject:(NSNumber *)[object objectForKey:metricsActivityKey]];
-                [self.creativityArray addObject:(NSNumber *)[object objectForKey:metricsCreativityKey]];
-                [self.eatingArray addObject:(NSNumber *)[object objectForKey:metricsEatingKey]];
-            }
-            totalNumber = self.sleepArray.count;
-            [self layoutStats];
-            [self refresh:nil];
-        }];
     }
-    [self refresh:nil];
-    
-    
+    else {
+        [self refresh:nil];
+    }
+
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
     //[attributes setObject:[UIColor colorWithRed:69.0/255.0 green:97.0/255.0 blue:115.0/255.0 alpha:1.0] forKey:@"NSColor"];
@@ -432,7 +427,7 @@
 
 - (IBAction)metricButtonPressed:(id)sender {
     
-    if (self.paperFoldNavController.paperFoldView.state == FoldStateClosed) {
+    if (self.paperFoldNavController.paperFoldView.state == FoldStateClosed && self.sleepArray.count > 0) {
         [self performSegueWithIdentifier:@"showMetric" sender:sender];
     }
     else {

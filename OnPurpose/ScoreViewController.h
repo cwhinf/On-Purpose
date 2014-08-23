@@ -17,6 +17,7 @@
 
 
 @property (strong, nonatomic) IBOutlet UIButton *scoreValueLabel;
+@property (strong, nonatomic) IBOutlet UIButton *finishButton;
 
 
 - (IBAction)finishPressed:(id)sender;
