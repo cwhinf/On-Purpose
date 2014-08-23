@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0E83F019A67B9700BC6BE8 /* Brain-Games-grey.png */; };
+		7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */; };
+		7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65B19A7E94D0094E09C /* Assessment.m */; };
+		7E31F65F19A8118F0094E09C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65E19A8118F0094E09C /* ScoreViewController.m */; };
 		7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */; };
 		7E54AFC919A5617D00C9BA4E /* RMStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC419A5617D00C9BA4E /* RMStepsController.m */; };
 		7E54AFCA19A5617D00C9BA4E /* RMStepsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC619A5617D00C9BA4E /* RMStepsBar.m */; };
 		7E54AFCB19A5617D00C9BA4E /* RMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC819A5617D00C9BA4E /* RMStep.m */; };
 		7E54AFCF19A5628A00C9BA4E /* ForecastStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */; };
-		7E54AFD219A5690600C9BA4E /* AssesmentStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFD119A5690600C9BA4E /* AssesmentStepViewController.m */; };
+		7E54AFD219A5690600C9BA4E /* ScaledStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */; };
 		7E90E552198DBAE300969FB6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E551198DBAE300969FB6 /* Accounts.framework */; };
 		7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E553198DBAE900969FB6 /* Social.framework */; };
 		7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */; };
@@ -90,6 +94,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0E83F019A67B9700BC6BE8 /* Brain-Games-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Brain-Games-grey.png"; path = "Resources/Brain-Games-grey.png"; sourceTree = "<group>"; };
+		7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LeftRightArrow-512.png"; path = "Resources/LeftRightArrow-512.png"; sourceTree = "<group>"; };
+		7E31F65A19A7E94D0094E09C /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
+		7E31F65B19A7E94D0094E09C /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
+		7E31F65D19A8118F0094E09C /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		7E31F65E19A8118F0094E09C /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricTableViewController.h; sourceTree = "<group>"; };
 		7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricTableViewController.m; sourceTree = "<group>"; };
 		7E54AFC319A5617D00C9BA4E /* RMStepsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStepsController.h; sourceTree = "<group>"; };
@@ -100,8 +110,8 @@
 		7E54AFC819A5617D00C9BA4E /* RMStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStep.m; sourceTree = "<group>"; };
 		7E54AFCD19A5628A00C9BA4E /* ForecastStepsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastStepsController.h; sourceTree = "<group>"; };
 		7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastStepsController.m; sourceTree = "<group>"; };
-		7E54AFD019A5690600C9BA4E /* AssesmentStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssesmentStepViewController.h; sourceTree = "<group>"; };
-		7E54AFD119A5690600C9BA4E /* AssesmentStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssesmentStepViewController.m; sourceTree = "<group>"; };
+		7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledStepViewController.h; sourceTree = "<group>"; };
+		7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledStepViewController.m; sourceTree = "<group>"; };
 		7E90E551198DBAE300969FB6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7E90E553198DBAE900969FB6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -299,8 +309,12 @@
 				7ECC9C9B1998151F002925D0 /* ForecastViewController.m */,
 				7E54AFCD19A5628A00C9BA4E /* ForecastStepsController.h */,
 				7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */,
-				7E54AFD019A5690600C9BA4E /* AssesmentStepViewController.h */,
-				7E54AFD119A5690600C9BA4E /* AssesmentStepViewController.m */,
+				7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */,
+				7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */,
+				7E31F65D19A8118F0094E09C /* ScoreViewController.h */,
+				7E31F65E19A8118F0094E09C /* ScoreViewController.m */,
+				7E31F65A19A7E94D0094E09C /* Assessment.h */,
+				7E31F65B19A7E94D0094E09C /* Assessment.m */,
 				7ECC9C7B199304CB002925D0 /* Single Metric */,
 				7E90E55C198DD34200969FB6 /* AddMetricsViewController.h */,
 				7E90E55D198DD34200969FB6 /* AddMetricsViewController.m */,
@@ -345,6 +359,7 @@
 			children = (
 				7ED6E78E199977B300E202CB /* expandArrow.png */,
 				7ED6E7941999785400E202CB /* navMenuIcon.png */,
+				7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -397,6 +412,7 @@
 				7ED6E79C199AD31D00E202CB /* homeScreen.png */,
 				7ED6E78F199977B300E202CB /* forecastOverlay.png */,
 				7ED6E79919999C2C00E202CB /* menuOverlay.png */,
+				7E0E83F019A67B9700BC6BE8 /* Brain-Games-grey.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -569,7 +585,9 @@
 				7ED6E7B0199AEE9E00E202CB /* EuropeUnderground_black.ttf in Resources */,
 				7ED6E7B1199AEE9E00E202CB /* EuropeUnderground_light.ttf in Resources */,
 				7ED6E7B2199AEE9E00E202CB /* Life is goofy.ttf in Resources */,
+				7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */,
 				7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */,
+				7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */,
 				7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */,
 				7ED6E7A2199AE7CC00E202CB /* Marlboro.ttf in Resources */,
 				7ED6E7B7199AFACE00E202CB /* homeScreen3.png in Resources */,
@@ -604,6 +622,7 @@
 				7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */,
 				7ECC9CB319981F48002925D0 /* MultiFoldView.m in Sources */,
 				7EB8BEFD198D81E100C06CFF /* AppDelegate.m in Sources */,
+				7E31F65F19A8118F0094E09C /* ScoreViewController.m in Sources */,
 				7EB8BEF9198D81E100C06CFF /* main.m in Sources */,
 				7ED6E7BF199B056D00E202CB /* MDRadialProgressTheme.m in Sources */,
 				7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */,
@@ -611,12 +630,13 @@
 				7ECC9CB219981F48002925D0 /* FoldView.m in Sources */,
 				7E54AFC919A5617D00C9BA4E /* RMStepsController.m in Sources */,
 				7E54AFCF19A5628A00C9BA4E /* ForecastStepsController.m in Sources */,
-				7E54AFD219A5690600C9BA4E /* AssesmentStepViewController.m in Sources */,
+				7E54AFD219A5690600C9BA4E /* ScaledStepViewController.m in Sources */,
 				7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */,
 				7E90E56A198DD3EB00969FB6 /* BEMSimpleLineGraphView.m in Sources */,
 				7ED6E7871999665600E202CB /* MenuViewController.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
 				7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */,
+				7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */,
 				7ED6E7BE199B056D00E202CB /* MDRadialProgressLabel.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
 				7ECC9CB119981F48002925D0 /* FacingView.m in Sources */,

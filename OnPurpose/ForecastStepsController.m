@@ -7,7 +7,7 @@
 //
 
 #import "ForecastStepsController.h"
-#import "AssesmentStepViewController.h"
+#import "ScaledStepViewController.h"
 
 @interface ForecastStepsController ()
 
@@ -19,6 +19,8 @@
     [super viewDidLoad];
     
     self.stepsBar.hideCancelButton = YES;
+    [self.stepsBar setHidden:YES];
+    self.assessment.answers = [[NSMutableArray alloc] init];
 }
 
 - (NSArray *)stepViewControllers {
@@ -35,16 +37,24 @@
 */
     NSMutableArray *steps = [[NSMutableArray alloc] init];
     
-    AssesmentStepViewController *step;
+    ScaledStepViewController *step;
     
-    for(NSString *question in self.assesment) {
+    NSInteger questionNumber = 1;
+    NSInteger questionTotal= self.assessment.questions.count;
+    
+    for(NSString *question in self.assessment.questions) {
         
         step = [self.storyboard instantiateViewControllerWithIdentifier:@"assesmentStep"];
-        step.questionString = question;
+        //step.questionString = question;
+        step.assessment = self.assessment;
         step.step.title = @"";
+        step.graphName = self.graphName;
         step.graphColor = self.graphColor;
+        step.questionNumber = questionNumber;
+        step.questionTotal = questionTotal;
         [steps addObject:step];
         
+        questionNumber++;
     }
 
 

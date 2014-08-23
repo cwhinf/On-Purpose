@@ -13,6 +13,7 @@
 #import "SingleMetricViewController.h"
 #import "SingleMetricTableViewController.h"
 #import "PaperFoldTabBarController.h"
+#import "Assessment.h"
 #import "Constants.h"
 
 #import "MDRadialProgressView.h"
@@ -43,7 +44,7 @@
 @property (strong, nonatomic) NSNumber *creativityAverage;
 @property (strong, nonatomic) NSNumber *eatingAverage;
 
-@property (strong, nonatomic) NSMutableArray *eatingAssesment;
+@property (strong, nonatomic) Assessment *eatingAssessment;
 
 
 @end
@@ -389,38 +390,23 @@
 
 - (void) setAssesments {
     
-    self.eatingAssesment = [[NSMutableArray alloc] init];
+    self.eatingAssessment = [[Assessment alloc] init];
     
-    NSString *question = @"Do you use olive oil as the principal source of fat for cooking?";
-    [self.eatingAssesment addObject:question];
-    question = @"How much olive oil do you consume PER DAY (including that used in frying, salads and meals eaten away from home)?";
-    [self.eatingAssesment addObject:question];
-    question = @"How many servings of vegetables do you consume PER DAY? [A serving is 200 g.]";
-    [self.eatingAssesment addObject:question];
-    question = @"How many pieces of fruit do you consume PER DAY?";
-    [self.eatingAssesment addObject:question];
-    question = @"How many servings of red meat, hamburger, or sausages do you consume PER DAY?";
-    [self.eatingAssesment addObject:question];
-    question = @"How many servings of butter, margarine, or cream do you consume PER DAY?";
-    [self.eatingAssesment addObject:question];
-    /*
-    question = @"How many carbonated and/or sugar-sweetened beverages do you consume PER DAY?";
-    [self.eatingAssesment addObject:question];
-    question = @"Do you drink wine? How much do you consume PER WEEK? ONE POINT FOR: ≥7 cups";
-    [self.eatingAssesment addObject:question];
-    question = @"How many servings (150 g) of beans, peas, or lentils do you consume PER WEEK? [A serving is 150 g.]";
-    [self.eatingAssesment addObject:question];
-    question = @"How many servings of fish/seafood do you consume PER WEEK? [A serving is 100–150 g of fish, 4–5 pieces or 200 g of seafood]";
-    [self.eatingAssesment addObject:question];
-    question = @"How many times do you consume commercial (not homemade) pastry such as cookies or cake PER WEEK?";
-    [self.eatingAssesment addObject:question];
-    question = @"How many times do you consume nuts PER WEEK?";
-    [self.eatingAssesment addObject:question];
-    question = @"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?";
-    [self.eatingAssesment addObject:question];
-    question = @"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?";
-    [self.eatingAssesment addObject:question];
-     */
+    [self.eatingAssessment addYesNoQuestion:@"Do you use olive oil as the principal source of fat for cooking?"];
+    [self.eatingAssessment addMultipleQuestion:@"How much olive oil do you consume PER DAY (including that used in frying, salads and meals eaten away from home)?" Choices:@[@"none", @"2 tablespoons", @"4 tablespoons", @"6 tablespoons", @"8 or more"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of vegetables do you consume PER DAY? [A serving is 200 g.]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many pieces of fruit do you consume PER DAY?" Choices:@[@"none", @"1 piece", @"2 pieces", @"3 pieces", @"4 or more pieces"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of red meat, hamburger, or sausages do you consume PER DAY?" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of butter, margarine, or cream do you consume PER DAY?" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many carbonated and/or sugar-sweetened beverages do you consume PER DAY?" Choices:@[@"none", @"1 beverage", @"2 beverages", @"3 beverages", @"4 or more beverages"]];
+    [self.eatingAssessment addMultipleQuestion:@"Do you drink wine? How much do you consume PER WEEK? ONE POINT FOR: ≥7 cups" Choices:@[@"I don't drink wine", @"2 cups", @"4 cups", @"6 cups", @"7 or more cups"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings (150 g) of beans, peas, or lentils do you consume PER WEEK? [A serving is 150 g.]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of fish/seafood do you consume PER WEEK? [A serving is 100–150 g of fish, 4–5 pieces or 200 g of seafood]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many times do you consume commercial (not homemade) pastry such as cookies or cake PER WEEK?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
+    [self.eatingAssessment addMultipleQuestion:@"How many times do you consume nuts PER WEEK?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
+    [self.eatingAssessment addYesNoQuestion:@"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?"];
+    [self.eatingAssessment addMultipleQuestion:@"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
+    
     
 }
 
@@ -579,7 +565,7 @@
             //singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
             singleMetricTableViewController.graphColor = UIColorFromRGB(0xef643c);            singleMetricTableViewController.graphName = @"Eating";
             singleMetricTableViewController.graphDefinition = @"is a rating on how well you ate. It can be based on food or anything";
-            singleMetricTableViewController.assesment = self.eatingAssesment;
+            singleMetricTableViewController.assessment = self.eatingAssessment;
         }
     }
 

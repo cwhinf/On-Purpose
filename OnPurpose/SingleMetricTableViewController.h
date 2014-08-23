@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 #import "BEMSimpleLineGraphView.h"
+#import "Assessment.h"
 
 
 @interface SingleMetricTableViewController : UITableViewController <BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
@@ -28,7 +29,7 @@
 @property (strong, nonatomic) NSString *graphName;
 @property (strong, nonatomic) NSString *graphDefinition;
 
-@property (strong, nonatomic) NSArray *assesment;
+@property (strong, nonatomic) Assessment *assessment;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelValues;
 @property (strong, nonatomic) IBOutlet UILabel *labelDates;

@@ -283,8 +283,9 @@
     
     if ([segue.identifier isEqualToString:@"showAssesment"]) {
         ForecastStepsController *forecastStepsController = segue.destinationViewController;
+        forecastStepsController.graphName = self.graphName;
         forecastStepsController.graphColor = self.graphColor;
-        forecastStepsController.assesment = self.assesment;
+        forecastStepsController.assessment = self.assessment;
     }
     
     
