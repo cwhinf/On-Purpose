@@ -20,7 +20,10 @@
     
     self.stepsBar.hideCancelButton = YES;
     [self.stepsBar setHidden:YES];
-    self.assessment.answers = [[NSMutableArray alloc] init];
+    self.assessment.answers = [[NSMutableArray alloc] initWithCapacity:self.assessment.questions.count];
+    for (int i=0; i < self.assessment.questions.count; i++) {
+        [self.assessment.answers addObject:[NSNumber numberWithInt:0]];
+    }
 }
 
 - (NSArray *)stepViewControllers {
@@ -62,6 +65,7 @@
 }
 
 - (void)finishedAllSteps {
+    [self.delegate didFinishSteps];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

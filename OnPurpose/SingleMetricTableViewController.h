@@ -10,10 +10,11 @@
 #import <Parse/Parse.h>
 
 #import "BEMSimpleLineGraphView.h"
+#import "ForecastStepsController.h"
 #import "Assessment.h"
 
 
-@interface SingleMetricTableViewController : UITableViewController <BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface SingleMetricTableViewController : UITableViewController <RMStepsControllerDelegate, BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
     int previousStepperValue;
     int totalNumber;

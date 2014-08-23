@@ -110,7 +110,7 @@
     [self.buttonNo.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:60]];
     
     
-    [self.nextButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:68]];
+    [self.nextButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:19]];
     [self.previousButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:19]];
     /*
     [self.buttonOne.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:24]];
@@ -129,13 +129,27 @@
     
     [self unselectAllScaleButtons];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self.parentViewController.navigationItem setTitle:[NSString stringWithFormat:@"%@/%@", [@(self.questionNumber) stringValue], [@(self.questionTotal) stringValue]]];
+    
+    NSInteger answer = [((NSNumber *)[self.assessment.answers objectAtIndex:self.questionNumber - 1]) intValue];
+    if (answer == 0) {
+        [self.nextButton setHidden:YES];
+    }
+    else {
+        [self.nextButton setHidden:NO];
+    }
+    
+    
+    
     
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -162,27 +176,36 @@
     if ([self.multipleButtons2 containsObject:self.selectedButton]) {
         self.selectedButton = [self.multipleButtons objectAtIndex:[self.multipleButtons2 indexOfObject:self.selectedButton]];
     }
+    double delayInSeconds = 0.2f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     
     if ([self.roundButtons containsObject:self.selectedButton]) {
+        
         [self.selectedButton setBackgroundImage:self.selectedButtonImage forState:UIControlStateNormal];
         [self.selectedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //code to be executed on the main queue after delay
+            //[self.assessment.answers addObject:[NSNumber numberWithInt:self.selectedButton.tag]];
+            [self.assessment.answers replaceObjectAtIndex:self.questionNumber-1 withObject:[NSNumber numberWithInt:self.selectedButton.tag]];
+            [self.stepsController showNextStep];
+        });
     }
     else {
         [self.selectedButton setTitleColor:self.graphColor forState:UIControlStateNormal];
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //code to be executed on the main queue after delay
+            //[self.assessment.answers addObject:[NSNumber numberWithInt:self.selectedButton.tag]];
+            [self.assessment.answers replaceObjectAtIndex:self.questionNumber-1 withObject:[NSNumber numberWithInt:self.selectedButton.tag]];
+            [self.stepsController showNextStep];
+        });
     }
-    
-    [UIView animateWithDuration:0.65f animations:^{
-        self.nextButton.frame = nextButtonFrame;
-        self.nextArrow.frame = nextArrowFrame;
-    } completion:^(BOOL finished) {
-        
-    }];
 
 }
 
 - (IBAction)nextPressed:(id)sender {
-    
-    
+    //[self.assessment.answers addObject:[NSNumber numberWithInt:self.selectedButton.tag]];
+    [self.stepsController showNextStep];
+    /*
     if (self.questionNumber == self.questionTotal) {
         [self.assessment.answers addObject:[NSNumber numberWithInt:self.selectedButton.tag]];
         [self.stepsController showNextStep];
@@ -191,7 +214,7 @@
     else {
         [self.assessment.answers addObject:[NSNumber numberWithInt:self.selectedButton.tag]];
         [self.stepsController showNextStep];
-    }
+    }*/
 }
 
 - (IBAction)previousPressed:(id)sender {
@@ -253,26 +276,6 @@
     [self.buttonYes setHidden:YES];
     [self.buttonNo setHidden:YES];
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"showScore"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        ScoreViewController *scoreViewController = navController.topViewController;
-        scoreViewController.assesment = self.assessment;
-        scoreViewController.graphName = self.graphName;
-        scoreViewController.graphColor = self.graphColor;
-    }
-    
-    
-}
-
-
-
-
-
-
-
 
 
 @end

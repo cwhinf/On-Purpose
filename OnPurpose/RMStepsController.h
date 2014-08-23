@@ -29,6 +29,13 @@
 #import "RMStepsBar.h"
 #import "RMStep.h"
 
+
+@protocol RMStepsControllerDelegate <NSObject>
+
+- (void) didFinishSteps;
+
+@end
+
 /**
  `RMStepsController` is an iOS control for guiding a user through a process step-by-step. It uses an instance of `RMStepsBar` for showing the currently selected step and the total number of steps.
  
@@ -43,6 +50,8 @@
 @interface RMStepsController : UIViewController
 
 /// @name Properties
+
+@property (strong, nonatomic) id<RMStepsControllerDelegate> delegate;
 
 /**
  Returns the instans of `RMStepsBar` used.

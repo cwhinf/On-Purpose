@@ -9,7 +9,8 @@
 #import "SingleMetricTableViewController.h"
 #import "SingleMetricViewController.h"
 #import "SingleMetricDayCell.h"
-#import "ForecastStepsController.h"
+#import "ScoreViewController.h"
+
 
 
 #define HEADERHEIGHT 555
@@ -233,7 +234,9 @@
 
 
 - (void) showAssesment {
-    [self performSegueWithIdentifier:@"showAssesment" sender:self];
+    if (self.assessment) {
+        [self performSegueWithIdentifier:@"showAssesment" sender:self];
+    }
 }
 
 
@@ -279,16 +282,31 @@
     
 }
 
+#pragma RMStepsControllerDelegate
+
+- (void) didFinishSteps {
+    [self performSegueWithIdentifier:@"showSteps" sender:self];
+}
+
+
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showAssesment"]) {
         ForecastStepsController *forecastStepsController = segue.destinationViewController;
+        forecastStepsController.delegate = self;
         forecastStepsController.graphName = self.graphName;
         forecastStepsController.graphColor = self.graphColor;
         forecastStepsController.assessment = self.assessment;
     }
-    
-    
+    else if ([segue.identifier isEqualToString:@"showSteps"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        ScoreViewController *scoreViewController = navController.topViewController;
+        scoreViewController.assesment = self.assessment;
+        scoreViewController.graphName = self.graphName;
+        scoreViewController.graphColor = self.graphColor;
+    }
 }
 
 

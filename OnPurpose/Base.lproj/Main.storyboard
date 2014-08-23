@@ -799,6 +799,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="backButton" destination="XWs-rB-lvI" id="aFb-4i-TsC"/>
                         <segue destination="Dco-Cd-AkJ" kind="push" identifier="showAssesment" id="FgS-mU-dZ3"/>
+                        <segue destination="JoW-Sb-xKK" kind="modal" identifier="showSteps" id="pj6-Yu-AXO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDs-jL-quz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1082,9 +1083,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqK-Ta-2bV">
-                                <rect key="frame" x="400" y="480" width="190" height="60"/>
+                                <rect key="frame" x="245" y="510" width="70" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="68"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="next">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1093,12 +1094,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="nextPressed:" destination="plw-oZ-Nh5" eventType="touchUpInside" id="VqU-cm-onE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LeftRightArrow-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytA-yc-vnq">
-                                <rect key="frame" x="550" y="490" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFL-PM-Z5h">
-                                <rect key="frame" x="5" y="511" width="96" height="35"/>
+                                <rect key="frame" x="5" y="510" width="100" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="previous">
@@ -1345,11 +1342,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="choiceCLabel" destination="LkW-1l-3or" id="ae3-pp-ifL"/>
                         <outlet property="choiceDLabel" destination="7Hb-vU-fGp" id="fCg-Ka-kNK"/>
                         <outlet property="choiceELabel" destination="Zjy-Tw-O1Y" id="nnM-m9-50Y"/>
-                        <outlet property="nextArrow" destination="ytA-yc-vnq" id="ZK3-0W-NOz"/>
                         <outlet property="nextButton" destination="QqK-Ta-2bV" id="r5d-AB-uT9"/>
                         <outlet property="previousButton" destination="tFL-PM-Z5h" id="Q5j-mF-ULr"/>
                         <outlet property="questionLabel" destination="WO2-Wb-RT1" id="BdM-K6-SZn"/>
-                        <segue destination="JoW-Sb-xKK" kind="modal" identifier="showScore" id="Xj8-ME-n2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tj-bb-ife" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1369,7 +1364,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlA-Ju-Jrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="130"/>
+            <point key="canvasLocation" x="1440" y="794"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="gtf-41-tYt">
@@ -1425,11 +1420,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rva-iM-5mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2726" y="130"/>
+            <point key="canvasLocation" x="1854" y="794"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LeftRightArrow-512.png" width="215" height="283"/>
         <image name="expandArrow.png" width="350" height="350"/>
         <image name="forecastOverlay.png" width="200" height="400"/>
         <image name="homeScreen.png" width="1920" height="3018"/>

@@ -61,6 +61,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self radialView:self.radialView incrementAverage:self.score];
     
     

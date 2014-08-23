@@ -180,6 +180,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self checkForUser];
     if (!self.sleepArray) {
         PFQuery *metricsQuery = [PFQuery queryWithClassName:metricsClassKey];
@@ -406,7 +408,6 @@
     [self.eatingAssessment addMultipleQuestion:@"How many times do you consume nuts PER WEEK?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
     [self.eatingAssessment addYesNoQuestion:@"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?"];
     [self.eatingAssessment addMultipleQuestion:@"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
-    
     
 }
 

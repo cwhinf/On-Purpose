@@ -165,6 +165,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     aveStartingPos = self.averageLineView.frame;
     //[self.averageLineView setHidden:YES];
