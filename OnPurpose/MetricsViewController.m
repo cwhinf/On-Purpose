@@ -45,6 +45,7 @@
 @property (strong, nonatomic) NSNumber *eatingAverage;
 
 @property (strong, nonatomic) Assessment *eatingAssessment;
+@property (strong, nonatomic) Assessment *presenceAssessment;
 
 
 @property (strong, nonatomic) PFUser *lastUser;
@@ -404,6 +405,18 @@
     [self.eatingAssessment addYesNoQuestion:@"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?"];
     [self.eatingAssessment addMultipleQuestion:@"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
     
+    
+    
+    self.presenceAssessment = [[Assessment alloc] init];
+    
+    [self.presenceAssessment addScaleQuestion:@"When I have distressing thoughts or images, I just notice them and let them go."];
+    [self.presenceAssessment addScaleQuestion:@"It seems I am “running automatic” without much awareness of what I’m doing."];
+    [self.presenceAssessment addScaleQuestion:@"It’s hard for me to find the words to describe what I’m feeling or thinking."];
+    [self.presenceAssessment addScaleQuestion:@"I tell myself that I shouldn’t be thinking or feeling the way I’m thinking or feeling."];
+    [self.presenceAssessment addScaleQuestion:@"I pay attention to physical experiences, such as the wind in my hair or the smells of things."];
+      
+    
+    
 }
 
 
@@ -538,6 +551,7 @@
             singleMetricTableViewController.graphColor = UIColorFromRGB(0x3a7ed7);
             singleMetricTableViewController.graphName = @"Presence";
             singleMetricTableViewController.graphDefinition = @"is a rating on how present you are. It can be based on anything";
+            singleMetricTableViewController.assessment = self.presenceAssessment;
         }
         else if ([sender isEqual:self.activityButton]) {
             singleMetricTableViewController.ArrayOfValues = self.activityArray;

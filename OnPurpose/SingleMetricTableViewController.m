@@ -289,6 +289,81 @@
 }
 
 
+- (NSNumber *) computeScore {
+    
+    NSArray *answers = self.assessment.answers;
+    
+
+    if ([self.graphName isEqualToString:@"Presence"]) {
+        return [answers valueForKeyPath:@"@avg.self"];
+    }
+    else if ([self.graphName isEqualToString:@"Eating"]) {
+        NSInteger total = 0;
+        
+        NSInteger answer = [((NSNumber *)[answers objectAtIndex:0]) intValue];
+        if (answer == 1) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:1]) intValue];
+        if (answer >= 3) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:2]) intValue];
+        if (answer >= 3) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:3]) intValue];
+        if (answer >= 4) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:4]) intValue];
+        if (answer == 1) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:5]) intValue];
+        if (answer == 1) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:6]) intValue];
+        if (answer == 1) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:7]) intValue];
+        if (answer == 5) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:8]) intValue];
+        if (answer >= 4) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:9]) intValue];
+        if (answer >= 4) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:10]) intValue];
+        if (answer < 3) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:11]) intValue];
+        if (answer >= 4) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:12]) intValue];
+        if (answer == 1) {
+            total++;
+        }
+        answer = [((NSNumber *)[answers objectAtIndex:13]) intValue];
+        if (answer >= 3) {
+            total++;
+        }
+        
+        return [NSNumber numberWithFloat: 5*total/14.0f];
+    }
+    else return [NSNumber numberWithInt:0];
+    
+}
+
+
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -303,11 +378,13 @@
     else if ([segue.identifier isEqualToString:@"showSteps"]) {
         UINavigationController *navController = segue.destinationViewController;
         ScoreViewController *scoreViewController = navController.topViewController;
-        scoreViewController.assesment = self.assessment;
+        scoreViewController.score = [self computeScore];
         scoreViewController.graphName = self.graphName;
         scoreViewController.graphColor = self.graphColor;
     }
 }
+
+
 
 
 

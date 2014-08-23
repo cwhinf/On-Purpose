@@ -28,6 +28,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonThree;
 @property (strong, nonatomic) IBOutlet UIButton *buttonFour;
 @property (strong, nonatomic) IBOutlet UIButton *buttonFive;
+
+@property (strong, nonatomic) IBOutlet UILabel *scaleLabel1;
+@property (strong, nonatomic) IBOutlet UILabel *scaleLabel2;
+
+
+
 @property (strong, nonatomic) IBOutlet UIButton *buttonA;
 @property (strong, nonatomic) IBOutlet UIButton *buttonB;
 @property (strong, nonatomic) IBOutlet UIButton *buttonC;
@@ -38,10 +44,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonC2;
 @property (strong, nonatomic) IBOutlet UIButton *buttonD2;
 @property (strong, nonatomic) IBOutlet UIButton *buttonE2;
-
-
-
-
 
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonYes;

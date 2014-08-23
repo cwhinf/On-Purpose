@@ -11,10 +11,11 @@
 
 @interface ScoreViewController : UIViewController
 
-@property (strong, nonatomic) Assessment *assesment;
 @property (strong, nonatomic) NSString *graphName;
 @property (strong, nonatomic) UIColor *graphColor;
 
+
+@property (strong, nonatomic) NSNumber *score;
 
 @property (strong, nonatomic) IBOutlet UIButton *scoreValueLabel;
 @property (strong, nonatomic) IBOutlet UIButton *finishButton;

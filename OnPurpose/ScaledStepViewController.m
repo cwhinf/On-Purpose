@@ -270,6 +270,8 @@
     [self.buttonThree setHidden:YES];
     [self.buttonFour setHidden:YES];
     [self.buttonFive setHidden:YES];
+    [self.scaleLabel1 setHidden:YES];
+    [self.scaleLabel2 setHidden:YES];
 }
 
 - (void) hideYesNoAnswers {
