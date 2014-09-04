@@ -73,7 +73,6 @@
 		7ED1032819AA9B0D00C4B5D6 /* DailySpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032719AA9B0D00C4B5D6 /* DailySpaceTableViewController.m */; };
 		7ED1032B19AA9B3400C4B5D6 /* DailySpaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032A19AA9B3400C4B5D6 /* DailySpaceCell.m */; };
 		7ED1032E19AAA93F00C4B5D6 /* SaveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032D19AAA93F00C4B5D6 /* SaveTableViewCell.m */; };
-		7ED1034319AC05DF00C4B5D6 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ED1034219AC05DF00C4B5D6 /* Kal.bundle */; };
 		7ED1034919AC08D400C4B5D6 /* CalendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED1034819AC08D400C4B5D6 /* CalendarIcon.png */; };
 		7ED6E7871999665600E202CB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7861999665600E202CB /* MenuViewController.m */; };
 		7ED6E791199977B300E202CB /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78E199977B300E202CB /* expandArrow.png */; };
@@ -774,7 +773,6 @@
 				7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */,
 				7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */,
 				7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */,
-				7ED1034319AC05DF00C4B5D6 /* Kal.bundle in Resources */,
 				7ED1034919AC08D400C4B5D6 /* CalendarIcon.png in Resources */,
 				7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */,
 				7ED6E7A2199AE7CC00E202CB /* Marlboro.ttf in Resources */,

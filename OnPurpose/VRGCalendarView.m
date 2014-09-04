@@ -494,17 +494,13 @@
              */
             
             CGContextSetFillColorWithColor(context, 
-                                           [UIColor whiteColor].CGColor);
+                                           self.mainColor.CGColor);
         } else if (todayBlock==i) {
             
-            CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
-            
             //my code
-            
-            
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-            CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
-            CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
+            CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 2);
+            CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 2);
             CGContextSetLineWidth(context, kVRGCalendarViewDayWidth);
             CGContextSetStrokeColorWithColor(context, [UIColor lightGrayColor].CGColor);
             CGContextStrokePath(UIGraphicsGetCurrentContext());
@@ -613,13 +609,13 @@
         CGContextSetStrokeColorWithColor(context, [UIColor OPAquaColor].CGColor);
         
         CGContextStrokePath(context);
-        /*
+        
         CGContextSetLineWidth(context, kVRGCalendarViewDayWidth - kVRGCalendarViewBorderWidth);
         CGContextMoveToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
         CGContextAddLineToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
         CGContextSetBlendMode(context,kCGBlendModeDestinationOut);
         CGContextStrokePath(context);
-         */
+         
         self.selectorCircle = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
