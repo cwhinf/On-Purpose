@@ -12,6 +12,7 @@
 #import "NSMutableArray+convenience.h"
 #import "UIView+convenience.h"
 #import "UIFont+fonts.h"
+#import "UIColor+colors.h"
 
 @implementation VRGCalendarView
 @synthesize currentMonth,delegate,labelCurrentMonth, animationView_A,animationView_B;
@@ -275,7 +276,7 @@
     labelCurrentMonth.text = [formatter stringFromDate:self.currentMonth];
     [labelCurrentMonth sizeToFit];
     labelCurrentMonth.frameX = roundf(self.frame.size.width/2 - labelCurrentMonth.frameWidth/2);
-    labelCurrentMonth.frameY = 10;
+    labelCurrentMonth.frameY = 0;
     [currentMonth firstWeekDayInMonth];
     
     CGContextClearRect(UIGraphicsGetCurrentContext(),rect);
@@ -467,16 +468,25 @@
         if (selectedDate && i==selectedDateBlock) {
             
             //my code
+            CGContextDrawImage(context, CGRectMake(targetX + 2, targetY + 2, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight), self.selectorCircle.CGImage);
             
+            /*
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
             CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
             CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
             CGContextSetLineWidth(context, kVRGCalendarViewDayWidth);
             CGContextSetStrokeColorWithColor(context, self.mainColor.CGColor);
-            CGContextStrokePath(UIGraphicsGetCurrentContext());
+
+            CGContextStrokePath(context);
+            
+            CGContextSetLineWidth(context, kVRGCalendarViewDayWidth - kVRGCalendarViewBorderWidth);
+            CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
+            CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
+            CGContextSetBlendMode(context,kCGBlendModeDestinationOut);
+            CGContextStrokePath(context);
             
             //my code end
-            /*
+            
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
             CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x006dbc"].CGColor);
@@ -490,6 +500,7 @@
             CGRect rectangleGrid = CGRectMake(targetX,targetY,kVRGCalendarViewDayWidth+2,kVRGCalendarViewDayHeight+2);
             
             //my code
+            
             
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
             CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2);
@@ -554,7 +565,6 @@
             color  = (UIColor *)[markedColors objectAtIndex:i];
         }
         
-        
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillPath(context);
     }
@@ -586,12 +596,33 @@
         self.labelCurrentMonth = [[UILabel alloc] initWithFrame:CGRectMake(34, 0, kVRGCalendarViewWidth-68, 40)];
         [self addSubview:labelCurrentMonth];
         labelCurrentMonth.backgroundColor=[UIColor whiteColor];
-        labelCurrentMonth.font = [UIFont mainFontBoldWithSize:24.0f];
+        labelCurrentMonth.font = [UIFont mainFontLightWithSize:28.0f];
         labelCurrentMonth.textColor = [UIColor colorWithHexString:@"0x383838"];
         labelCurrentMonth.textAlignment = UITextAlignmentCenter;
         
         [self performSelector:@selector(reset) withObject:nil afterDelay:0.1]; //so delegate can be set after init and still get called on init
         //        [self reset];
+        
+        
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight), NO, 0.0f);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        CGContextMoveToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
+        CGContextAddLineToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
+        CGContextSetLineWidth(context, kVRGCalendarViewDayWidth);
+        CGContextSetStrokeColorWithColor(context, [UIColor OPAquaColor].CGColor);
+        
+        CGContextStrokePath(context);
+        /*
+        CGContextSetLineWidth(context, kVRGCalendarViewDayWidth - kVRGCalendarViewBorderWidth);
+        CGContextMoveToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
+        CGContextAddLineToPoint(context, kVRGCalendarViewDayWidth/2, kVRGCalendarViewDayHeight/2);
+        CGContextSetBlendMode(context,kCGBlendModeDestinationOut);
+        CGContextStrokePath(context);
+         */
+        self.selectorCircle = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
     }
     return self;
 }

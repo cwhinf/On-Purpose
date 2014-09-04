@@ -99,7 +99,6 @@
 		7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */; };
 		7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */; };
 		7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C3199B4C0800E202CB /* Museo-700.otf */; };
-		7EDBE15A19B3F77200629BC4 /* WhyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBE15919B3F77200629BC4 /* WhyViewController.m */; };
 		7EE9412019B5365E0001CC69 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */; };
 		7EE9412619B556AB0001CC69 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */; };
 		7EE9412719B556AB0001CC69 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412219B556070001CC69 /* OpenSans-ExtraBold.ttf */; };
@@ -271,8 +270,6 @@
 		7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
 		7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-500.otf"; sourceTree = "<group>"; };
 		7ED6E7C3199B4C0800E202CB /* Museo-700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-700.otf"; sourceTree = "<group>"; };
-		7EDBE15819B3F77200629BC4 /* WhyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhyViewController.h; sourceTree = "<group>"; };
-		7EDBE15919B3F77200629BC4 /* WhyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhyViewController.m; sourceTree = "<group>"; };
 		7EE9411E19B5365E0001CC69 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
 		7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
 		7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -469,8 +466,6 @@
 				7E53F68619B7F3250048B66D /* ForecastPopUpViewController.m */,
 				7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */,
 				7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */,
-				7EDBE15819B3F77200629BC4 /* WhyViewController.h */,
-				7EDBE15919B3F77200629BC4 /* WhyViewController.m */,
 			);
 			name = "Single Metric";
 			sourceTree = "<group>";
@@ -837,7 +832,6 @@
 				7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */,
 				7ED6E7BE199B056D00E202CB /* MDRadialProgressLabel.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
-				7EDBE15A19B3F77200629BC4 /* WhyViewController.m in Sources */,
 				7ECC9CB119981F48002925D0 /* FacingView.m in Sources */,
 				7E54AFCA19A5617D00C9BA4E /* RMStepsBar.m in Sources */,
 				7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */,

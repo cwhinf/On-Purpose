@@ -10,6 +10,7 @@
 
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
+#import "UIFont+fonts.h"
 
 @interface ScoreViewController ()
 
@@ -38,8 +39,8 @@
     [self.scoreValueLabel setTitleColor:self.graphColor forState:UIControlStateNormal];
     
     
-    [self.scoreValueLabel setFont:[UIFont fontWithName:@"Museo-500" size:68.0f]];
-    [self.finishButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:38.0f]];
+    [self.scoreValueLabel setFont:[UIFont mainFontWithSize:68.0f]];
+    [self.finishButton.titleLabel setFont:[UIFont mainFontWithSize:38.0f]];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:1];
@@ -71,7 +72,7 @@
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
     [attributes setObject:self.graphColor forKey:@"NSColor"];
-    [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
+    [attributes setObject:[UIFont mainFontWithSize:27.0f] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
 }

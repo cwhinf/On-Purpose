@@ -45,8 +45,8 @@
     [self.button2.titleLabel setFont:font];
     [self.label3 setFont:font];
     
-    
-    
+    font = [UIFont mainFontBoldWithSize:24.0f];
+    [self.menuLabel setFont:font];
     
 }
 

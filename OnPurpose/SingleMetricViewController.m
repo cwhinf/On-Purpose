@@ -93,8 +93,8 @@
     [self.labelValues setTextColor:self.graphColor];
     
     //set label colors
-    [self.avgButton setTitleColor:self.graphColor forState:UIControlStateNormal];
-    [self.forecastButton setTitleColor:self.graphColor forState:UIControlStateNormal];
+    //[self.avgButton setTitleColor:self.graphColor forState:UIControlStateNormal];
+    //[self.forecastButton setTitleColor:self.graphColor forState:UIControlStateNormal];
     
     self.myGraph.backgroundColor = self.graphColor;
     
@@ -112,7 +112,7 @@
     
     //setup average and forecast
     
-    UIFont *labelFont = [UIFont mainFontWithSize:16];
+    UIFont *labelFont = [UIFont mainFontLightWithSize:16];
     [self.basedOnLabel setFont:labelFont];
     
     labelFont = [UIFont mainFontBoldWithSize:23];
@@ -124,7 +124,7 @@
     [formatter setMaximumFractionDigits:1];
     [formatter setMinimumFractionDigits:1];
     
-    UIFont *font = [UIFont mainFontWithSize:40];
+    UIFont *font = [UIFont mainFontLightWithSize:40];
     
     CGRect radialAverageRect;
     

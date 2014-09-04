@@ -16,6 +16,7 @@
 #import "UIColor+colors.h"
 #import "Assessment.h"
 #import "TDRatingView.h"
+#import "UIFont+fonts.h"
 
 
 @interface DailySpaceTableViewController ()
@@ -69,7 +70,7 @@
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
     [attributes setObject:[UIColor OPAquaColor] forKey:@"NSColor"];
-    [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
+    [attributes setObject:[UIFont mainFontWithSize:27.0f] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     

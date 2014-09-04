@@ -36,7 +36,7 @@
     [self.aristotleLabel setFont:[UIFont mainFontLightWithSize:28.0f]];
     [self.forecastLabel setFont:[UIFont mainFontBoldWithSize:23.0f]];
     [self.averageLabel setFont:[UIFont mainFontLightWithSize:44.0f]];
-    [self.whyLabel setFont:[UIFont mainFontWithSize:20.0f]];
+    [self.whyLabel setFont:[UIFont mainFontWithSize:18.0f]];
     
 }
 

@@ -15,6 +15,7 @@
 
 #define kVRGCalendarViewDayWidth 44
 #define kVRGCalendarViewDayHeight 44
+#define kVRGCalendarViewBorderWidth 5
 
 @protocol VRGCalendarViewDelegate;
 @interface VRGCalendarView : UIView {
@@ -46,6 +47,7 @@
 @property (nonatomic, retain, getter = selectedDate) NSDate *selectedDate;
 //my code
 @property (strong, nonatomic) UIColor *mainColor;
+@property (strong, nonatomic) UIImage *selectorCircle;
 
 -(void)selectDate:(int)date;
 -(void)reset;
