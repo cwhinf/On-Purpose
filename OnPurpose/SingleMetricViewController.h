@@ -37,6 +37,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *basedOnLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *averageLabel;
 @property (strong, nonatomic) IBOutlet UILabel *forecastLabel;

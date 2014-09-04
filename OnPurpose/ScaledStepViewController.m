@@ -10,6 +10,7 @@
 #import "RMStepsController.h"
 #import "ScaledStepViewController.h"
 #import "ScoreViewController.h"
+#import "UIFont+fonts.h"
 
 @interface ScaledStepViewController () {
     CGRect nextButtonFrame;
@@ -104,14 +105,14 @@
     self.unselectedButtonImage = UIGraphicsGetImageFromCurrentImageContext();
     
     for (UIButton *button in self.roundButtons) {
-        [button setFont:[UIFont fontWithName:@"Museo-500" size:24]];
+        [button setFont:[UIFont mainFontWithSize:24.0f]];
     }
-    [self.buttonYes.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:60]];
-    [self.buttonNo.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:60]];
+    [self.buttonYes.titleLabel setFont:[UIFont mainFontWithSize:60.0f]];
+    [self.buttonNo.titleLabel setFont:[UIFont mainFontWithSize:60.0f]];
     
     
-    [self.nextButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:19]];
-    [self.previousButton.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:19]];
+    [self.nextButton.titleLabel setFont:[UIFont mainFontWithSize:19.0f]];
+    [self.previousButton.titleLabel setFont:[UIFont mainFontWithSize:19.0f]];
     /*
     [self.buttonOne.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:24]];
     [self.buttonTwo.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:24]];

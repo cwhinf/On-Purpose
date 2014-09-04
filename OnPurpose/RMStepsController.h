@@ -29,10 +29,12 @@
 #import "RMStepsBar.h"
 #import "RMStep.h"
 
+@class RMStepsController;
+
 
 @protocol RMStepsControllerDelegate <NSObject>
 
-- (void) didFinishSteps;
+- (void) stepsControllerdidFinishSteps:(RMStepsController *)stepsController;
 
 @end
 

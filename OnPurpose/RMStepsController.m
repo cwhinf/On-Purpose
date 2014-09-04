@@ -216,7 +216,7 @@
 }
 
 - (void)finishedAllSteps {
-    [self.delegate didFinishSteps];
+    [self.delegate stepsControllerdidFinishSteps:self];
     NSLog(@"Finished");
 }
 

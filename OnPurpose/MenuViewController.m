@@ -9,11 +9,13 @@
 #import "MenuViewController.h"
 #import "MetricsViewController.h";
 #import "ForecastViewController.h"
+#import "UIFont+fonts.h"
 
 @interface MenuViewController ()
 
 - (IBAction)homePressed:(id)sender;
 - (IBAction)forecastPressed:(id)sender;
+- (IBAction)spacePressed:(id)sender;
 
 @property (strong, nonatomic) UITabBarController *mainTabBarController;
 
@@ -37,6 +39,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.mainTabBarController = (UITabBarController *) self.paperFoldNavController.rootViewController;
+    
+    UIFont *font = [UIFont mainFontWithSize:20];
+    [self.button1.titleLabel setFont:font];
+    [self.button2.titleLabel setFont:font];
+    [self.label3 setFont:font];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,6 +78,14 @@
     
     [self.mainTabBarController setSelectedIndex:1];
     [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
+}
+
+- (IBAction)spacePressed:(id)sender {
+    
+    [self.mainTabBarController setSelectedIndex:2];
+    [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
+    
+    
 }
 
 

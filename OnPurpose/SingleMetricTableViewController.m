@@ -10,6 +10,9 @@
 #import "SingleMetricViewController.h"
 #import "SingleMetricDayCell.h"
 #import "ScoreViewController.h"
+#import "UIViewController+CWPopup.h"
+#import "ForecastPopUpViewController.h"
+
 
 
 
@@ -25,6 +28,7 @@
 
 @property (strong, nonatomic) SingleMetricViewController *singleMetricViewController;
 @property (strong, nonatomic) NSMutableArray *cellHeight;
+@property (strong, nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 @end
 
@@ -50,7 +54,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.navigationItem.title = self.graphName;
+    self.navigationItem.title = self.metric.graphName;
     
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
@@ -69,20 +73,23 @@
     }
     
     //set navController color and font
-    self.navigationController.navigationBar.tintColor = self.graphColor;
+    self.navigationController.navigationBar.tintColor = self.metric.graphColor;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
-    [attributes setObject:self.graphColor forKey:@"NSColor"];
-    [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
+    [attributes setObject:self.metric.graphColor forKey:@"NSColor"];
+    [attributes setObject:[UIFont mainFontWithSize:27] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     NSDictionary *backButtonAttricbutes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                           [UIFont fontWithName:@"Museo-500" size:20],
+                                           [UIFont mainFontWithSize:20],
                                            NSFontAttributeName,
                                            nil];
     [self.backButton setTitleTextAttributes:backButtonAttricbutes forState:UIControlStateNormal];
     
-
+    
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
+    self.tapRecognizer.numberOfTapsRequired = 1;
+    self.tapRecognizer.delegate = self.tableView;
     
 }
 
@@ -116,9 +123,9 @@
         self.singleMetricViewController.singleMetricTableViewController = self;
         self.singleMetricViewController.ArrayOfValues = self.ArrayOfValues;
         self.singleMetricViewController.metricDaysArray = self.metricDaysArray;
-        self.singleMetricViewController.graphColor = self.graphColor;
-        self.singleMetricViewController.graphName = self.graphName;
-        self.singleMetricViewController.graphDefinition = self.graphDefinition;
+        self.singleMetricViewController.graphColor = self.metric.graphColor;
+        self.singleMetricViewController.graphName = self.metric.graphName;
+        self.singleMetricViewController.graphDefinition = self.metric.graphDefinition;
         
         return self.singleMetricViewController.view;;
     }
@@ -159,10 +166,10 @@
         NSString *dateString = [prefixDateString stringByAppendingString:suffix];
         [cell.dayLabel setText:dateString];
         
-        UIFont *font = [UIFont fontWithName:@"Montserrat-Regular" size:28];
+        UIFont *font = [UIFont mainFontWithSize:28];
         [cell.valueLabel setFont:font];
         [cell.valueLabel setText:[NSString stringWithFormat:@"%@.0", (NSNumber *)[self.ArrayOfValues objectAtIndex:indexPath.item]]];
-        [cell.valueLabel setTextColor:self.graphColor];
+        [cell.valueLabel setTextColor:self.metric.graphColor];
         
         if ([(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue] == CELLHEIGHT) {
             cell.expandArrow.transform = CGAffineTransformMakeRotation(degreesToRadians(0.0f));
@@ -225,7 +232,7 @@
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
     [attributes setObject:UIColorFromRGB(0x23bd99) forKey:@"NSColor"];
-    [attributes setObject:[UIFont fontWithName:@"Museo-700" size:27] forKey:@"NSFont"];
+    [attributes setObject:[UIFont mainFontWithSize:27] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     
@@ -234,9 +241,27 @@
 
 
 - (void) showAssesment {
-    if (self.assessment) {
-        [self performSegueWithIdentifier:@"showAssesment" sender:self];
+    if (self.metric.assessment) {
+        [self performSegueWithIdentifier:@"showWhy" sender:self];
     }
+}
+
+
+- (void) showWhy {
+    
+    [self.navigationController.view addGestureRecognizer:self.tapRecognizer];
+    
+
+    ForecastPopUpViewController *messageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"forecastPopUp"];
+    messageViewController.view.frame = CGRectMake(0.0f, 0.0f, 260.0f, 400.0f);
+    messageViewController.metric = self.metric;
+    [messageViewController averageForRadialView:[NSNumber numberWithDouble:4.8]];
+    [self.tableView setUserInteractionEnabled:NO];
+    
+    self.navigationController.useBlurForPopup = YES;
+    self.paperFoldNavContoller.paperFoldView.enableLeftFoldDragging = NO;
+    [self.navigationController presentPopupViewController:messageViewController animated:YES completion:nil];
+    
 }
 
 
@@ -284,104 +309,46 @@
 
 #pragma RMStepsControllerDelegate
 
-- (void) didFinishSteps {
-    [self performSegueWithIdentifier:@"showSteps" sender:self];
+- (void) stepsControllerdidFinishSteps:(RMStepsController *)stepsController {
+    [self performSegueWithIdentifier:@"showScore" sender:self];
 }
 
-
-- (NSNumber *) computeScore {
-    
-    NSArray *answers = self.assessment.answers;
-    
-
-    if ([self.graphName isEqualToString:@"Presence"]) {
-        return [answers valueForKeyPath:@"@avg.self"];
+//for message popup
+- (void)dismissPopup {
+    if (self.navigationController.popupViewController != nil) {
+        self.paperFoldNavContoller.paperFoldView.enableLeftFoldDragging = YES;
+        [self.navigationController.view removeGestureRecognizer:self.tapRecognizer];
+        [self.navigationController dismissPopupViewControllerAnimated:YES completion:^{
+            NSLog(@"popup view dismissed");
+        }];
+        [self.tableView setUserInteractionEnabled:YES];
     }
-    else if ([self.graphName isEqualToString:@"Eating"]) {
-        NSInteger total = 0;
-        
-        NSInteger answer = [((NSNumber *)[answers objectAtIndex:0]) intValue];
-        if (answer == 1) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:1]) intValue];
-        if (answer >= 3) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:2]) intValue];
-        if (answer >= 3) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:3]) intValue];
-        if (answer >= 4) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:4]) intValue];
-        if (answer == 1) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:5]) intValue];
-        if (answer == 1) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:6]) intValue];
-        if (answer == 1) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:7]) intValue];
-        if (answer == 5) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:8]) intValue];
-        if (answer >= 4) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:9]) intValue];
-        if (answer >= 4) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:10]) intValue];
-        if (answer < 3) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:11]) intValue];
-        if (answer >= 4) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:12]) intValue];
-        if (answer == 1) {
-            total++;
-        }
-        answer = [((NSNumber *)[answers objectAtIndex:13]) intValue];
-        if (answer >= 3) {
-            total++;
-        }
-        
-        return [NSNumber numberWithFloat: 5*total/14.0f];
-    }
-    else return [NSNumber numberWithInt:0];
-    
 }
 
+#pragma mark - gesture recognizer delegate functions
+
+// so that tapping popup view doesnt dismiss it
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return touch.view == self.view;
+}
 
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"showAssesment"]) {
+    if ([segue.identifier isEqualToString:@"showAssessment"]) {
         ForecastStepsController *forecastStepsController = segue.destinationViewController;
         forecastStepsController.delegate = self;
-        forecastStepsController.graphName = self.graphName;
-        forecastStepsController.graphColor = self.graphColor;
-        forecastStepsController.assessment = self.assessment;
+        forecastStepsController.assessment = self.metric.assessment;
     }
-    else if ([segue.identifier isEqualToString:@"showSteps"]) {
+    else if ([segue.identifier isEqualToString:@"showScore"]) {
         UINavigationController *navController = segue.destinationViewController;
         ScoreViewController *scoreViewController = navController.topViewController;
-        scoreViewController.score = [self computeScore];
-        scoreViewController.graphName = self.graphName;
-        scoreViewController.graphColor = self.graphColor;
+        scoreViewController.score = [self.metric.assessment score];
+        scoreViewController.graphName = self.metric.graphName;
+        scoreViewController.graphColor = self.metric.graphColor;
     }
+    
 }
 
 

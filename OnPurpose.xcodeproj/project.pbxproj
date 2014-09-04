@@ -12,11 +12,22 @@
 		7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65B19A7E94D0094E09C /* Assessment.m */; };
 		7E31F65F19A8118F0094E09C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65E19A8118F0094E09C /* ScoreViewController.m */; };
 		7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */; };
+		7E53F67B19B7A78C0048B66D /* MetricTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F67A19B7A78C0048B66D /* MetricTableViewCell.m */; };
+		7E53F68119B7B97E0048B66D /* Metric.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F68019B7B97E0048B66D /* Metric.m */; };
+		7E53F68419B7DF110048B66D /* UIFont+fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F68319B7DF110048B66D /* UIFont+fonts.m */; };
+		7E53F68719B7F3250048B66D /* ForecastPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F68619B7F3250048B66D /* ForecastPopUpViewController.m */; };
 		7E54AFC919A5617D00C9BA4E /* RMStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC419A5617D00C9BA4E /* RMStepsController.m */; };
 		7E54AFCA19A5617D00C9BA4E /* RMStepsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC619A5617D00C9BA4E /* RMStepsBar.m */; };
 		7E54AFCB19A5617D00C9BA4E /* RMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC819A5617D00C9BA4E /* RMStep.m */; };
 		7E54AFCF19A5628A00C9BA4E /* ForecastStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */; };
 		7E54AFD219A5690600C9BA4E /* ScaledStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */; };
+		7E8AF07419AD2BF3008D5794 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */; };
+		7E8AF08119AD2F42008D5794 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07819AD2F42008D5794 /* VRGCalendarView.m */; };
+		7E8AF08219AD2F42008D5794 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07A19AD2F42008D5794 /* UIView+convenience.m */; };
+		7E8AF08319AD2F42008D5794 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07C19AD2F42008D5794 /* NSMutableArray+convenience.m */; };
+		7E8AF08419AD2F42008D5794 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07E19AD2F42008D5794 /* NSDate+convenience.m */; };
+		7E8AF08519AD2F42008D5794 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF08019AD2F42008D5794 /* UIColor+expanded.m */; };
+		7E8AF08819AD2F83008D5794 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF08719AD2F83008D5794 /* CalendarViewController.m */; };
 		7E90E552198DBAE300969FB6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E551198DBAE300969FB6 /* Accounts.framework */; };
 		7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E553198DBAE900969FB6 /* Social.framework */; };
 		7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */; };
@@ -57,6 +68,13 @@
 		7ECC9CB819981F48002925D0 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CAC19981F48002925D0 /* ShadowView.m */; };
 		7ECC9CB919981F48002925D0 /* TouchThroughUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CAE19981F48002925D0 /* TouchThroughUIView.m */; };
 		7ECC9CBA19981F48002925D0 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC9CB019981F48002925D0 /* UIView+Screenshot.m */; };
+		7ED1032019AA711300C4B5D6 /* CWRadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1031F19AA711300C4B5D6 /* CWRadioButtons.m */; };
+		7ED1032419AA849300C4B5D6 /* UIColor+colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032319AA849300C4B5D6 /* UIColor+colors.m */; };
+		7ED1032819AA9B0D00C4B5D6 /* DailySpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032719AA9B0D00C4B5D6 /* DailySpaceTableViewController.m */; };
+		7ED1032B19AA9B3400C4B5D6 /* DailySpaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032A19AA9B3400C4B5D6 /* DailySpaceCell.m */; };
+		7ED1032E19AAA93F00C4B5D6 /* SaveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1032D19AAA93F00C4B5D6 /* SaveTableViewCell.m */; };
+		7ED1034319AC05DF00C4B5D6 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ED1034219AC05DF00C4B5D6 /* Kal.bundle */; };
+		7ED1034919AC08D400C4B5D6 /* CalendarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED1034819AC08D400C4B5D6 /* CalendarIcon.png */; };
 		7ED6E7871999665600E202CB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7861999665600E202CB /* MenuViewController.m */; };
 		7ED6E791199977B300E202CB /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78E199977B300E202CB /* expandArrow.png */; };
 		7ED6E792199977B300E202CB /* forecastOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78F199977B300E202CB /* forecastOverlay.png */; };
@@ -81,6 +99,17 @@
 		7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */; };
 		7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */; };
 		7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C3199B4C0800E202CB /* Museo-700.otf */; };
+		7EDBE15A19B3F77200629BC4 /* WhyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDBE15919B3F77200629BC4 /* WhyViewController.m */; };
+		7EE9412019B5365E0001CC69 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */; };
+		7EE9412619B556AB0001CC69 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */; };
+		7EE9412719B556AB0001CC69 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412219B556070001CC69 /* OpenSans-ExtraBold.ttf */; };
+		7EE9412819B556AB0001CC69 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412319B556070001CC69 /* OpenSans-Light.ttf */; };
+		7EE9412919B556AB0001CC69 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412419B556070001CC69 /* OpenSans-Regular.ttf */; };
+		7EE9412A19B556AB0001CC69 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412519B556070001CC69 /* OpenSans-Semibold.ttf */; };
+		7EE9412D19B658130001CC69 /* MetricsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9412C19B658130001CC69 /* MetricsTableViewController.m */; };
+		7EE9413319B65A9E0001CC69 /* TDArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413019B65A9E0001CC69 /* TDArrow.m */; };
+		7EE9413419B65A9E0001CC69 /* TDRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413219B65A9E0001CC69 /* TDRatingView.m */; };
+		7EE9413819B65DC30001CC69 /* CWCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413719B65DC30001CC69 /* CWCircle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +131,14 @@
 		7E31F65E19A8118F0094E09C /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricTableViewController.h; sourceTree = "<group>"; };
 		7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricTableViewController.m; sourceTree = "<group>"; };
+		7E53F67919B7A78C0048B66D /* MetricTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricTableViewCell.h; sourceTree = "<group>"; };
+		7E53F67A19B7A78C0048B66D /* MetricTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricTableViewCell.m; sourceTree = "<group>"; };
+		7E53F67F19B7B97E0048B66D /* Metric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metric.h; sourceTree = "<group>"; };
+		7E53F68019B7B97E0048B66D /* Metric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Metric.m; sourceTree = "<group>"; };
+		7E53F68219B7DF110048B66D /* UIFont+fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+fonts.h"; sourceTree = "<group>"; };
+		7E53F68319B7DF110048B66D /* UIFont+fonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+fonts.m"; sourceTree = "<group>"; };
+		7E53F68519B7F3250048B66D /* ForecastPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastPopUpViewController.h; sourceTree = "<group>"; };
+		7E53F68619B7F3250048B66D /* ForecastPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastPopUpViewController.m; sourceTree = "<group>"; };
 		7E54AFC319A5617D00C9BA4E /* RMStepsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStepsController.h; sourceTree = "<group>"; };
 		7E54AFC419A5617D00C9BA4E /* RMStepsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStepsController.m; sourceTree = "<group>"; };
 		7E54AFC519A5617D00C9BA4E /* RMStepsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStepsBar.h; sourceTree = "<group>"; };
@@ -112,6 +149,19 @@
 		7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastStepsController.m; sourceTree = "<group>"; };
 		7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledStepViewController.h; sourceTree = "<group>"; };
 		7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledStepViewController.m; sourceTree = "<group>"; };
+		7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		7E8AF07719AD2F42008D5794 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
+		7E8AF07819AD2F42008D5794 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
+		7E8AF07919AD2F42008D5794 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
+		7E8AF07A19AD2F42008D5794 /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
+		7E8AF07B19AD2F42008D5794 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
+		7E8AF07C19AD2F42008D5794 /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+convenience.m"; sourceTree = "<group>"; };
+		7E8AF07D19AD2F42008D5794 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		7E8AF07E19AD2F42008D5794 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		7E8AF07F19AD2F42008D5794 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		7E8AF08019AD2F42008D5794 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		7E8AF08619AD2F83008D5794 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		7E8AF08719AD2F83008D5794 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		7E90E551198DBAE300969FB6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7E90E553198DBAE900969FB6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -180,6 +230,18 @@
 		7ECC9CB019981F48002925D0 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
 		7ECC9CBB19981F8A002925D0 /* swipe_guide.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_guide.psd; sourceTree = "<group>"; };
 		7ECC9CBC19981F8A002925D0 /* swipe_guide2.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_guide2.psd; sourceTree = "<group>"; };
+		7ED1031E19AA711300C4B5D6 /* CWRadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWRadioButtons.h; sourceTree = "<group>"; };
+		7ED1031F19AA711300C4B5D6 /* CWRadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWRadioButtons.m; sourceTree = "<group>"; };
+		7ED1032219AA849300C4B5D6 /* UIColor+colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+colors.h"; sourceTree = "<group>"; };
+		7ED1032319AA849300C4B5D6 /* UIColor+colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+colors.m"; sourceTree = "<group>"; };
+		7ED1032619AA9B0D00C4B5D6 /* DailySpaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySpaceTableViewController.h; sourceTree = "<group>"; };
+		7ED1032719AA9B0D00C4B5D6 /* DailySpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySpaceTableViewController.m; sourceTree = "<group>"; };
+		7ED1032919AA9B3400C4B5D6 /* DailySpaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySpaceCell.h; sourceTree = "<group>"; };
+		7ED1032A19AA9B3400C4B5D6 /* DailySpaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySpaceCell.m; sourceTree = "<group>"; };
+		7ED1032C19AAA93F00C4B5D6 /* SaveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveTableViewCell.h; sourceTree = "<group>"; };
+		7ED1032D19AAA93F00C4B5D6 /* SaveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTableViewCell.m; sourceTree = "<group>"; };
+		7ED1034219AC05DF00C4B5D6 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = "Kal-master/src/Kal.bundle"; sourceTree = SOURCE_ROOT; };
+		7ED1034819AC08D400C4B5D6 /* CalendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CalendarIcon.png; path = Resources/CalendarIcon.png; sourceTree = "<group>"; };
 		7ED6E7851999665600E202CB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7ED6E7861999665600E202CB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7ED6E78E199977B300E202CB /* expandArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expandArrow.png; path = Resources/expandArrow.png; sourceTree = "<group>"; };
@@ -209,6 +271,23 @@
 		7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
 		7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-500.otf"; sourceTree = "<group>"; };
 		7ED6E7C3199B4C0800E202CB /* Museo-700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-700.otf"; sourceTree = "<group>"; };
+		7EDBE15819B3F77200629BC4 /* WhyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhyViewController.h; sourceTree = "<group>"; };
+		7EDBE15919B3F77200629BC4 /* WhyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhyViewController.m; sourceTree = "<group>"; };
+		7EE9411E19B5365E0001CC69 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
+		7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
+		7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		7EE9412219B556070001CC69 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "Resources/Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7EE9412319B556070001CC69 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "Resources/Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		7EE9412419B556070001CC69 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Resources/Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		7EE9412519B556070001CC69 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "Resources/Fonts/OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		7EE9412B19B658130001CC69 /* MetricsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricsTableViewController.h; sourceTree = "<group>"; };
+		7EE9412C19B658130001CC69 /* MetricsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricsTableViewController.m; sourceTree = "<group>"; };
+		7EE9412F19B65A9E0001CC69 /* TDArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDArrow.h; sourceTree = "<group>"; };
+		7EE9413019B65A9E0001CC69 /* TDArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDArrow.m; sourceTree = "<group>"; };
+		7EE9413119B65A9E0001CC69 /* TDRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRatingView.h; sourceTree = "<group>"; };
+		7EE9413219B65A9E0001CC69 /* TDRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRatingView.m; sourceTree = "<group>"; };
+		7EE9413619B65DC30001CC69 /* CWCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCircle.h; sourceTree = "<group>"; };
+		7EE9413719B65DC30001CC69 /* CWCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCircle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8AF07419AD2BF3008D5794 /* FacebookSDK.framework in Frameworks */,
 				7E90E558198DBB9D00969FB6 /* SystemConfiguration.framework in Frameworks */,
 				7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */,
 				7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */,
@@ -278,6 +358,7 @@
 		7EB8BEEB198D81E100C06CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */,
 				7E90E557198DBB9D00969FB6 /* SystemConfiguration.framework */,
 				7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */,
 				7E90E553198DBAE900969FB6 /* Social.framework */,
@@ -298,23 +379,19 @@
 				7EB8BEFC198D81E100C06CFF /* AppDelegate.m */,
 				7E90E559198DC21F00969FB6 /* Constants.h */,
 				7E90E55A198DC21F00969FB6 /* Constants.m */,
+				7ED1032219AA849300C4B5D6 /* UIColor+colors.h */,
+				7ED1032319AA849300C4B5D6 /* UIColor+colors.m */,
+				7E53F68219B7DF110048B66D /* UIFont+fonts.h */,
+				7E53F68319B7DF110048B66D /* UIFont+fonts.m */,
+				7E53F67F19B7B97E0048B66D /* Metric.h */,
+				7E53F68019B7B97E0048B66D /* Metric.m */,
 				7EB8BEFE198D81E100C06CFF /* Main.storyboard */,
 				7ED6E7851999665600E202CB /* MenuViewController.h */,
 				7ED6E7861999665600E202CB /* MenuViewController.m */,
 				7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */,
 				7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */,
-				7E90E55F198DD3D700969FB6 /* MetricsViewController.h */,
-				7E90E560198DD3D700969FB6 /* MetricsViewController.m */,
-				7ECC9C9A1998151F002925D0 /* ForecastViewController.h */,
-				7ECC9C9B1998151F002925D0 /* ForecastViewController.m */,
-				7E54AFCD19A5628A00C9BA4E /* ForecastStepsController.h */,
-				7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */,
-				7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */,
-				7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */,
-				7E31F65D19A8118F0094E09C /* ScoreViewController.h */,
-				7E31F65E19A8118F0094E09C /* ScoreViewController.m */,
-				7E31F65A19A7E94D0094E09C /* Assessment.h */,
-				7E31F65B19A7E94D0094E09C /* Assessment.m */,
+				7ED1031D19AA6E2B00C4B5D6 /* Top ViewControllers */,
+				7ED1031919AA6C1200C4B5D6 /* Assessment */,
 				7ECC9C7B199304CB002925D0 /* Single Metric */,
 				7E90E55C198DD34200969FB6 /* AddMetricsViewController.h */,
 				7E90E55D198DD34200969FB6 /* AddMetricsViewController.m */,
@@ -328,6 +405,7 @@
 		7EB8BEF3198D81E100C06CFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7ED1034219AC05DF00C4B5D6 /* Kal.bundle */,
 				7EB8BEF4198D81E100C06CFF /* OnPurpose-Info.plist */,
 				7EB8BEF5198D81E100C06CFF /* InfoPlist.strings */,
 				7EB8BEF8198D81E100C06CFF /* main.m */,
@@ -357,6 +435,7 @@
 		7ECC9C791992C87C002925D0 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				7ED1034819AC08D400C4B5D6 /* CalendarIcon.png */,
 				7ED6E78E199977B300E202CB /* expandArrow.png */,
 				7ED6E7941999785400E202CB /* navMenuIcon.png */,
 				7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */,
@@ -382,12 +461,16 @@
 		7ECC9C7B199304CB002925D0 /* Single Metric */ = {
 			isa = PBXGroup;
 			children = (
-				7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */,
-				7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */,
 				7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */,
 				7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */,
+				7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */,
+				7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */,
+				7E53F68519B7F3250048B66D /* ForecastPopUpViewController.h */,
+				7E53F68619B7F3250048B66D /* ForecastPopUpViewController.m */,
 				7ECC9C741992B8A8002925D0 /* SingleMetricDayCell.h */,
 				7ECC9C751992B8A8002925D0 /* SingleMetricDayCell.m */,
+				7EDBE15819B3F77200629BC4 /* WhyViewController.h */,
+				7EDBE15919B3F77200629BC4 /* WhyViewController.m */,
 			);
 			name = "Single Metric";
 			sourceTree = "<group>";
@@ -395,6 +478,10 @@
 		7ECC9C7C199304E7002925D0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7EE9413519B65AA40001CC69 /* TDRatingView */,
+				7EE9412E19B65A800001CC69 /* CWPopUp */,
+				7EE9411619B52EA70001CC69 /* VRGCalendarView */,
+				7ED1032519AA881B00C4B5D6 /* CWRadioButtons */,
 				7E54AFCC19A5618900C9BA4E /* RMStepsController */,
 				7ED6E7C1199B057B00E202CB /* MDRadialProgress */,
 				7ECC9CBD19981F96002925D0 /* PaperFold */,
@@ -465,6 +552,61 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7ED1031919AA6C1200C4B5D6 /* Assessment */ = {
+			isa = PBXGroup;
+			children = (
+				7E54AFCD19A5628A00C9BA4E /* ForecastStepsController.h */,
+				7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */,
+				7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */,
+				7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */,
+				7E31F65D19A8118F0094E09C /* ScoreViewController.h */,
+				7E31F65E19A8118F0094E09C /* ScoreViewController.m */,
+				7E31F65A19A7E94D0094E09C /* Assessment.h */,
+				7E31F65B19A7E94D0094E09C /* Assessment.m */,
+			);
+			name = Assessment;
+			sourceTree = "<group>";
+		};
+		7ED1031D19AA6E2B00C4B5D6 /* Top ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E90E55F198DD3D700969FB6 /* MetricsViewController.h */,
+				7E90E560198DD3D700969FB6 /* MetricsViewController.m */,
+				7EE9412B19B658130001CC69 /* MetricsTableViewController.h */,
+				7EE9412C19B658130001CC69 /* MetricsTableViewController.m */,
+				7E53F67919B7A78C0048B66D /* MetricTableViewCell.h */,
+				7E53F67A19B7A78C0048B66D /* MetricTableViewCell.m */,
+				7ECC9C9A1998151F002925D0 /* ForecastViewController.h */,
+				7ECC9C9B1998151F002925D0 /* ForecastViewController.m */,
+				7ED1034419AC06BC00C4B5D6 /* DailyValues */,
+			);
+			name = "Top ViewControllers";
+			sourceTree = "<group>";
+		};
+		7ED1032519AA881B00C4B5D6 /* CWRadioButtons */ = {
+			isa = PBXGroup;
+			children = (
+				7ED1031E19AA711300C4B5D6 /* CWRadioButtons.h */,
+				7ED1031F19AA711300C4B5D6 /* CWRadioButtons.m */,
+			);
+			name = CWRadioButtons;
+			sourceTree = "<group>";
+		};
+		7ED1034419AC06BC00C4B5D6 /* DailyValues */ = {
+			isa = PBXGroup;
+			children = (
+				7ED1032619AA9B0D00C4B5D6 /* DailySpaceTableViewController.h */,
+				7ED1032719AA9B0D00C4B5D6 /* DailySpaceTableViewController.m */,
+				7ED1032919AA9B3400C4B5D6 /* DailySpaceCell.h */,
+				7ED1032A19AA9B3400C4B5D6 /* DailySpaceCell.m */,
+				7ED1032C19AAA93F00C4B5D6 /* SaveTableViewCell.h */,
+				7ED1032D19AAA93F00C4B5D6 /* SaveTableViewCell.m */,
+				7E8AF08619AD2F83008D5794 /* CalendarViewController.h */,
+				7E8AF08719AD2F83008D5794 /* CalendarViewController.m */,
+			);
+			name = DailyValues;
+			sourceTree = "<group>";
+		};
 		7ED6E7A0199AE74100E202CB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +622,11 @@
 				7ED6E7AB199AEE6F00E202CB /* Montserrat-Regular.ttf */,
 				7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */,
 				7ED6E7C3199B4C0800E202CB /* Museo-700.otf */,
+				7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */,
+				7EE9412219B556070001CC69 /* OpenSans-ExtraBold.ttf */,
+				7EE9412319B556070001CC69 /* OpenSans-Light.ttf */,
+				7EE9412419B556070001CC69 /* OpenSans-Regular.ttf */,
+				7EE9412519B556070001CC69 /* OpenSans-Semibold.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -495,6 +642,45 @@
 				7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */,
 			);
 			name = MDRadialProgress;
+			sourceTree = "<group>";
+		};
+		7EE9411619B52EA70001CC69 /* VRGCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				7E8AF07719AD2F42008D5794 /* VRGCalendarView.h */,
+				7E8AF07819AD2F42008D5794 /* VRGCalendarView.m */,
+				7E8AF07919AD2F42008D5794 /* UIView+convenience.h */,
+				7E8AF07A19AD2F42008D5794 /* UIView+convenience.m */,
+				7E8AF07B19AD2F42008D5794 /* NSMutableArray+convenience.h */,
+				7E8AF07C19AD2F42008D5794 /* NSMutableArray+convenience.m */,
+				7E8AF07D19AD2F42008D5794 /* NSDate+convenience.h */,
+				7E8AF07E19AD2F42008D5794 /* NSDate+convenience.m */,
+				7E8AF07F19AD2F42008D5794 /* UIColor+expanded.h */,
+				7E8AF08019AD2F42008D5794 /* UIColor+expanded.m */,
+			);
+			name = VRGCalendarView;
+			sourceTree = "<group>";
+		};
+		7EE9412E19B65A800001CC69 /* CWPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				7EE9411E19B5365E0001CC69 /* UIViewController+CWPopup.h */,
+				7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */,
+			);
+			name = CWPopUp;
+			sourceTree = "<group>";
+		};
+		7EE9413519B65AA40001CC69 /* TDRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				7EE9412F19B65A9E0001CC69 /* TDArrow.h */,
+				7EE9413019B65A9E0001CC69 /* TDArrow.m */,
+				7EE9413619B65DC30001CC69 /* CWCircle.h */,
+				7EE9413719B65DC30001CC69 /* CWCircle.m */,
+				7EE9413119B65A9E0001CC69 /* TDRatingView.h */,
+				7EE9413219B65A9E0001CC69 /* TDRatingView.m */,
+			);
+			name = TDRatingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,6 +762,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE9412619B556AB0001CC69 /* OpenSans-Bold.ttf in Resources */,
+				7EE9412719B556AB0001CC69 /* OpenSans-ExtraBold.ttf in Resources */,
+				7EE9412819B556AB0001CC69 /* OpenSans-Light.ttf in Resources */,
+				7EE9412919B556AB0001CC69 /* OpenSans-Regular.ttf in Resources */,
+				7EE9412A19B556AB0001CC69 /* OpenSans-Semibold.ttf in Resources */,
 				7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */,
 				7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */,
 				7ED6E7AC199AEE9E00E202CB /* VertigoFLF-Bold.ttf in Resources */,
@@ -588,6 +779,8 @@
 				7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */,
 				7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */,
 				7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */,
+				7ED1034319AC05DF00C4B5D6 /* Kal.bundle in Resources */,
+				7ED1034919AC08D400C4B5D6 /* CalendarIcon.png in Resources */,
 				7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */,
 				7ED6E7A2199AE7CC00E202CB /* Marlboro.ttf in Resources */,
 				7ED6E7B7199AFACE00E202CB /* homeScreen3.png in Resources */,
@@ -625,6 +818,8 @@
 				7E31F65F19A8118F0094E09C /* ScoreViewController.m in Sources */,
 				7EB8BEF9198D81E100C06CFF /* main.m in Sources */,
 				7ED6E7BF199B056D00E202CB /* MDRadialProgressTheme.m in Sources */,
+				7E8AF08819AD2F83008D5794 /* CalendarViewController.m in Sources */,
+				7E53F68119B7B97E0048B66D /* Metric.m in Sources */,
 				7ECC9C761992B8A8002925D0 /* SingleMetricDayCell.m in Sources */,
 				7ECC9C9819980796002925D0 /* JYRadarChart.m in Sources */,
 				7ECC9CB219981F48002925D0 /* FoldView.m in Sources */,
@@ -635,26 +830,45 @@
 				7E90E56A198DD3EB00969FB6 /* BEMSimpleLineGraphView.m in Sources */,
 				7ED6E7871999665600E202CB /* MenuViewController.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
+				7EE9413419B65A9E0001CC69 /* TDRatingView.m in Sources */,
+				7E53F68419B7DF110048B66D /* UIFont+fonts.m in Sources */,
+				7EE9412019B5365E0001CC69 /* UIViewController+CWPopup.m in Sources */,
 				7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */,
 				7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */,
 				7ED6E7BE199B056D00E202CB /* MDRadialProgressLabel.m in Sources */,
 				7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */,
+				7EDBE15A19B3F77200629BC4 /* WhyViewController.m in Sources */,
 				7ECC9CB119981F48002925D0 /* FacingView.m in Sources */,
 				7E54AFCA19A5617D00C9BA4E /* RMStepsBar.m in Sources */,
 				7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */,
+				7ED1032819AA9B0D00C4B5D6 /* DailySpaceTableViewController.m in Sources */,
 				7ECC9C9C1998151F002925D0 /* ForecastViewController.m in Sources */,
+				7E53F67B19B7A78C0048B66D /* MetricTableViewCell.m in Sources */,
 				7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */,
 				7ECC9CBA19981F48002925D0 /* UIView+Screenshot.m in Sources */,
 				7ECC9CB919981F48002925D0 /* TouchThroughUIView.m in Sources */,
 				7E90E56B198DD3EB00969FB6 /* BEMAnimations.m in Sources */,
 				7E90E55E198DD34200969FB6 /* AddMetricsViewController.m in Sources */,
+				7E53F68719B7F3250048B66D /* ForecastPopUpViewController.m in Sources */,
 				7E90E561198DD3D700969FB6 /* MetricsViewController.m in Sources */,
+				7E8AF08219AD2F42008D5794 /* UIView+convenience.m in Sources */,
+				7E8AF08319AD2F42008D5794 /* NSMutableArray+convenience.m in Sources */,
 				7ECC9CB619981F48002925D0 /* PaperFoldSwipeHintView.m in Sources */,
 				7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */,
+				7ED1032419AA849300C4B5D6 /* UIColor+colors.m in Sources */,
+				7E8AF08519AD2F42008D5794 /* UIColor+expanded.m in Sources */,
+				7EE9413319B65A9E0001CC69 /* TDArrow.m in Sources */,
+				7E8AF08419AD2F42008D5794 /* NSDate+convenience.m in Sources */,
+				7ED1032019AA711300C4B5D6 /* CWRadioButtons.m in Sources */,
 				7ECC9CB819981F48002925D0 /* ShadowView.m in Sources */,
+				7E8AF08119AD2F42008D5794 /* VRGCalendarView.m in Sources */,
 				7ECC9CB419981F48002925D0 /* PaperFoldNavigationController.m in Sources */,
+				7EE9413819B65DC30001CC69 /* CWCircle.m in Sources */,
 				7E54AFCB19A5617D00C9BA4E /* RMStep.m in Sources */,
 				7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */,
+				7ED1032E19AAA93F00C4B5D6 /* SaveTableViewCell.m in Sources */,
+				7ED1032B19AA9B3400C4B5D6 /* DailySpaceCell.m in Sources */,
+				7EE9412D19B658130001CC69 /* MetricsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,9 +951,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"Kal-master/src\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -771,8 +986,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"Kal-master/src\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -788,12 +1005,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnPurpose/OnPurpose-Prefix.pch";
 				INFOPLIST_FILE = "OnPurpose/OnPurpose-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
@@ -811,12 +1029,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnPurpose/OnPurpose-Prefix.pch";
 				INFOPLIST_FILE = "OnPurpose/OnPurpose-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
@@ -840,6 +1059,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "OnPurposeTests/OnPurposeTests-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -858,6 +1078,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OnPurpose/OnPurpose-Prefix.pch";
 				INFOPLIST_FILE = "OnPurposeTests/OnPurposeTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

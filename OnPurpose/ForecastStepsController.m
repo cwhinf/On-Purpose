@@ -8,6 +8,7 @@
 
 #import "ForecastStepsController.h"
 #import "ScaledStepViewController.h"
+#import "UIFont+fonts.h"
 
 @interface ForecastStepsController ()
 
@@ -24,6 +25,14 @@
     for (int i=0; i < self.assessment.questions.count; i++) {
         [self.assessment.answers addObject:[NSNumber numberWithInt:0]];
     }
+    
+    //set navController color and font
+    self.navigationController.navigationBar.tintColor = self.assessment.graphColor;
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
+                                       self.navigationController.navigationBar.titleTextAttributes];
+    [attributes setObject:self.assessment.graphColor forKey:@"NSColor"];
+    [attributes setObject:[UIFont mainFontWithSize:27] forKey:@"NSFont"];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
 }
 
 - (NSArray *)stepViewControllers {
@@ -51,8 +60,8 @@
         //step.questionString = question;
         step.assessment = self.assessment;
         step.step.title = @"";
-        step.graphName = self.graphName;
-        step.graphColor = self.graphColor;
+        step.graphName = self.assessment.graphName;
+        step.graphColor = self.assessment.graphColor;
         step.questionNumber = questionNumber;
         step.questionTotal = questionTotal;
         [steps addObject:step];
@@ -65,7 +74,7 @@
 }
 
 - (void)finishedAllSteps {
-    [self.delegate didFinishSteps];
+    [self.delegate stepsControllerdidFinishSteps:self];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -74,3 +83,26 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

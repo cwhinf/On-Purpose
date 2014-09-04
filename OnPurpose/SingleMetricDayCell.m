@@ -7,6 +7,7 @@
 //
 
 #import "SingleMetricDayCell.h"
+#import "UIFont+fonts.h"
 
 @implementation SingleMetricDayCell
 
@@ -22,6 +23,8 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [self.dayLabel setFont:[UIFont mainFontLightWithSize:29.0f]];
+    [self.expandedText setFont:[UIFont mainFontBoldWithSize:17.0f]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

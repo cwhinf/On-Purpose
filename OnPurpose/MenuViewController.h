@@ -14,4 +14,14 @@
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 
+@property (strong, nonatomic) IBOutlet UIButton *button1;
+@property (strong, nonatomic) IBOutlet UIButton *button2;
+@property (strong, nonatomic) IBOutlet UILabel *label3;
+
+
+
+
+
+
+
 @end

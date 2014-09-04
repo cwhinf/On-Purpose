@@ -10,7 +10,7 @@
 
 #import "SingleMetricViewController.h"
 #import "Constants.h"
-
+#import "UIViewController+CWPopup.h"
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 
@@ -46,7 +46,7 @@
     NSMutableAttributedString *definitionString = [[NSMutableAttributedString alloc] initWithString:string];
     [definitionString addAttribute:NSForegroundColorAttributeName value:self.graphColor range:NSMakeRange(0, self.graphName.length)];
     [definitionString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:130.0/255.0 green:130.0/255.0 blue:130.0/255.0 alpha:1.0] range:NSMakeRange(self.graphName.length, string.length - self.graphName.length)];
-    [definitionString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Museo-500" size:18] range:NSMakeRange(0, string.length)];
+    [definitionString addAttribute:NSFontAttributeName value:[UIFont mainFontWithSize:18] range:NSMakeRange(0, string.length)];
     
     [self.definitionLabel setAttributedText:definitionString];
     
@@ -54,7 +54,7 @@
     previousStepperValue = self.graphObjectIncrement.value;
     totalNumber = 0;
     
-    ;    self.ArrayOfDates = [[NSMutableArray alloc] init];
+    self.ArrayOfDates = [[NSMutableArray alloc] init];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     
@@ -112,7 +112,10 @@
     
     //setup average and forecast
     
-    UIFont *labelFont = [UIFont fontWithName:@"Montserrat-Regular" size:23];
+    UIFont *labelFont = [UIFont mainFontWithSize:16];
+    [self.basedOnLabel setFont:labelFont];
+    
+    labelFont = [UIFont mainFontBoldWithSize:23];
     
     [self.averageLabel setFont:labelFont];
     [self.forecastLabel setFont:labelFont];
@@ -121,7 +124,7 @@
     [formatter setMaximumFractionDigits:1];
     [formatter setMinimumFractionDigits:1];
     
-    UIFont *font = [UIFont fontWithName:@"Montserrat-Regular" size:40];
+    UIFont *font = [UIFont mainFontWithSize:40];
     
     CGRect radialAverageRect;
     
@@ -135,7 +138,7 @@
     [self.avgButton setTitle:[formatter stringFromNumber:self.average] forState:UIControlStateNormal];
     [self.avgButton.titleLabel setFont:font];
     
-    radialAverageRect = CGRectMake(50, 440, 100, 100);
+    radialAverageRect = CGRectMake(50, 445, 100, 100);
     self.averageRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
     self.averageRadialView.progressTotal = 500;
     self.averageRadialView.progressCounter = 0;
@@ -146,7 +149,7 @@
     [self.forecastButton setTitle:[formatter stringFromNumber:self.forecast] forState:UIControlStateNormal];
     [self.forecastButton.titleLabel setFont:font];
     
-    radialAverageRect = CGRectMake(170, 440, 100, 100);
+    radialAverageRect = CGRectMake(170, 445, 100, 100);
     self.forecastRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:theme];
     self.forecastRadialView.progressTotal = 500;
     self.forecastRadialView.progressCounter = 0;
@@ -196,7 +199,7 @@
 }
 
 - (IBAction)forecastPressed:(id)sender {
-    [self.singleMetricTableViewController showAssesment];
+    [self.singleMetricTableViewController showWhy];
 }
 
 - (IBAction)refresh:(id)sender {

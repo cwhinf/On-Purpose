@@ -12,25 +12,25 @@
 #import "BEMSimpleLineGraphView.h"
 #import "ForecastStepsController.h"
 #import "Assessment.h"
+#import "Metric.h"
+#import "PaperFoldNavigationController.h"
 
 
-@interface SingleMetricTableViewController : UITableViewController <RMStepsControllerDelegate, BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface SingleMetricTableViewController : UITableViewController <UIGestureRecognizerDelegate, RMStepsControllerDelegate, BEMSimpleLineGraphDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
     int previousStepperValue;
     int totalNumber;
 }
 
-
+@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavContoller;
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 
 @property (strong, nonatomic) NSMutableArray *ArrayOfValues;
 @property (strong, nonatomic) NSMutableArray *ArrayOfDates;
-@property (strong, nonatomic) NSMutableArray *metricDaysArray;
-@property (strong, nonatomic) UIColor *graphColor;
-@property (strong, nonatomic) NSString *graphName;
-@property (strong, nonatomic) NSString *graphDefinition;
+@property (strong, nonatomic) Metric *metric;
 
-@property (strong, nonatomic) Assessment *assessment;
+@property (strong, nonatomic) NSMutableArray *metricDaysArray;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *labelValues;
 @property (strong, nonatomic) IBOutlet UILabel *labelDates;
@@ -50,6 +50,9 @@
 - (IBAction)refresh:(id)sender;
 - (IBAction)backPressed:(id)sender;
 - (void) showAssesment;
+- (void) showWhy;
+
+
 
 - (IBAction)addOrRemoveLineFromGraph:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *graphColorChoice;

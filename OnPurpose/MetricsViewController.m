@@ -15,6 +15,7 @@
 #import "PaperFoldTabBarController.h"
 #import "Assessment.h"
 #import "Constants.h"
+#import "UIColor+colors.h"
 
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
@@ -46,7 +47,6 @@
 
 @property (strong, nonatomic) Assessment *eatingAssessment;
 @property (strong, nonatomic) Assessment *presenceAssessment;
-
 
 @property (strong, nonatomic) PFUser *lastUser;
 
@@ -94,7 +94,7 @@
     
     NSInteger graphMin = 2;
     NSInteger graphMax = 5;
-    
+    /*
     // Customization of the graph
     self.sleepGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
     self.sleepGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
@@ -150,6 +150,65 @@
     self.eatingGraph.enableBezierCurve = YES;
     self.eatingGraph.min = graphMin;
     self.eatingGraph.max = graphMax;
+    */
+    
+    
+    // Customization of the graph
+    self.sleepGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    self.sleepGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
+    self.sleepGraph.colorLine = [UIColor OPRedColor];
+    self.sleepGraph.colorXaxisLabel = [UIColor OPRedColor];
+    self.sleepGraph.widthLine = 3.0;
+    self.sleepGraph.enableTouchReport = YES;
+    self.sleepGraph.enablePopUpReport = YES;
+    self.sleepGraph.enableBezierCurve = YES;
+    self.sleepGraph.min = graphMin;
+    self.sleepGraph.max = graphMax;
+    
+    self.presenceGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
+    self.presenceGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
+    self.presenceGraph.colorLine = [UIColor OPBlueColor];
+    self.presenceGraph.colorXaxisLabel = [UIColor OPBlueColor];
+    self.presenceGraph.widthLine = 3.0;
+    self.presenceGraph.enableTouchReport = YES;
+    self.presenceGraph.enablePopUpReport = YES;
+    self.presenceGraph.enableBezierCurve = YES;
+    self.presenceGraph.min = graphMin;
+    self.presenceGraph.max = graphMax;
+    
+    self.activityGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:255.0/255.0 green:187.0/255.0 blue:31.0/255.0 alpha:1.0];
+    self.activityGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:255.0/255.0 green:187.0/255.0 blue:31.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
+    self.activityGraph.colorLine = [UIColor OPYellowColor];
+    self.activityGraph.colorXaxisLabel = [UIColor OPYellowColor];
+    self.activityGraph.widthLine = 3.0;
+    self.activityGraph.enableTouchReport = YES;
+    self.activityGraph.enablePopUpReport = YES;
+    self.activityGraph.enableBezierCurve = YES;
+    self.activityGraph.min = graphMin;
+    self.activityGraph.max = graphMax;
+    
+    self.creativityGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    self.creativityGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
+    self.creativityGraph.colorLine = [UIColor OPAquaColor];
+    self.creativityGraph.colorXaxisLabel = [UIColor OPAquaColor];
+    self.creativityGraph.widthLine = 3.0;
+    self.creativityGraph.enableTouchReport = YES;
+    self.creativityGraph.enablePopUpReport = YES;
+    self.creativityGraph.enableBezierCurve = YES;
+    self.creativityGraph.min = graphMin;
+    self.creativityGraph.max = graphMax;
+    
+    self.eatingGraph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
+    self.eatingGraph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
+    self.eatingGraph.colorLine = [UIColor OPOrangeColor];
+    self.eatingGraph.colorXaxisLabel = [UIColor OPOrangeColor];
+    self.eatingGraph.widthLine = 3.0;
+    self.eatingGraph.enableTouchReport = YES;
+    self.eatingGraph.enablePopUpReport = YES;
+    self.eatingGraph.enableBezierCurve = YES;
+    self.eatingGraph.min = graphMin;
+    self.eatingGraph.max = graphMax;
+    
     
     
     // The labels to report the values of the graph when the user touches it
@@ -284,6 +343,7 @@
     
     CGRect radialAverageRect;
     
+    /*
     MDRadialProgressTheme *theme = [[MDRadialProgressTheme alloc] init];
     theme.sliceDividerHidden = YES;
     theme.completedColor = [UIColor whiteColor];
@@ -344,6 +404,96 @@
     self.eatingRadialView.progressTotal = 500;
     self.eatingRadialView.progressCounter = 0;
     [self.view addSubview:self.eatingRadialView];
+    */
+    
+    
+    
+    MDRadialProgressTheme *sleepTheme = [[MDRadialProgressTheme alloc] init];
+    sleepTheme.sliceDividerHidden = YES;
+    sleepTheme.completedColor = [UIColor OPRedColor];
+    sleepTheme.incompletedColor = [[UIColor OPRedColor] colorWithAlphaComponent:.5];
+    sleepTheme.labelColor = [UIColor clearColor];
+    
+    self.sleepAverage = [self.sleepArray valueForKeyPath:@"@avg.self"];
+    [self.sleepValueLabel setText:[formatter stringFromNumber:self.sleepAverage]];
+    [self.sleepValueLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(67, 90, 70, 70);
+    self.sleepRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:sleepTheme];
+    self.sleepRadialView.progressTotal = 500;
+    self.sleepRadialView.progressCounter = 0;
+    [self.view addSubview:self.sleepRadialView];
+    
+    
+    MDRadialProgressTheme *presenceTheme = [[MDRadialProgressTheme alloc] init];
+    presenceTheme.sliceDividerHidden = YES;
+    presenceTheme.completedColor = [UIColor OPBlueColor];
+    presenceTheme.incompletedColor = [[UIColor OPBlueColor] colorWithAlphaComponent:.5];
+    presenceTheme.labelColor = [UIColor clearColor];
+    
+    self.presenceAverage = [self.presenceArray valueForKeyPath:@"@avg.self"];
+    [self.presenceValueLabel setText:[formatter stringFromNumber:self.presenceAverage]];
+    [self.presenceValueLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(67, 190, 70, 70);
+    self.presenceRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:presenceTheme];
+    self.presenceRadialView.progressTotal = 500;
+    self.presenceRadialView.progressCounter = 0;
+    [self.view addSubview:self.presenceRadialView];
+    
+    
+    MDRadialProgressTheme *activityTheme = [[MDRadialProgressTheme alloc] init];
+    activityTheme.sliceDividerHidden = YES;
+    activityTheme.completedColor = [UIColor OPYellowColor];
+    activityTheme.incompletedColor = [[UIColor OPYellowColor] colorWithAlphaComponent:.5];
+    activityTheme.labelColor = [UIColor clearColor];
+    
+    self.activityAverage = [self.activityArray valueForKeyPath:@"@avg.self"];
+    [self.activityValueLabel setText:[formatter stringFromNumber:self.activityAverage]];
+    [self.activityValueLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(67, 290, 70, 70);
+    self.activityRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:activityTheme];
+    self.activityRadialView.progressTotal = 500;
+    self.activityRadialView.progressCounter = 0;
+    [self.view addSubview:self.activityRadialView];
+    
+    
+    
+    MDRadialProgressTheme *creativityTheme = [[MDRadialProgressTheme alloc] init];
+    creativityTheme.sliceDividerHidden = YES;
+    creativityTheme.completedColor = [UIColor OPAquaColor];
+    creativityTheme.incompletedColor = [[UIColor OPAquaColor] colorWithAlphaComponent:.5];
+    creativityTheme.labelColor = [UIColor clearColor];
+    
+    self.creativityAverage = [self.creativityArray valueForKeyPath:@"@avg.self"];
+    [self.creativityValueLabel setText:[formatter stringFromNumber:self.creativityAverage]];
+    [self.creativityValueLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(67, 390, 70, 70);
+    self.creativityRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:creativityTheme];
+    self.creativityRadialView.progressTotal = 500;
+    self.creativityRadialView.progressCounter = 0;
+    [self.view addSubview:self.creativityRadialView];
+    
+    
+    
+    MDRadialProgressTheme *eatingTheme = [[MDRadialProgressTheme alloc] init];
+    eatingTheme.sliceDividerHidden = YES;
+    eatingTheme.completedColor = [UIColor OPOrangeColor];
+    eatingTheme.incompletedColor = [[UIColor OPOrangeColor] colorWithAlphaComponent:.5];
+    eatingTheme.labelColor = [UIColor clearColor];
+    
+    self.eatingAverage = [self.eatingArray valueForKeyPath:@"@avg.self"];
+    [self.eatingValueLabel setText:[formatter stringFromNumber:self.eatingAverage]];
+    [self.eatingValueLabel setFont:font];
+    
+    radialAverageRect = CGRectMake(67, 490, 70, 70);
+    self.eatingRadialView = [[MDRadialProgressView alloc] initWithFrame:radialAverageRect andTheme:eatingTheme];
+    self.eatingRadialView.progressTotal = 500;
+    self.eatingRadialView.progressCounter = 0;
+    [self.view addSubview:self.eatingRadialView];
+    
     
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
@@ -389,7 +539,23 @@
 - (void) setAssesments {
     
     self.eatingAssessment = [[Assessment alloc] init];
+    self.eatingAssessment.graphName = @"Eating";
+    self.eatingAssessment.graphColor = [UIColor OPOrangeColor];
     
+    [self.eatingAssessment addMultipleQuestion:@"How much olive oil do you consume PER DAY (including that used in frying, salads and meals eaten away from home)?" Choices:@[@"none", @"2 tablespoons", @"4 tablespoons", @"6 tablespoons", @"8 or more"] PointsForAnswers:@[@0,@0,@1,@1,@1]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of vegetables do you consume PER DAY? [A serving is 200 g.]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"] PointsForAnswers:@[@0,@0,@1,@1,@1]];
+    [self.eatingAssessment addMultipleQuestion:@"How many pieces of fruit do you consume PER DAY?" Choices:@[@"none", @"1 piece", @"2 pieces", @"3 pieces", @"4 or more pieces"] PointsForAnswers:@[@0,@0,@0,@1,@1]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of red meat, hamburger, or sausages do you consume PER DAY?" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"] PointsForAnswers:@[@1,@0,@0,@0,@0]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of butter, margarine, or cream do you consume PER DAY?" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"] PointsForAnswers:@[@1,@0,@0,@0,@0]];
+    [self.eatingAssessment addMultipleQuestion:@"How many carbonated and/or sugar-sweetened beverages do you consume PER DAY?" Choices:@[@"none", @"1 beverage", @"2 beverages", @"3 beverages", @"4 or more beverages"] PointsForAnswers:@[@1,@0,@0,@0,@0]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings (150 g) of beans, peas, or lentils do you consume PER WEEK? [A serving is 150 g.]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"] PointsForAnswers:@[@0,@0,@1,@1,@1]];
+    [self.eatingAssessment addMultipleQuestion:@"How many servings of whole grain foods such as couscous, oats, quinoa, brown or wild rice did you eat?" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"] PointsForAnswers:@[@0,@0,@1,@1,@1]];
+    [self.eatingAssessment addMultipleQuestion:@"How many times do you consume commercial (not homemade) pastry such as cookies or cake PER WEEK?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"] PointsForAnswers:@[@1,@0,@0,@0,@0]];
+    [self.eatingAssessment addYesNoQuestion:@"Have you eaten a serving of nuts in the past week?" Accept:YES];
+
+    
+    //old assessment
+    /*
     [self.eatingAssessment addYesNoQuestion:@"Do you use olive oil as the principal source of fat for cooking?"];
     [self.eatingAssessment addMultipleQuestion:@"How much olive oil do you consume PER DAY (including that used in frying, salads and meals eaten away from home)?" Choices:@[@"none", @"2 tablespoons", @"4 tablespoons", @"6 tablespoons", @"8 or more"]];
     [self.eatingAssessment addMultipleQuestion:@"How many servings of vegetables do you consume PER DAY? [A serving is 200 g.]" Choices:@[@"none", @"1 serving", @"2 servings", @"3 servings", @"4 or more servings"]];
@@ -404,10 +570,13 @@
     [self.eatingAssessment addMultipleQuestion:@"How many times do you consume nuts PER WEEK?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
     [self.eatingAssessment addYesNoQuestion:@"Do you prefer to eat chicken, turkey or rabbit instead of beef, pork, hamburgers, or sausages?"];
     [self.eatingAssessment addMultipleQuestion:@"How many times PER WEEK do you consume boiled vegetables, pasta, rice, or other dishes with a sauce of tomato, garlic, onion, or leeks sautéed in olive oil?" Choices:@[@"none", @"once", @"twice", @"3 times", @"4 or more times"]];
-    
+    */
     
     
     self.presenceAssessment = [[Assessment alloc] init];
+    self.presenceAssessment.graphName = @"Presence";
+    self.presenceAssessment.graphColor = [UIColor OPBlueColor];
+    
     
     [self.presenceAssessment addScaleQuestion:@"When I have distressing thoughts or images, I just notice them and let them go."];
     [self.presenceAssessment addScaleQuestion:@"It seems I am “running automatic” without much awareness of what I’m doing."];
@@ -537,45 +706,27 @@
         if ([sender isEqual:self.sleepButton]) {
             singleMetricTableViewController.ArrayOfValues = self.sleepArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-            //singleMetricTableViewController.graphColor = self.sleepGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0xa82d32);
-            //singleMetricTableViewController.navigationItem.title = @"Sleep";
-            singleMetricTableViewController.graphName = @"Sleep";
-            singleMetricTableViewController.graphDefinition = @"is a rating on how well you slept. It can be based on hours or anything";
-            
+            singleMetricTableViewController.metric = [[Metric alloc] initSleep];
         }
         else if ([sender isEqual:self.presenceButton]) {
             singleMetricTableViewController.ArrayOfValues = self.presenceArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-            //singleMetricTableViewController.graphColor = self.presenceGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0x3a7ed7);
-            singleMetricTableViewController.graphName = @"Presence";
-            singleMetricTableViewController.graphDefinition = @"is a rating on how present you are. It can be based on anything";
-            singleMetricTableViewController.assessment = self.presenceAssessment;
+            singleMetricTableViewController.metric = [[Metric alloc] initPresence];
         }
         else if ([sender isEqual:self.activityButton]) {
             singleMetricTableViewController.ArrayOfValues = self.activityArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-            //singleMetricTableViewController.graphColor = self.activityGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0xf9af1a);
-            singleMetricTableViewController.graphName = @"Activity";
-            singleMetricTableViewController.graphDefinition = @"is a rating on how active you are. It can be based on hours or anything";
+            singleMetricTableViewController.metric = [[Metric alloc] initActivity];
         }
         else if ([sender isEqual:self.creativityButton]) {
             singleMetricTableViewController.ArrayOfValues = self.creativityArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-            //singleMetricTableViewController.graphColor = self.creativityGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0x23bd99);
-            singleMetricTableViewController.graphName = @"Creativity";
-            singleMetricTableViewController.graphDefinition = @"is a rating on how creative you are. It can be based on anything";
+            singleMetricTableViewController.metric = [[Metric alloc] initCreativity];
         }
         else if ([sender isEqual:self.eatingButton]) {
             singleMetricTableViewController.ArrayOfValues = self.eatingArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;
-            //singleMetricTableViewController.graphColor = self.eatingGraph.backgroundColor;
-            singleMetricTableViewController.graphColor = UIColorFromRGB(0xef643c);            singleMetricTableViewController.graphName = @"Eating";
-            singleMetricTableViewController.graphDefinition = @"is a rating on how well you ate. It can be based on food or anything";
-            singleMetricTableViewController.assessment = self.eatingAssessment;
+            singleMetricTableViewController.metric = [[Metric alloc] initEating];
         }
     }
 

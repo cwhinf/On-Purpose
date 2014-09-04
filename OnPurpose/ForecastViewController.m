@@ -35,6 +35,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
+                                       self.navigationController.navigationBar.titleTextAttributes];
+    [attributes setObject:[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0] forKey:@"NSColor"];
+    [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
     PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
@@ -42,14 +48,7 @@
     [self showRadarChart];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
-                                       self.navigationController.navigationBar.titleTextAttributes];
-    [attributes setObject:[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0] forKey:@"NSColor"];
-    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
-    
-}
+
 
 - (void) showRadarChart {
     self.radarChart = [[JYRadarChart alloc] initWithFrame:CGRectMake(0, 65, 320, 320)];

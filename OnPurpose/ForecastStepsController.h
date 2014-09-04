@@ -12,7 +12,6 @@
 @interface ForecastStepsController : RMStepsController
 
 @property (strong, nonatomic) Assessment *assessment;
-@property (strong, nonatomic) NSString *graphName;
-@property (strong, nonatomic) UIColor *graphColor;
+
 
 @end
