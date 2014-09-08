@@ -21,13 +21,17 @@
 		7E54AFCB19A5617D00C9BA4E /* RMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFC819A5617D00C9BA4E /* RMStep.m */; };
 		7E54AFCF19A5628A00C9BA4E /* ForecastStepsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */; };
 		7E54AFD219A5690600C9BA4E /* ScaledStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */; };
-		7E8AF07419AD2BF3008D5794 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */; };
 		7E8AF08119AD2F42008D5794 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07819AD2F42008D5794 /* VRGCalendarView.m */; };
 		7E8AF08219AD2F42008D5794 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07A19AD2F42008D5794 /* UIView+convenience.m */; };
 		7E8AF08319AD2F42008D5794 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07C19AD2F42008D5794 /* NSMutableArray+convenience.m */; };
 		7E8AF08419AD2F42008D5794 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF07E19AD2F42008D5794 /* NSDate+convenience.m */; };
 		7E8AF08519AD2F42008D5794 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF08019AD2F42008D5794 /* UIColor+expanded.m */; };
 		7E8AF08819AD2F83008D5794 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8AF08719AD2F83008D5794 /* CalendarViewController.m */; };
+		7E9024E619BCFEEF008E6412 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9024E519BCFEEF008E6412 /* RNFrostedSidebar.m */; };
+		7E9024E819BD46C7008E6412 /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9024E719BD46C7008E6412 /* dashboard.png */; };
+		7E9024EA19BD4D80008E6412 /* appbar.weather.overcast.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9024E919BD4D80008E6412 /* appbar.weather.overcast.png */; };
+		7E9024EC19BD4F16008E6412 /* appbar.scale.unbalanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9024EB19BD4F16008E6412 /* appbar.scale.unbalanced.png */; };
+		7E9024EE19BD5AD6008E6412 /* appbar.group.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9024ED19BD5AD6008E6412 /* appbar.group.png */; };
 		7E90E552198DBAE300969FB6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E551198DBAE300969FB6 /* Accounts.framework */; };
 		7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E553198DBAE900969FB6 /* Social.framework */; };
 		7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */; };
@@ -40,6 +44,7 @@
 		7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E567198DD3EB00969FB6 /* BEMCircle.m */; };
 		7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E569198DD3EB00969FB6 /* BEMLine.m */; };
 		7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */; };
+		7EB6E07019BAA58E0096B4A6 /* MONActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6E06F19BAA58E0096B4A6 /* MONActivityIndicatorView.m */; };
 		7EB8BEED198D81E100C06CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEC198D81E100C06CFF /* Foundation.framework */; };
 		7EB8BEEF198D81E100C06CFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEE198D81E100C06CFF /* CoreGraphics.framework */; };
 		7EB8BEF1198D81E100C06CFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEF0198D81E100C06CFF /* UIKit.framework */; };
@@ -147,7 +152,6 @@
 		7E54AFCE19A5628A00C9BA4E /* ForecastStepsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastStepsController.m; sourceTree = "<group>"; };
 		7E54AFD019A5690600C9BA4E /* ScaledStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledStepViewController.h; sourceTree = "<group>"; };
 		7E54AFD119A5690600C9BA4E /* ScaledStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledStepViewController.m; sourceTree = "<group>"; };
-		7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		7E8AF07719AD2F42008D5794 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
 		7E8AF07819AD2F42008D5794 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
 		7E8AF07919AD2F42008D5794 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
@@ -160,6 +164,12 @@
 		7E8AF08019AD2F42008D5794 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
 		7E8AF08619AD2F83008D5794 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		7E8AF08719AD2F83008D5794 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		7E9024E419BCFEEF008E6412 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
+		7E9024E519BCFEEF008E6412 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
+		7E9024E719BD46C7008E6412 /* dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dashboard.png; path = Resources/dashboard.png; sourceTree = "<group>"; };
+		7E9024E919BD4D80008E6412 /* appbar.weather.overcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.weather.overcast.png; path = Resources/appbar.weather.overcast.png; sourceTree = "<group>"; };
+		7E9024EB19BD4F16008E6412 /* appbar.scale.unbalanced.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.scale.unbalanced.png; path = Resources/appbar.scale.unbalanced.png; sourceTree = "<group>"; };
+		7E9024ED19BD5AD6008E6412 /* appbar.group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.group.png; path = Resources/appbar.group.png; sourceTree = "<group>"; };
 		7E90E551198DBAE300969FB6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7E90E553198DBAE900969FB6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -180,6 +190,8 @@
 		7E90E569198DD3EB00969FB6 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricViewController.h; sourceTree = "<group>"; };
 		7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricViewController.m; sourceTree = "<group>"; };
+		7EB6E06E19BAA58E0096B4A6 /* MONActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONActivityIndicatorView.h; sourceTree = "<group>"; };
+		7EB6E06F19BAA58E0096B4A6 /* MONActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONActivityIndicatorView.m; sourceTree = "<group>"; };
 		7EB8BEE9198D81E100C06CFF /* OnPurpose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPurpose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB8BEEC198D81E100C06CFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7EB8BEEE198D81E100C06CFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -238,7 +250,6 @@
 		7ED1032A19AA9B3400C4B5D6 /* DailySpaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySpaceCell.m; sourceTree = "<group>"; };
 		7ED1032C19AAA93F00C4B5D6 /* SaveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveTableViewCell.h; sourceTree = "<group>"; };
 		7ED1032D19AAA93F00C4B5D6 /* SaveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTableViewCell.m; sourceTree = "<group>"; };
-		7ED1034219AC05DF00C4B5D6 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Kal.bundle; path = "Kal-master/src/Kal.bundle"; sourceTree = SOURCE_ROOT; };
 		7ED1034819AC08D400C4B5D6 /* CalendarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CalendarIcon.png; path = Resources/CalendarIcon.png; sourceTree = "<group>"; };
 		7ED6E7851999665600E202CB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7ED6E7861999665600E202CB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -291,7 +302,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E8AF07419AD2BF3008D5794 /* FacebookSDK.framework in Frameworks */,
 				7E90E558198DBB9D00969FB6 /* SystemConfiguration.framework in Frameworks */,
 				7E90E556198DBB7100969FB6 /* MobileCoreServices.framework in Frameworks */,
 				7E90E554198DBAE900969FB6 /* Social.framework in Frameworks */,
@@ -329,6 +339,15 @@
 			name = RMStepsController;
 			sourceTree = "<group>";
 		};
+		7EB6E07119BAA5960096B4A6 /* MONActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				7EB6E06E19BAA58E0096B4A6 /* MONActivityIndicatorView.h */,
+				7EB6E06F19BAA58E0096B4A6 /* MONActivityIndicatorView.m */,
+			);
+			name = MONActivityIndicatorView;
+			sourceTree = "<group>";
+		};
 		7EB8BEE0198D81E100C06CFF = {
 			isa = PBXGroup;
 			children = (
@@ -354,7 +373,6 @@
 		7EB8BEEB198D81E100C06CFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E8AF07319AD2BF3008D5794 /* FacebookSDK.framework */,
 				7E90E557198DBB9D00969FB6 /* SystemConfiguration.framework */,
 				7E90E555198DBB7100969FB6 /* MobileCoreServices.framework */,
 				7E90E553198DBAE900969FB6 /* Social.framework */,
@@ -401,7 +419,6 @@
 		7EB8BEF3198D81E100C06CFF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7ED1034219AC05DF00C4B5D6 /* Kal.bundle */,
 				7EB8BEF4198D81E100C06CFF /* OnPurpose-Info.plist */,
 				7EB8BEF5198D81E100C06CFF /* InfoPlist.strings */,
 				7EB8BEF8198D81E100C06CFF /* main.m */,
@@ -435,6 +452,10 @@
 				7ED6E78E199977B300E202CB /* expandArrow.png */,
 				7ED6E7941999785400E202CB /* navMenuIcon.png */,
 				7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */,
+				7E9024E719BD46C7008E6412 /* dashboard.png */,
+				7E9024E919BD4D80008E6412 /* appbar.weather.overcast.png */,
+				7E9024EB19BD4F16008E6412 /* appbar.scale.unbalanced.png */,
+				7E9024ED19BD5AD6008E6412 /* appbar.group.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -472,6 +493,9 @@
 		7ECC9C7C199304E7002925D0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7E9024E419BCFEEF008E6412 /* RNFrostedSidebar.h */,
+				7E9024E519BCFEEF008E6412 /* RNFrostedSidebar.m */,
+				7EB6E07119BAA5960096B4A6 /* MONActivityIndicatorView */,
 				7EE9413519B65AA40001CC69 /* TDRatingView */,
 				7EE9412E19B65A800001CC69 /* CWPopUp */,
 				7EE9411619B52EA70001CC69 /* VRGCalendarView */,
@@ -764,14 +788,17 @@
 				7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */,
 				7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */,
 				7ED6E7AC199AEE9E00E202CB /* VertigoFLF-Bold.ttf in Resources */,
+				7E9024E819BD46C7008E6412 /* dashboard.png in Resources */,
 				7ED6E7AD199AEE9E00E202CB /* VertigoFLF.ttf in Resources */,
 				7ED6E7AE199AEE9E00E202CB /* VertigoPlusFLF-Bold.ttf in Resources */,
 				7ED6E7AF199AEE9E00E202CB /* VertigoPlusFLF.ttf in Resources */,
 				7ED6E7B0199AEE9E00E202CB /* EuropeUnderground_black.ttf in Resources */,
 				7ED6E7B1199AEE9E00E202CB /* EuropeUnderground_light.ttf in Resources */,
 				7ED6E7B2199AEE9E00E202CB /* Life is goofy.ttf in Resources */,
+				7E9024EA19BD4D80008E6412 /* appbar.weather.overcast.png in Resources */,
 				7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */,
 				7ED6E7B3199AEE9E00E202CB /* Montserrat-Bold.ttf in Resources */,
+				7E9024EE19BD5AD6008E6412 /* appbar.group.png in Resources */,
 				7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */,
 				7ED1034919AC08D400C4B5D6 /* CalendarIcon.png in Resources */,
 				7ED6E7B4199AEE9E00E202CB /* Montserrat-Regular.ttf in Resources */,
@@ -787,6 +814,7 @@
 				7ED6E79D199AD31D00E202CB /* homeScreen.png in Resources */,
 				7ED6E791199977B300E202CB /* expandArrow.png in Resources */,
 				7ED6E79F199AE25D00E202CB /* homeScreen2.png in Resources */,
+				7E9024EC19BD4F16008E6412 /* appbar.scale.unbalanced.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,10 +872,12 @@
 				7E53F68719B7F3250048B66D /* ForecastPopUpViewController.m in Sources */,
 				7E90E561198DD3D700969FB6 /* MetricsViewController.m in Sources */,
 				7E8AF08219AD2F42008D5794 /* UIView+convenience.m in Sources */,
+				7EB6E07019BAA58E0096B4A6 /* MONActivityIndicatorView.m in Sources */,
 				7E8AF08319AD2F42008D5794 /* NSMutableArray+convenience.m in Sources */,
 				7ECC9CB619981F48002925D0 /* PaperFoldSwipeHintView.m in Sources */,
 				7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */,
 				7ED1032419AA849300C4B5D6 /* UIColor+colors.m in Sources */,
+				7E9024E619BCFEEF008E6412 /* RNFrostedSidebar.m in Sources */,
 				7E8AF08519AD2F42008D5794 /* UIColor+expanded.m in Sources */,
 				7EE9413319B65A9E0001CC69 /* TDArrow.m in Sources */,
 				7E8AF08419AD2F42008D5794 /* NSDate+convenience.m in Sources */,
@@ -946,7 +976,7 @@
 				HEADER_SEARCH_PATHS = "\"Kal-master/src\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -981,7 +1011,7 @@
 				HEADER_SEARCH_PATHS = "";
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"Kal-master/src\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1003,7 +1033,7 @@
 				GCC_PREFIX_HEADER = "OnPurpose/OnPurpose-Prefix.pch";
 				INFOPLIST_FILE = "OnPurpose/OnPurpose-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;
@@ -1027,7 +1057,7 @@
 				GCC_PREFIX_HEADER = "OnPurpose/OnPurpose-Prefix.pch";
 				INFOPLIST_FILE = "OnPurpose/OnPurpose-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.1;

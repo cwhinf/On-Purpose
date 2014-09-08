@@ -29,7 +29,7 @@
     self.menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
     self.menuViewController.paperFoldNavController = self.paperFoldNavController;
     
-    [self.paperFoldNavController setLeftViewController:self.menuViewController width:100.0f];
+    [self.paperFoldNavController setLeftViewController:self.menuViewController width:180.0f];
     
     self.window.rootViewController = self.paperFoldNavController;
     

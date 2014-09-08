@@ -9,17 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "CWRadioButtons.h"
 #import "RMStepsController.h"
+#import "CalendarViewController.h"
 
-@interface DailySpaceTableViewController : UITableViewController <CWRadioButtonsDelegate, RMStepsControllerDelegate>
+@interface DailySpaceTableViewController : UITableViewController <UIGestureRecognizerDelegate, CalendarViewControllerDelegate, CWRadioButtonsDelegate, RMStepsControllerDelegate>
 
 
 
 - (IBAction)savePressed:(id)sender;
 - (IBAction)menuPressed:(id)sender;
 - (IBAction)assessmentPressed:(id)sender;
+- (IBAction)calendarPressed:(id)sender;
 
 - (void)buttonSelected:(UIButton *)button;
-
 
 
 

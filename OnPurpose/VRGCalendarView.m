@@ -301,8 +301,7 @@
     CGContextAddLineToPoint(context,xmargin,ymargin+arrowSize/2);
     CGContextAddLineToPoint(context,xmargin+arrowSize/1.5, ymargin);
     
-    CGContextSetFillColorWithColor(context, 
-                                   [UIColor blackColor].CGColor);
+    CGContextSetFillColorWithColor(context,[UIColor blackColor].CGColor);
     CGContextFillPath(context);
     
     //Arrow right
@@ -468,7 +467,7 @@
         if (selectedDate && i==selectedDateBlock) {
             
             //my code
-            CGContextDrawImage(context, CGRectMake(targetX + 2, targetY + 2, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight), self.selectorCircle.CGImage);
+            CGContextDrawImage(context, CGRectMake(targetX + 2, targetY + 5, kVRGCalendarViewDayWidth, kVRGCalendarViewDayHeight), self.selectorCircle.CGImage);
             
             /*
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
@@ -499,8 +498,8 @@
             
             //my code
             CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-            CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 2);
-            CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 2);
+            CGContextMoveToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 5);
+            CGContextAddLineToPoint(context, targetX + kVRGCalendarViewDayWidth/2 + 2, targetY + kVRGCalendarViewDayHeight/2 + 5);
             CGContextSetLineWidth(context, kVRGCalendarViewDayWidth);
             CGContextSetStrokeColorWithColor(context, [UIColor lightGrayColor].CGColor);
             CGContextStrokePath(UIGraphicsGetCurrentContext());

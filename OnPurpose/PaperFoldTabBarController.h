@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PaperFoldNavigationController.h"
+#import "RNFrostedSidebar.h"
 
 
-@interface PaperFoldTabBarController : UITabBarController
+@interface PaperFoldTabBarController : UITabBarController <RNFrostedSidebarDelegate>
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
+
+-(void) showMenu;
+
+
+-(void) hideMenu;
+
 
 @end

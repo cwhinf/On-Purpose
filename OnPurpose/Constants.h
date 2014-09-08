@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIColor+colors.h"
+#import "UIFont+fonts.h"
 
 //userClass
 extern NSString *const userClassKey;

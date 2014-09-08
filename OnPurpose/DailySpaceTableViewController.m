@@ -17,10 +17,13 @@
 #import "Assessment.h"
 #import "TDRatingView.h"
 #import "UIFont+fonts.h"
+#import "UIViewController+CWPopup.h"
+
 
 
 @interface DailySpaceTableViewController ()
 
+@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 
 @property (strong, nonatomic) UIButton *saveButton;
@@ -28,6 +31,8 @@
 @property (strong, nonatomic) Assessment *eatingAssessment;
 @property (strong, nonatomic) Assessment *presenceAssessment;
 @property (strong, nonatomic) NSDate *date;
+
+@property (strong, nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 @end
 
@@ -47,13 +52,15 @@
     [super viewDidLoad];
     
     [self setAssesments];
-    
+    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
     PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
     
     self.date = [NSDate date];
     
-    
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
+    self.tapRecognizer.numberOfTapsRequired = 1;
+    self.tapRecognizer.delegate = self.tableView;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,7 +71,6 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
     [self.navigationItem setTitle:[formatter stringFromDate:self.date]];
-    
     
     self.navigationController.navigationBar.tintColor = [UIColor OPAquaColor];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
@@ -195,12 +201,13 @@
 }
 
 - (IBAction)menuPressed:(id)sender {
-    
+    /*
     if (self.paperFoldNavController.paperFoldView.state == PaperFoldStateLeftUnfolded) {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
     } else {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateLeftUnfolded animated:YES];
-    }
+    }*/
+    [self.mainTabBarController showMenu];
 }
 
 - (IBAction)assessmentPressed:(id)sender {
@@ -212,6 +219,36 @@
     else if ([((DailySpaceCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]]).assessmentButton isEqual:sender]){
         [self performSegueWithIdentifier:@"showAssessment" sender:sender];
     }
+}
+
+- (IBAction)calendarPressed:(id)sender {
+    
+    [self.tableView addGestureRecognizer:self.tapRecognizer];
+    
+    UIView *calenderBackround = [[UIView alloc] initWithFrame:CGRectMake(-5.0, -5.0, 290, 285)];
+    [calenderBackround setBackgroundColor:[UIColor whiteColor]];
+    [calenderBackround.layer setCornerRadius:10.0];
+    calenderBackround.clipsToBounds = YES;
+    
+    UILabel *popUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, -50.0, 280.0, 40.0)];
+    [popUpLabel setTextColor:[UIColor whiteColor]];
+    [popUpLabel setText:@"pick a day"];
+    [popUpLabel setFont:[UIFont mainFontWithSize:28.0]];
+    [popUpLabel setTextAlignment:NSTextAlignmentCenter];
+    
+    
+    CalendarViewController *calenderViewController = [[CalendarViewController alloc] init];
+    calenderViewController.delegate = self;
+    calenderViewController.currentDate = self.date;
+    calenderViewController.view.frame = CGRectMake(0.0, 200.0, 280.0, 280.0);
+    [calenderViewController.view addSubview:calenderBackround];
+    [calenderViewController.view sendSubviewToBack:calenderBackround];
+    [calenderViewController.view addSubview:popUpLabel];
+    
+    self.mainTabBarController.useBlurForPopup = YES;
+    self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = NO;
+    [self.mainTabBarController presentPopupViewController:calenderViewController animated:YES completion:nil];
+    
 }
 
 
@@ -284,6 +321,7 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
     [self.navigationItem setTitle:[formatter stringFromDate:self.date]];
+    [self.mainTabBarController dismissPopupViewControllerAnimated:YES completion:nil];
 }
 
 - (void) setAssesments {
@@ -316,6 +354,25 @@
     [self.presenceAssessment addScaleQuestion:@"I tell myself that I shouldn’t be thinking or feeling the way I’m thinking or feeling."];
     [self.presenceAssessment addScaleQuestion:@"I pay attention to physical experiences, such as the wind in my hair or the smells of things."];
     
+}
+
+#pragma mark - gesture recognizer delegate functions
+
+// so that tapping popup view doesnt dismiss it
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return touch.view == self.view;
+}
+
+//for message popup
+- (void)dismissPopup {
+    if (self.navigationController.popupViewController != nil) {
+        self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = YES;
+        [self.navigationController.view removeGestureRecognizer:self.tapRecognizer];
+        [self.navigationController dismissPopupViewControllerAnimated:YES completion:^{
+            NSLog(@"popup view dismissed");
+        }];
+        [self.tableView setUserInteractionEnabled:YES];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

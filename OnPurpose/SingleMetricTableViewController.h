@@ -22,7 +22,7 @@
     int totalNumber;
 }
 
-@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavContoller;
+@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *myGraph;
 
 @property (strong, nonatomic) NSMutableArray *ArrayOfValues;

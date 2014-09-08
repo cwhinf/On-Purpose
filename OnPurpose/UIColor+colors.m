@@ -40,6 +40,11 @@
     return [UIColor colorWithRed:(130.0f/255.0f) green:(130.0f/255.0f) blue:(130.0f/255.0f) alpha:1.0f];
 }
 
++ (UIColor*) OPLightGreyColor
+{
+    return [UIColor colorWithRed:(200.0f/255.0f) green:(200.0f/255.0f) blue:(200.0f/255.0f) alpha:1.0f];
+}
+
 @end
 
 

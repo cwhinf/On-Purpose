@@ -38,6 +38,9 @@
     [self.averageLabel setFont:[UIFont mainFontLightWithSize:44.0f]];
     [self.whyLabel setFont:[UIFont mainFontWithSize:18.0f]];
     
+    self.view.layer.cornerRadius = 10.0;
+    //self.view.clipsToBounds = YES;
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {

@@ -34,7 +34,7 @@
     else {
         [calendar setSelectedDate:[NSDate date]];
     }
-    CGRect frame = CGRectMake(0.0f, 64.0f, calendar.frame.size.width, calendar.frame.size.height);
+    CGRect frame = CGRectMake(0.0f, 0.0f, calendar.frame.size.width, calendar.frame.size.height);
     calendar.frame = frame;
     calendar.delegate=self;
     [self.view addSubview:calendar];

@@ -58,6 +58,31 @@
 - (void) graphValues:(NSArray *)values dates:(NSArray *)dates {
     self.ArrayOfValues = values;
     self.ArrayOfDates = dates;
+    self.average = [self.ArrayOfValues valueForKeyPath:@"@avg.self"];
+    
+    float avg = [self.average floatValue];
+    avg = (avg - 3.0) /2.0;
+    
+    
+    float red = 3.0f - (3*avg);
+    if (red < .1) {
+        //red = .1;
+    }
+    else if (red > .9) {
+        //red = .9;
+    }
+    
+    float green = 3*avg;
+    if (green < .1) {
+        //green = .1;
+    }
+    else if (green > .9) {
+        //green = .9;
+    }
+    
+    float blue = 0.f;
+    
+    //self.metric.graphColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
     
     self.graph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
     self.graph.colorBottom = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0]; // Leaving this not-set on iOS 7 will default to your window's tintColor
@@ -81,7 +106,6 @@
     theme.incompletedColor = [self.metric.graphColor colorWithAlphaComponent:.5];
     theme.labelColor = [UIColor clearColor];
     
-    self.average = [self.ArrayOfValues valueForKeyPath:@"@avg.self"];
     [self.averageLabel setText:[formatter stringFromNumber:self.average]];
     if (self.radialView) {
         [self.radialView setHidden:YES];
@@ -94,6 +118,14 @@
     [self addSubview:self.radialView];
     [self radialView:self.radialView incrementAverage:self.average];
     
+    
+    
+    if ([self.metric.type isEqualToString:@"SPACE"]) {
+        [self.spaceLetterLabel setTextColor:self.metric.graphColor];
+    }
+    else {
+        [self.spaceLetterLabel setTextColor:[UIColor clearColor]];
+    }
     
     
     

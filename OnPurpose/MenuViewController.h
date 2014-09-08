@@ -17,6 +17,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *menuLabel;
 @property (strong, nonatomic) IBOutlet UIButton *button1;
 @property (strong, nonatomic) IBOutlet UIButton *button2;
+@property (strong, nonatomic) IBOutlet UIButton *button3;
+@property (strong, nonatomic) IBOutlet UIButton *button4;
+@property (strong, nonatomic) IBOutlet UIButton *button5;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *label3;
 
 

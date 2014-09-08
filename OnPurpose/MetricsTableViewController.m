@@ -10,6 +10,8 @@
 #import "MetricTableViewCell.h"
 #import "SingleMetricTableViewController.h"
 #import "PaperFoldTabBarController.h"
+#import "MONActivityIndicatorView.h"
+#import "UIViewController+CWPopup.h"
 #import "Assessment.h"
 #import "Constants.h"
 #import "UIColor+colors.h"
@@ -18,7 +20,10 @@
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 
-@interface MetricsTableViewController ()
+
+@interface MetricsTableViewController () <MONActivityIndicatorViewDelegate>
+
+@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
@@ -30,6 +35,8 @@
 @property (strong, nonatomic) NSNumber *eatingAverage;
 
 @property (strong, nonatomic) PFUser *lastUser;
+
+
 
 @end
 
@@ -48,7 +55,7 @@
 {
     [super viewDidLoad];
     
-    
+    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
     
     PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
@@ -63,14 +70,57 @@
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
     
+    
+    
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    
+    
     [self checkForUser];
     if (self.lastUser != [PFUser currentUser]) {
+        
+        MONActivityIndicatorView *activityIndicator = [[MONActivityIndicatorView alloc] init];
+        activityIndicator.delegate = self;
+        activityIndicator.numberOfCircles = 3;
+        activityIndicator.radius = 25;
+        activityIndicator.internalSpacing = 3;
+        activityIndicator.center = self.view.center;
+        [activityIndicator startAnimating];
+        
+        UIView *loadBGView = [[UIView alloc] initWithFrame:CGRectMake(50.0, 80.0, 220.0, 115.0)];
+        [loadBGView setBackgroundColor:[UIColor whiteColor]];
+        loadBGView.layer.cornerRadius = 15.0f;
+        
+        UILabel *loadLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0, 80.0, 220.0, 65.0)];
+        [loadLabel setTextAlignment:NSTextAlignmentCenter];
+        [loadLabel setTextColor:[UIColor OPAquaColor]];
+        NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:@"On Purpose"];
+        [title addAttribute:NSFontAttributeName value:[UIFont mainFontLightWithSize:36] range:NSMakeRange(0, 2)];
+        [title addAttribute:NSFontAttributeName value:[UIFont mainFontBoldWithSize:36] range:NSMakeRange(3, 7)];
+        [loadLabel setAttributedText:title];
+        
+        UILabel *loadSubLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0, 150.0, 220.0, 20.0)];
+        [loadSubLabel setTextAlignment:NSTextAlignmentCenter];
+        [loadSubLabel setTextColor:[UIColor OPGreyTextColor]];
+        [loadSubLabel setText:@"live better"];
+        [loadSubLabel setFont:[UIFont mainFontWithSize:20]];
+        
+        self.navigationController.useBlurForPopup = YES;
+        self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = NO;
+        UIViewController *activityController = [[UIViewController alloc] init];
+        activityController.view.frame = CGRectMake(0.0f, 0.0f, 320.0f, 568.0f);
+        [activityController.view addSubview:loadBGView];
+        [activityController.view addSubview:activityIndicator];
+        [activityController.view addSubview:loadLabel];
+        [activityController.view addSubview:loadSubLabel];
+        [self.navigationController presentPopupViewController:activityController animated:NO completion:nil];
+        
+        
+        
         self.lastUser = [PFUser currentUser];
         self.sleepArray = [[NSMutableArray alloc] init];
         self.presenceArray = [[NSMutableArray alloc] init];
@@ -94,6 +144,9 @@
             }
             //totalNumber = self.sleepArray.count;
             //[self layoutStats];
+            //[activityIndicator removeFromSuperview];
+            //[loadLabel removeFromSuperview];
+            [self.navigationController dismissPopupViewControllerAnimated:YES completion:nil];
             [self refreshAnimaions];
             [self layout];
             [self.tableView reloadData];
@@ -113,6 +166,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
      */
     
+    /*
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:@"On Purpose"];
     [title addAttribute:NSFontAttributeName value:[UIFont mainFontLightWithSize:27] range:NSMakeRange(0, 2)];
     [title addAttribute:NSFontAttributeName value:[UIFont mainFontBoldWithSize:27] range:NSMakeRange(3, 7)];
@@ -120,6 +174,14 @@
     [label setAttributedText:title];
     [label setTextColor:[UIColor OPAquaColor]];
     self.navigationItem.titleView = label;
+    */
+    
+    self.navigationController.navigationBar.tintColor = [UIColor OPAquaColor];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
+                                       self.navigationController.navigationBar.titleTextAttributes];
+    [attributes setObject:[UIColor OPAquaColor] forKey:@"NSColor"];
+    [attributes setObject:[UIFont mainFontWithSize:27.0f] forKey:@"NSFont"];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
 }
 
@@ -154,8 +216,6 @@
     for (NSInteger i=0; i < [self tableView:self.tableView numberOfRowsInSection:0]; i++) {
         [((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]) refreshAnimations];
     }
-    
-    
     
 }
 
@@ -306,12 +366,16 @@
 */
 
 - (IBAction)menuPressed:(id)sender {
-    
+    /*
     if (self.paperFoldNavController.paperFoldView.state == PaperFoldStateLeftUnfolded) {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
     } else {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateLeftUnfolded animated:YES];
     }
+    */
+    
+    
+    [self.mainTabBarController showMenu];
     
 }
 
@@ -417,6 +481,14 @@
      */
 }
 
+#pragma mark - MONActivityIndicatorViewDelegate Methods
+
+- (UIColor *)activityIndicatorView:(MONActivityIndicatorView *)activityIndicatorView
+      circleBackgroundColorAtIndex:(NSUInteger)index {
+    return [UIColor whiteColor];
+}
+
+
 
 
 #pragma mark - Navigation
@@ -426,7 +498,7 @@
 {
     if ([segue.identifier isEqualToString:@"showMetric"]) {
         SingleMetricTableViewController *singleMetricTableViewController = segue.destinationViewController;
-        singleMetricTableViewController.paperFoldNavContoller = self.paperFoldNavController;
+        singleMetricTableViewController.paperFoldNavController = self.paperFoldNavController;
         if ([sender isEqual:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]]) {
             singleMetricTableViewController.ArrayOfValues = self.sleepArray;
             singleMetricTableViewController.metricDaysArray = self.metricDaysArray;

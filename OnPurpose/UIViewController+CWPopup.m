@@ -181,7 +181,7 @@ NSString const *CWPopupViewOffset = @"CWPopupViewOffset";
     // get current context
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
     // draw current view
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.view.layer.presentationLayer renderInContext:UIGraphicsGetCurrentContext()];
     // clip context to frame
     CGContextClipToRect(currentContext, frame);
     // get resulting cropped screenshot
@@ -198,15 +198,22 @@ NSString const *CWPopupViewOffset = @"CWPopupViewOffset";
     return imageToBlur;
 }
 
+#define radians(degrees) (degrees * M_PI/180)
+
 - (void)addBlurView {
     
+    CGRect frame = self.view.frame;
     UIGraphicsBeginImageContextWithOptions(self.view.frame.size, NO, 0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, self.view.frame.size.height);
+    CGContextConcatCTM(context, flipVertical);
     CGContextDrawImage(context, self.view.frame, [self getScreenImage].CGImage);
     CGContextSetFillColorWithColor(context, [[UIColor blackColor] colorWithAlphaComponent:.2].CGColor);
     CGContextFillRect(context, self.view.frame);
     UIImage *fadeView = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    
     
     
     UIImageView *blurView = [UIImageView new];
@@ -294,6 +301,8 @@ NSString const *CWPopupViewOffset = @"CWPopupViewOffset";
         } else { // don't animate
             viewControllerToPresent.view.frame = finalFrame;
             [self.view addSubview:viewControllerToPresent.view];
+            viewControllerToPresent.view.alpha = 1.0;
+            blurView.alpha = self.useBlurForPopup ? 1.0f : 0.4f;
             [self.popupViewController didMoveToParentViewController:self];
             [self.popupViewController endAppearanceTransition];
             [completion invoke];

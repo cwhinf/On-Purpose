@@ -14,6 +14,7 @@
 @interface ForecastViewController ()
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
+@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
 @property (strong, nonatomic) JYRadarChart *radarChart;
 
 
@@ -35,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
+    
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
@@ -92,11 +95,15 @@
 */
 
 - (IBAction)menuPressed:(id)sender {
+    /*
     if (self.paperFoldNavController.paperFoldView.state == PaperFoldStateLeftUnfolded) {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateDefault animated:YES];
     } else {
         [self.paperFoldNavController.paperFoldView setPaperFoldState:PaperFoldStateLeftUnfolded animated:YES];
     }
+     */
+    
+    [self.mainTabBarController showMenu];
 }
 
 

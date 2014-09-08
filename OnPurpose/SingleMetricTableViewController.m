@@ -251,15 +251,22 @@
     
     [self.navigationController.view addGestureRecognizer:self.tapRecognizer];
     
+    
+    UILabel *popUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 405.0, 260.0, 40.0)];
+    [popUpLabel setTextColor:[UIColor whiteColor]];
+    [popUpLabel setText:@"tap to close"];
+    [popUpLabel setFont:[UIFont mainFontWithSize:20.0]];
+    [popUpLabel setTextAlignment:NSTextAlignmentCenter];
 
     ForecastPopUpViewController *messageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"forecastPopUp"];
     messageViewController.view.frame = CGRectMake(0.0f, 0.0f, 260.0f, 400.0f);
     messageViewController.metric = self.metric;
     [messageViewController averageForRadialView:[NSNumber numberWithDouble:4.8]];
     [self.tableView setUserInteractionEnabled:NO];
+    [messageViewController.view addSubview:popUpLabel];
     
     self.navigationController.useBlurForPopup = YES;
-    self.paperFoldNavContoller.paperFoldView.enableLeftFoldDragging = NO;
+    self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = NO;
     [self.navigationController presentPopupViewController:messageViewController animated:YES completion:nil];
     
 }
@@ -316,7 +323,7 @@
 //for message popup
 - (void)dismissPopup {
     if (self.navigationController.popupViewController != nil) {
-        self.paperFoldNavContoller.paperFoldView.enableLeftFoldDragging = YES;
+        self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = YES;
         [self.navigationController.view removeGestureRecognizer:self.tapRecognizer];
         [self.navigationController dismissPopupViewControllerAnimated:YES completion:^{
             NSLog(@"popup view dismissed");
