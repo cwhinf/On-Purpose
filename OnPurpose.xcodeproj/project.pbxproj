@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7E0E83F119A67B9700BC6BE8 /* Brain-Games-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0E83F019A67B9700BC6BE8 /* Brain-Games-grey.png */; };
+		7E29DE4319C8DFA9009C5BA9 /* OtherValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E29DE4219C8DFA9009C5BA9 /* OtherValueTableViewCell.m */; };
 		7E31F65919A7CD370094E09C /* LeftRightArrow-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */; };
 		7E31F65C19A7E94D0094E09C /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65B19A7E94D0094E09C /* Assessment.m */; };
 		7E31F65F19A8118F0094E09C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E31F65E19A8118F0094E09C /* ScoreViewController.m */; };
+		7E4C104819C637FC00214A8F /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C104519C637FC00214A8F /* ASValuePopUpView.m */; };
+		7E4C104919C637FC00214A8F /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C104719C637FC00214A8F /* ASValueTrackingSlider.m */; };
 		7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */; };
 		7E53F67B19B7A78C0048B66D /* MetricTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F67A19B7A78C0048B66D /* MetricTableViewCell.m */; };
 		7E53F68119B7B97E0048B66D /* Metric.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E53F68019B7B97E0048B66D /* Metric.m */; };
@@ -44,6 +47,7 @@
 		7E90E56C198DD3EB00969FB6 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E567198DD3EB00969FB6 /* BEMCircle.m */; };
 		7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E569198DD3EB00969FB6 /* BEMLine.m */; };
 		7E90E57319903DBF00969FB6 /* SingleMetricViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */; };
+		7EB5B03B19CBE37A00BE7DB4 /* ChartPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5B03A19CBE37A00BE7DB4 /* ChartPopViewController.m */; };
 		7EB6E07019BAA58E0096B4A6 /* MONActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6E06F19BAA58E0096B4A6 /* MONActivityIndicatorView.m */; };
 		7EB8BEED198D81E100C06CFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEC198D81E100C06CFF /* Foundation.framework */; };
 		7EB8BEEF198D81E100C06CFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8BEEE198D81E100C06CFF /* CoreGraphics.framework */; };
@@ -83,7 +87,7 @@
 		7ED6E791199977B300E202CB /* expandArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78E199977B300E202CB /* expandArrow.png */; };
 		7ED6E792199977B300E202CB /* forecastOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E78F199977B300E202CB /* forecastOverlay.png */; };
 		7ED6E7951999785400E202CB /* navMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7941999785400E202CB /* navMenuIcon.png */; };
-		7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */; };
+		7ED6E7981999792600E202CB /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7971999792600E202CB /* MainTabBarController.m */; };
 		7ED6E79A19999C2C00E202CB /* menuOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79919999C2C00E202CB /* menuOverlay.png */; };
 		7ED6E79D199AD31D00E202CB /* homeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79C199AD31D00E202CB /* homeScreen.png */; };
 		7ED6E79F199AE25D00E202CB /* homeScreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E79E199AE25D00E202CB /* homeScreen2.png */; };
@@ -103,6 +107,8 @@
 		7ED6E7C0199B056D00E202CB /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */; };
 		7ED6E7C4199B4DF400E202CB /* Museo-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */; };
 		7ED6E7C5199B4DF400E202CB /* Museo-700.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6E7C3199B4C0800E202CB /* Museo-700.otf */; };
+		7EDDE5B619CCF4650052F4CF /* appbar.align.left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDE5B419CCF4650052F4CF /* appbar.align.left.png */; };
+		7EDDE5B719CCF4650052F4CF /* appbar.close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDE5B519CCF4650052F4CF /* appbar.close.png */; };
 		7EE9412019B5365E0001CC69 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */; };
 		7EE9412619B556AB0001CC69 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */; };
 		7EE9412719B556AB0001CC69 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412219B556070001CC69 /* OpenSans-ExtraBold.ttf */; };
@@ -111,7 +117,7 @@
 		7EE9412A19B556AB0001CC69 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9412519B556070001CC69 /* OpenSans-Semibold.ttf */; };
 		7EE9412D19B658130001CC69 /* MetricsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9412C19B658130001CC69 /* MetricsTableViewController.m */; };
 		7EE9413319B65A9E0001CC69 /* TDArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413019B65A9E0001CC69 /* TDArrow.m */; };
-		7EE9413419B65A9E0001CC69 /* TDRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413219B65A9E0001CC69 /* TDRatingView.m */; };
+		7EE9413419B65A9E0001CC69 /* CWRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413219B65A9E0001CC69 /* CWRatingView.m */; };
 		7EE9413819B65DC30001CC69 /* CWCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9413719B65DC30001CC69 /* CWCircle.m */; };
 /* End PBXBuildFile section */
 
@@ -127,11 +133,17 @@
 
 /* Begin PBXFileReference section */
 		7E0E83F019A67B9700BC6BE8 /* Brain-Games-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Brain-Games-grey.png"; path = "Resources/Brain-Games-grey.png"; sourceTree = "<group>"; };
+		7E29DE4119C8DFA9009C5BA9 /* OtherValueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherValueTableViewCell.h; sourceTree = "<group>"; };
+		7E29DE4219C8DFA9009C5BA9 /* OtherValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherValueTableViewCell.m; sourceTree = "<group>"; };
 		7E31F65819A7CD370094E09C /* LeftRightArrow-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LeftRightArrow-512.png"; path = "Resources/LeftRightArrow-512.png"; sourceTree = "<group>"; };
 		7E31F65A19A7E94D0094E09C /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
 		7E31F65B19A7E94D0094E09C /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
 		7E31F65D19A8118F0094E09C /* ScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		7E31F65E19A8118F0094E09C /* ScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		7E4C104419C637FC00214A8F /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		7E4C104519C637FC00214A8F /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		7E4C104619C637FC00214A8F /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		7E4C104719C637FC00214A8F /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
 		7E4CD1DC1991A71F00631BC3 /* SingleMetricTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricTableViewController.h; sourceTree = "<group>"; };
 		7E4CD1DD1991A71F00631BC3 /* SingleMetricTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricTableViewController.m; sourceTree = "<group>"; };
 		7E53F67919B7A78C0048B66D /* MetricTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetricTableViewCell.h; sourceTree = "<group>"; };
@@ -190,6 +202,8 @@
 		7E90E569198DD3EB00969FB6 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
 		7E90E57119903DBE00969FB6 /* SingleMetricViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMetricViewController.h; sourceTree = "<group>"; };
 		7E90E57219903DBF00969FB6 /* SingleMetricViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMetricViewController.m; sourceTree = "<group>"; };
+		7EB5B03919CBE37A00BE7DB4 /* ChartPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPopViewController.h; sourceTree = "<group>"; };
+		7EB5B03A19CBE37A00BE7DB4 /* ChartPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPopViewController.m; sourceTree = "<group>"; };
 		7EB6E06E19BAA58E0096B4A6 /* MONActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONActivityIndicatorView.h; sourceTree = "<group>"; };
 		7EB6E06F19BAA58E0096B4A6 /* MONActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONActivityIndicatorView.m; sourceTree = "<group>"; };
 		7EB8BEE9198D81E100C06CFF /* OnPurpose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPurpose.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,8 +270,8 @@
 		7ED6E78E199977B300E202CB /* expandArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expandArrow.png; path = Resources/expandArrow.png; sourceTree = "<group>"; };
 		7ED6E78F199977B300E202CB /* forecastOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forecastOverlay.png; path = Resources/forecastOverlay.png; sourceTree = "<group>"; };
 		7ED6E7941999785400E202CB /* navMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navMenuIcon.png; path = Resources/navMenuIcon.png; sourceTree = "<group>"; };
-		7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldTabBarController.h; sourceTree = "<group>"; };
-		7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldTabBarController.m; sourceTree = "<group>"; };
+		7ED6E7961999792600E202CB /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		7ED6E7971999792600E202CB /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		7ED6E79919999C2C00E202CB /* menuOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuOverlay.png; path = Resources/menuOverlay.png; sourceTree = "<group>"; };
 		7ED6E79C199AD31D00E202CB /* homeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeScreen.png; path = Resources/homeScreen.png; sourceTree = "<group>"; };
 		7ED6E79E199AE25D00E202CB /* homeScreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeScreen2.png; path = Resources/homeScreen2.png; sourceTree = "<group>"; };
@@ -280,6 +294,8 @@
 		7ED6E7BD199B056D00E202CB /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
 		7ED6E7C2199B4BFA00E202CB /* Museo-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-500.otf"; sourceTree = "<group>"; };
 		7ED6E7C3199B4C0800E202CB /* Museo-700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo-700.otf"; sourceTree = "<group>"; };
+		7EDDE5B419CCF4650052F4CF /* appbar.align.left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.align.left.png; path = Resources/appbar.align.left.png; sourceTree = "<group>"; };
+		7EDDE5B519CCF4650052F4CF /* appbar.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appbar.close.png; path = Resources/appbar.close.png; sourceTree = "<group>"; };
 		7EE9411E19B5365E0001CC69 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
 		7EE9411F19B5365E0001CC69 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
 		7EE9412119B556070001CC69 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Resources/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -291,8 +307,8 @@
 		7EE9412C19B658130001CC69 /* MetricsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetricsTableViewController.m; sourceTree = "<group>"; };
 		7EE9412F19B65A9E0001CC69 /* TDArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDArrow.h; sourceTree = "<group>"; };
 		7EE9413019B65A9E0001CC69 /* TDArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDArrow.m; sourceTree = "<group>"; };
-		7EE9413119B65A9E0001CC69 /* TDRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRatingView.h; sourceTree = "<group>"; };
-		7EE9413219B65A9E0001CC69 /* TDRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRatingView.m; sourceTree = "<group>"; };
+		7EE9413119B65A9E0001CC69 /* CWRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWRatingView.h; sourceTree = "<group>"; };
+		7EE9413219B65A9E0001CC69 /* CWRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWRatingView.m; sourceTree = "<group>"; };
 		7EE9413619B65DC30001CC69 /* CWCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCircle.h; sourceTree = "<group>"; };
 		7EE9413719B65DC30001CC69 /* CWCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCircle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -326,6 +342,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E4C104319C637E900214A8F /* RNFrostedSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				7E9024E419BCFEEF008E6412 /* RNFrostedSidebar.h */,
+				7E9024E519BCFEEF008E6412 /* RNFrostedSidebar.m */,
+			);
+			name = RNFrostedSidebar;
+			sourceTree = "<group>";
+		};
+		7E4C104A19C6380300214A8F /* ASValueTrackingSlider */ = {
+			isa = PBXGroup;
+			children = (
+				7E4C104419C637FC00214A8F /* ASValuePopUpView.h */,
+				7E4C104519C637FC00214A8F /* ASValuePopUpView.m */,
+				7E4C104619C637FC00214A8F /* ASValueTrackingSlider.h */,
+				7E4C104719C637FC00214A8F /* ASValueTrackingSlider.m */,
+			);
+			name = ASValueTrackingSlider;
+			sourceTree = "<group>";
+		};
 		7E54AFCC19A5618900C9BA4E /* RMStepsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,8 +438,8 @@
 				7EB8BEFE198D81E100C06CFF /* Main.storyboard */,
 				7ED6E7851999665600E202CB /* MenuViewController.h */,
 				7ED6E7861999665600E202CB /* MenuViewController.m */,
-				7ED6E7961999792600E202CB /* PaperFoldTabBarController.h */,
-				7ED6E7971999792600E202CB /* PaperFoldTabBarController.m */,
+				7ED6E7961999792600E202CB /* MainTabBarController.h */,
+				7ED6E7971999792600E202CB /* MainTabBarController.m */,
 				7ED1031D19AA6E2B00C4B5D6 /* Top ViewControllers */,
 				7ED1031919AA6C1200C4B5D6 /* Assessment */,
 				7ECC9C7B199304CB002925D0 /* Single Metric */,
@@ -456,6 +492,8 @@
 				7E9024E919BD4D80008E6412 /* appbar.weather.overcast.png */,
 				7E9024EB19BD4F16008E6412 /* appbar.scale.unbalanced.png */,
 				7E9024ED19BD5AD6008E6412 /* appbar.group.png */,
+				7EDDE5B419CCF4650052F4CF /* appbar.align.left.png */,
+				7EDDE5B519CCF4650052F4CF /* appbar.close.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -493,8 +531,8 @@
 		7ECC9C7C199304E7002925D0 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				7E9024E419BCFEEF008E6412 /* RNFrostedSidebar.h */,
-				7E9024E519BCFEEF008E6412 /* RNFrostedSidebar.m */,
+				7E4C104A19C6380300214A8F /* ASValueTrackingSlider */,
+				7E4C104319C637E900214A8F /* RNFrostedSidebar */,
 				7EB6E07119BAA5960096B4A6 /* MONActivityIndicatorView */,
 				7EE9413519B65AA40001CC69 /* TDRatingView */,
 				7EE9412E19B65A800001CC69 /* CWPopUp */,
@@ -594,6 +632,8 @@
 				7EE9412C19B658130001CC69 /* MetricsTableViewController.m */,
 				7E53F67919B7A78C0048B66D /* MetricTableViewCell.h */,
 				7E53F67A19B7A78C0048B66D /* MetricTableViewCell.m */,
+				7E29DE4119C8DFA9009C5BA9 /* OtherValueTableViewCell.h */,
+				7E29DE4219C8DFA9009C5BA9 /* OtherValueTableViewCell.m */,
 				7ECC9C9A1998151F002925D0 /* ForecastViewController.h */,
 				7ECC9C9B1998151F002925D0 /* ForecastViewController.m */,
 				7ED1034419AC06BC00C4B5D6 /* DailyValues */,
@@ -613,6 +653,8 @@
 		7ED1034419AC06BC00C4B5D6 /* DailyValues */ = {
 			isa = PBXGroup;
 			children = (
+				7EB5B03919CBE37A00BE7DB4 /* ChartPopViewController.h */,
+				7EB5B03A19CBE37A00BE7DB4 /* ChartPopViewController.m */,
 				7ED1032619AA9B0D00C4B5D6 /* DailySpaceTableViewController.h */,
 				7ED1032719AA9B0D00C4B5D6 /* DailySpaceTableViewController.m */,
 				7ED1032919AA9B3400C4B5D6 /* DailySpaceCell.h */,
@@ -695,8 +737,8 @@
 				7EE9413019B65A9E0001CC69 /* TDArrow.m */,
 				7EE9413619B65DC30001CC69 /* CWCircle.h */,
 				7EE9413719B65DC30001CC69 /* CWCircle.m */,
-				7EE9413119B65A9E0001CC69 /* TDRatingView.h */,
-				7EE9413219B65A9E0001CC69 /* TDRatingView.m */,
+				7EE9413119B65A9E0001CC69 /* CWRatingView.h */,
+				7EE9413219B65A9E0001CC69 /* CWRatingView.m */,
 			);
 			name = TDRatingView;
 			sourceTree = "<group>";
@@ -782,6 +824,7 @@
 			files = (
 				7EE9412619B556AB0001CC69 /* OpenSans-Bold.ttf in Resources */,
 				7EE9412719B556AB0001CC69 /* OpenSans-ExtraBold.ttf in Resources */,
+				7EDDE5B719CCF4650052F4CF /* appbar.close.png in Resources */,
 				7EE9412819B556AB0001CC69 /* OpenSans-Light.ttf in Resources */,
 				7EE9412919B556AB0001CC69 /* OpenSans-Regular.ttf in Resources */,
 				7EE9412A19B556AB0001CC69 /* OpenSans-Semibold.ttf in Resources */,
@@ -792,6 +835,7 @@
 				7ED6E7AD199AEE9E00E202CB /* VertigoFLF.ttf in Resources */,
 				7ED6E7AE199AEE9E00E202CB /* VertigoPlusFLF-Bold.ttf in Resources */,
 				7ED6E7AF199AEE9E00E202CB /* VertigoPlusFLF.ttf in Resources */,
+				7EDDE5B619CCF4650052F4CF /* appbar.align.left.png in Resources */,
 				7ED6E7B0199AEE9E00E202CB /* EuropeUnderground_black.ttf in Resources */,
 				7ED6E7B1199AEE9E00E202CB /* EuropeUnderground_light.ttf in Resources */,
 				7ED6E7B2199AEE9E00E202CB /* Life is goofy.ttf in Resources */,
@@ -848,10 +892,13 @@
 				7E54AFCF19A5628A00C9BA4E /* ForecastStepsController.m in Sources */,
 				7E54AFD219A5690600C9BA4E /* ScaledStepViewController.m in Sources */,
 				7E4CD1DE1991A71F00631BC3 /* SingleMetricTableViewController.m in Sources */,
+				7E29DE4319C8DFA9009C5BA9 /* OtherValueTableViewCell.m in Sources */,
 				7E90E56A198DD3EB00969FB6 /* BEMSimpleLineGraphView.m in Sources */,
 				7ED6E7871999665600E202CB /* MenuViewController.m in Sources */,
+				7E4C104919C637FC00214A8F /* ASValueTrackingSlider.m in Sources */,
+				7E4C104819C637FC00214A8F /* ASValuePopUpView.m in Sources */,
 				7E90E55B198DC21F00969FB6 /* Constants.m in Sources */,
-				7EE9413419B65A9E0001CC69 /* TDRatingView.m in Sources */,
+				7EE9413419B65A9E0001CC69 /* CWRatingView.m in Sources */,
 				7E53F68419B7DF110048B66D /* UIFont+fonts.m in Sources */,
 				7EE9412019B5365E0001CC69 /* UIViewController+CWPopup.m in Sources */,
 				7ECC9C9719980796002925D0 /* JYLegendView.m in Sources */,
@@ -863,6 +910,7 @@
 				7ECC9CB719981F48002925D0 /* PaperFoldView.m in Sources */,
 				7ED1032819AA9B0D00C4B5D6 /* DailySpaceTableViewController.m in Sources */,
 				7ECC9C9C1998151F002925D0 /* ForecastViewController.m in Sources */,
+				7EB5B03B19CBE37A00BE7DB4 /* ChartPopViewController.m in Sources */,
 				7E53F67B19B7A78C0048B66D /* MetricTableViewCell.m in Sources */,
 				7E90E56D198DD3EB00969FB6 /* BEMLine.m in Sources */,
 				7ECC9CBA19981F48002925D0 /* UIView+Screenshot.m in Sources */,
@@ -887,7 +935,7 @@
 				7ECC9CB419981F48002925D0 /* PaperFoldNavigationController.m in Sources */,
 				7EE9413819B65DC30001CC69 /* CWCircle.m in Sources */,
 				7E54AFCB19A5617D00C9BA4E /* RMStep.m in Sources */,
-				7ED6E7981999792600E202CB /* PaperFoldTabBarController.m in Sources */,
+				7ED6E7981999792600E202CB /* MainTabBarController.m in Sources */,
 				7ED1032E19AAA93F00C4B5D6 /* SaveTableViewCell.m in Sources */,
 				7ED1032B19AA9B3400C4B5D6 /* DailySpaceCell.m in Sources */,
 				7EE9412D19B658130001CC69 /* MetricsTableViewController.m in Sources */,

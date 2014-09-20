@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 
 #import "AppDelegate.h"
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 
 @implementation AppDelegate
 
@@ -20,23 +20,18 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    PaperFoldTabBarController *mainTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
+    self.mainTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBarController"];
         
-    self.paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:mainTabBarController];
+    //self.paperFoldNavController = [[PaperFoldNavigationController alloc] initWithRootViewController:mainTabBarController];
     
-    mainTabBarController.paperFoldNavController = self.paperFoldNavController;
+    //mainTabBarController.paperFoldNavController = self.paperFoldNavController;
     
-    self.menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
-    self.menuViewController.paperFoldNavController = self.paperFoldNavController;
+    //self.menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
+    //self.menuViewController.paperFoldNavController = self.paperFoldNavController;
     
-    [self.paperFoldNavController setLeftViewController:self.menuViewController width:180.0f];
+    //[self.paperFoldNavController setLeftViewController:self.menuViewController width:180.0f];
     
-    self.window.rootViewController = self.paperFoldNavController;
-    
-    
-    
-    
-    
+    self.window.rootViewController = self.mainTabBarController;//self.paperFoldNavController;
     
     
     return YES;

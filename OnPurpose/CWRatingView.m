@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 JEMS All rights reserved.
 //
 
-#import "TDRatingView.h"
+#import "CWRatingView.h"
 //#import "TDArrow.h"
 #import "CWCircle.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define spaceBetweenSliderandRatingView 0
-@implementation TDRatingView
+@implementation CWRatingView
 @synthesize  maximumRating ,minimumRating,spaceBetweenEachNo, difference;
 @synthesize widthOfEachNo, heightOfEachNo, sliderHeight,delegate;
 @synthesize scaleBgColor,arrowColor,disableStateTextColor,selectedStateTextColor,sliderBorderColor;

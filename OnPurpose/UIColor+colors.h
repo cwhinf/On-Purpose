@@ -15,6 +15,7 @@
 + (UIColor*) OPYellowColor;
 + (UIColor*) OPAquaColor;
 + (UIColor*) OPOrangeColor;
++ (UIColor*) OPPurpleColor;
 + (UIColor*) OPGreyTextColor;
 + (UIColor*) OPLightGreyColor;
 

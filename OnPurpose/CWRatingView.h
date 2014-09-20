@@ -14,7 +14,7 @@
 - (void) selectedRating:(NSString *)scale;
 @end
 
-@interface TDRatingView : UIView<UIGestureRecognizerDelegate>
+@interface CWRatingView : UIView<UIGestureRecognizerDelegate>
 {
     NSUInteger maximumRating;
     NSUInteger minimumRating;

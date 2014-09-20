@@ -23,5 +23,11 @@
 
 - (IBAction)menuPressed:(id)sender;
 
+- (IBAction)otherValueButtonPressed:(id)sender;
+
+- (IBAction)chartMyDayPressed:(id)sender;
+
+
+
 @end
 

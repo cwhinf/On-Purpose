@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Dungbeetle. All rights reserved.
 //
 
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 #import "Constants.h"
 
-@interface PaperFoldTabBarController ()
+@interface MainTabBarController ()
 
 @property (strong, nonatomic) RNFrostedSidebar *frostedSidebar;
 
 @end
 
-@implementation PaperFoldTabBarController
+@implementation MainTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -114,7 +114,10 @@
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
     
-    [self setSelectedIndex:index];
+    if (index < 2) {
+        [self setSelectedIndex:index];
+    }
+    
     [self.frostedSidebar dismissAnimated:YES];
     
 }

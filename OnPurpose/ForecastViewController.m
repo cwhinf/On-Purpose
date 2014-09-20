@@ -8,13 +8,13 @@
 
 #import "ForecastViewController.h"
 #import "PaperFoldNavigationController.h"
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 #import "JYRadarChart.h"
 
 @interface ForecastViewController ()
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
-@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
+@property (strong, nonatomic) MainTabBarController *mainTabBarController;
 @property (strong, nonatomic) JYRadarChart *radarChart;
 
 
@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
+    self.mainTabBarController = (MainTabBarController *)self.navigationController.parentViewController;
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
@@ -45,7 +45,7 @@
     [attributes setObject:[UIFont fontWithName:@"Museo-500" size:27] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     
-    PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
+    MainTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
     
     [self showRadarChart];

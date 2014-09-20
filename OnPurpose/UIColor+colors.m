@@ -35,6 +35,11 @@
     return [UIColor colorWithRed:(239.0f/255.0f) green:(100.0f/255.0f) blue:(60.0f/255.0f) alpha:1.0f];
 }
 
++ (UIColor*) OPPurpleColor
+{
+    return [UIColor colorWithRed:(155.0f/255.0f) green:(89.0f/255.0f) blue:(182.0f/255.0f) alpha:1.0f];
+}
+
 + (UIColor*) OPGreyTextColor
 {
     return [UIColor colorWithRed:(130.0f/255.0f) green:(130.0f/255.0f) blue:(130.0f/255.0f) alpha:1.0f];

@@ -7,7 +7,7 @@
 //
 
 #import "DailySpaceTableViewController.h"
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 #import "DailySpaceCell.h"
 #import "SaveTableViewCell.h"
 #import "ForecastStepsController.h"
@@ -15,7 +15,7 @@
 #import "CalendarViewController.h"
 #import "UIColor+colors.h"
 #import "Assessment.h"
-#import "TDRatingView.h"
+#import "CWRatingView.h"
 #import "UIFont+fonts.h"
 #import "UIViewController+CWPopup.h"
 
@@ -23,7 +23,7 @@
 
 @interface DailySpaceTableViewController ()
 
-@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
+@property (strong, nonatomic) MainTabBarController *mainTabBarController;
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 
 @property (strong, nonatomic) UIButton *saveButton;
@@ -50,17 +50,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+
     
     [self setAssesments];
-    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
-    PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
-    self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
-    
+    self.mainTabBarController = (MainTabBarController *)self.navigationController.parentViewController;
+    //MainTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
+    //self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
+
     self.date = [NSDate date];
     
+    self.view.clipsToBounds = YES;
+    /*
     self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPopup)];
     self.tapRecognizer.numberOfTapsRequired = 1;
     self.tapRecognizer.delegate = self.tableView;
+     */
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -104,7 +109,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 6;
+    return 5;
 }
 
 
@@ -143,6 +148,10 @@
         self.saveButton = cell.saveButton;
         return cell;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 95.0;
 }
 
 
@@ -223,7 +232,7 @@
 
 - (IBAction)calendarPressed:(id)sender {
     
-    [self.tableView addGestureRecognizer:self.tapRecognizer];
+    //[self.tableView addGestureRecognizer:self.tapRecognizer];
     
     UIView *calenderBackround = [[UIView alloc] initWithFrame:CGRectMake(-5.0, -5.0, 290, 285)];
     [calenderBackround setBackgroundColor:[UIColor whiteColor]];
@@ -251,7 +260,7 @@
     
 }
 
-
+ 
 #pragma CWRadioButtonDelegate;
 
 - (void)buttonSelected:(UIButton *)button {
@@ -381,7 +390,9 @@
         
         [self.navigationItem setTitle:@"back"];
         
-        ForecastStepsController *forecastStepsController = segue.destinationViewController;
+        //UINavigationController *navController = segue.destinationViewController;
+        
+        ForecastStepsController *forecastStepsController = segue.destinationViewController;//navController.topViewController;
         forecastStepsController.delegate = self;
         
         if ([((DailySpaceCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]]).assessmentButton isEqual:sender]){

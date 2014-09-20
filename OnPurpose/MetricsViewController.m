@@ -12,7 +12,7 @@
 #import "MetricsViewController.h"
 #import "SingleMetricViewController.h"
 #import "SingleMetricTableViewController.h"
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 #import "Assessment.h"
 #import "Constants.h"
 #import "UIColor+colors.h"
@@ -62,7 +62,7 @@
     
     [self setAssesments];
     
-    PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
+    MainTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
     
     

@@ -20,9 +20,9 @@
 - (id)initActivity;
 - (id)initCreativity;
 - (id)initEating;
-- (id)initEnergy;
-- (id)initSelfControl;
 - (id)initVitality;
+- (id)initWillpower;
+- (id)initRelaxation;
 
 
 @property (strong, nonatomic) NSString *type;

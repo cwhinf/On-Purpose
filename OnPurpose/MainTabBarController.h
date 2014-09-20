@@ -11,7 +11,7 @@
 #import "RNFrostedSidebar.h"
 
 
-@interface PaperFoldTabBarController : UITabBarController <RNFrostedSidebarDelegate>
+@interface MainTabBarController : UITabBarController <RNFrostedSidebarDelegate>
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 

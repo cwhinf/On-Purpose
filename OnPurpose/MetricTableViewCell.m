@@ -25,9 +25,9 @@
 {
     // Initialization code
     
-    [self.spaceLetterLabel setFont:[UIFont mainFontWithSize:68.0f]];
-    [self.graphName setFont:[UIFont mainFontWithSize:17.0f]];
-    [self.averageLabel setFont:[UIFont mainFontWithSize:20.0f]];
+    [self.spaceLetterLabel setFont:[UIFont mainFontWithSize:45.0f]];
+    [self.graphName setFont:[UIFont mainFontWithSize:12.0f]];
+    [self.averageLabel setFont:[UIFont mainFontWithSize:13.0f]];
     
 }
 
@@ -54,6 +54,8 @@
     [self.label5 setTextColor:metric.graphColor];
      */
 }
+
+
 
 - (void) graphValues:(NSArray *)values dates:(NSArray *)dates {
     self.ArrayOfValues = values;
@@ -82,6 +84,12 @@
     
     float blue = 0.f;
     
+    
+    if (values.count) {
+        
+    }
+    
+    
     //self.metric.graphColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
     
     self.graph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
@@ -92,6 +100,7 @@
     self.graph.enableTouchReport = YES;
     self.graph.enablePopUpReport = YES;
     self.graph.enableBezierCurve = YES;
+    self.graph.labelFont = [UIFont mainFontWithSize:8.0];
     //self.graph.min = graphMin;
     //self.sleepGraph.max = graphMax;
     [self.graph reloadGraph];
@@ -105,6 +114,7 @@
     theme.completedColor = self.metric.graphColor;
     theme.incompletedColor = [self.metric.graphColor colorWithAlphaComponent:.5];
     theme.labelColor = [UIColor clearColor];
+    theme.thickness = 10.0;
     
     [self.averageLabel setText:[formatter stringFromNumber:self.average]];
     if (self.radialView) {
@@ -126,9 +136,6 @@
     else {
         [self.spaceLetterLabel setTextColor:[UIColor clearColor]];
     }
-    
-    
-    
     
 }
 

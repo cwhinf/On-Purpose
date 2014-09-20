@@ -349,17 +349,20 @@ NSString const *CWPopupViewOffset = @"CWPopupViewOffset";
 #pragma mark - handling screen orientation change
 
 - (CGRect)getPopupFrameForViewController:(UIViewController *)viewController {
+    /*
     CGRect frame = viewController.view.frame;
     CGFloat x;
     CGFloat y;
     if (UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
         x = ([UIScreen mainScreen].bounds.size.width - frame.size.width)/2;
-        y = ([UIScreen mainScreen].bounds.size.height - frame.size.height)/4;
+        y = ([UIScreen mainScreen].bounds.size.height - frame.size.height)/2;
     } else {
         x = ([UIScreen mainScreen].bounds.size.height - frame.size.width)/2;
         y = ([UIScreen mainScreen].bounds.size.width - frame.size.height)/2;
     }
     return CGRectMake(x + viewController.popupViewOffset.x, y + viewController.popupViewOffset.y, frame.size.width, frame.size.height);
+     */
+    return viewController.view.frame;
 }
 
 - (void)screenOrientationChanged {

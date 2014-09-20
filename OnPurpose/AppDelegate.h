@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PaperFoldNavigationController.h"
+//#import "PaperFoldNavigationController.h"
 #import "MenuViewController.h"
+#import "MainTabBarController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
+//@property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 @property (strong, nonatomic) MenuViewController *menuViewController;
+
+@property (strong, nonatomic) MainTabBarController *mainTabBarController;
 
 @end

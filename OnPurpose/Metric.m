@@ -77,46 +77,44 @@
     return self;
 }
 
-- (id)initEnergy {
-    self = [super init];
-    if (self) {
-        // Initialization code
-        self.type = @"nonSPACE";
-        self.graphName = @"Energy";
-        self.graphColor = [UIColor OPYellowColor];
-        self.graphDefinition = @"is a rating on how energetic you are. It can be based on anything";
-        self.assessment = [[Assessment alloc] init];
-    }
-    return self;
-}
-
-- (id)initSelfControl {
-    self = [super init];
-    if (self) {
-        // Initialization code
-        self.type = @"nonSPACE";
-        self.graphName = @"Self Control";
-        self.graphColor = [UIColor OPAquaColor];
-        self.graphDefinition = @"is a rating on how in control you are. It can be based on anything";
-        self.assessment = [[Assessment alloc] init];
-    }
-    return self;
-}
-
 - (id)initVitality {
     self = [super init];
     if (self) {
         // Initialization code
         self.type = @"nonSPACE";
         self.graphName = @"Vitality";
-        self.graphColor = [UIColor OPOrangeColor];
+        self.graphColor = [UIColor OPPurpleColor];
         self.graphDefinition = @"is a rating on your vitality. It can be based on or anything";
         self.assessment = [[Assessment alloc] init];
     }
     return self;
 }
 
+- (id)initWillpower {
+    self = [super init];
+    if (self) {
+        // Initialization code
+        self.type = @"nonSPACE";
+        self.graphName = @"Will Power";
+        self.graphColor = [UIColor OPPurpleColor];
+        self.graphDefinition = @"is a rating on how in control you are. It can be based on anything";
+        self.assessment = [[Assessment alloc] init];
+    }
+    return self;
+}
 
+- (id)initRelaxation{
+    self = [super init];
+    if (self) {
+        // Initialization code
+        self.type = @"nonSPACE";
+        self.graphName = @"Relaxation";
+        self.graphColor = [UIColor OPPurpleColor];
+        self.graphDefinition = @"is a rating on how in control you are. It can be based on anything";
+        self.assessment = [[Assessment alloc] init];
+    }
+    return self;
+}
 @end
 
 

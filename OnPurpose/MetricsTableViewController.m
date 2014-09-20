@@ -8,8 +8,9 @@
 
 #import "MetricsTableViewController.h"
 #import "MetricTableViewCell.h"
+#import "OtherValueTableViewCell.h"
 #import "SingleMetricTableViewController.h"
-#import "PaperFoldTabBarController.h"
+#import "MainTabBarController.h"
 #import "MONActivityIndicatorView.h"
 #import "UIViewController+CWPopup.h"
 #import "Assessment.h"
@@ -21,12 +22,20 @@
 #import "MDRadialProgressTheme.h"
 
 
+
+
+#define NUMBEROFCELLS 9
+#define CELLHEIGHT 84
+
+
 @interface MetricsTableViewController () <MONActivityIndicatorViewDelegate>
 
-@property (strong, nonatomic) PaperFoldTabBarController *mainTabBarController;
+@property (strong, nonatomic) MainTabBarController *mainTabBarController;
 
 @property (strong, nonatomic) PaperFoldNavigationController *paperFoldNavController;
 @property (strong, nonatomic) PFLogInViewController *parseLogInViewController;
+
+@property (strong, nonatomic) NSMutableArray *cellHeight;
 
 @property (strong, nonatomic) NSNumber *sleepAverage;
 @property (strong, nonatomic) NSNumber *presenceAverage;
@@ -36,7 +45,11 @@
 
 @property (strong, nonatomic) PFUser *lastUser;
 
+@property (strong, nonatomic) UIButton *greyView1;
+@property (strong, nonatomic) UIButton *greyView2;
+@property (strong, nonatomic) UIButton *greyView3;
 
+@property (strong, nonatomic) MetricTableViewCell *visiblePopUpCell;
 
 @end
 
@@ -55,10 +68,23 @@
 {
     [super viewDidLoad];
     
-    self.mainTabBarController = (PaperFoldTabBarController *)self.navigationController.parentViewController;
     
-    PaperFoldTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
+    self.mainTabBarController = (MainTabBarController *)self.navigationController.parentViewController;
+    
+    MainTabBarController *paperFoldTabBarController = self.navigationController.parentViewController;
     self.paperFoldNavController = paperFoldTabBarController.paperFoldNavController;
+    
+    self.cellHeight = [[NSMutableArray alloc] initWithCapacity:NUMBEROFCELLS];
+    
+    for (int i=0; i < NUMBEROFCELLS; i++) {
+        if (i < 5 || i == NUMBEROFCELLS - 1) {
+            [self.cellHeight addObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+        }
+        else {
+            [self.cellHeight addObject:[NSNumber numberWithFloat:0.0]];
+        }
+        
+    }
     
     
     self.sleepArray = [[NSMutableArray alloc] init];
@@ -69,8 +95,6 @@
     self.metricDaysArray = [[NSMutableArray alloc] init];
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
-    
-    
     
 }
 
@@ -176,6 +200,40 @@
     self.navigationItem.titleView = label;
     */
     
+    
+    
+    NSIndexPath *path = [NSIndexPath indexPathForRow:NUMBEROFCELLS - 1 inSection:0];
+    OtherValueTableViewCell *cell = (OtherValueTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+    
+    self.greyView1 = [[UIButton alloc] initWithFrame:cell.frame];
+    [self.greyView1 addTarget:self action:@selector(removeGreyView:) forControlEvents:UIControlEventTouchUpInside];
+    UIView *view1_1 = [[UIView alloc] initWithFrame:CGRectMake(107.0, 0.0, 213.0, cell.frame.size.height)];
+    [view1_1 setBackgroundColor:[[UIColor OPGreyTextColor] colorWithAlphaComponent:0.2]];
+    view1_1.userInteractionEnabled = NO;
+    view1_1.exclusiveTouch = NO;
+    [self.greyView1 addSubview:view1_1];
+    
+    self.greyView2 = [[UIButton alloc] initWithFrame:cell.frame];
+    [self.greyView2 addTarget:self action:@selector(removeGreyView:) forControlEvents:UIControlEventTouchUpInside];
+    UIView *view2_1 = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 107.0, cell.frame.size.height)];
+    [view2_1 setBackgroundColor:[[UIColor OPGreyTextColor] colorWithAlphaComponent:0.2]];
+    view2_1.userInteractionEnabled = NO;
+    view2_1.exclusiveTouch = NO;
+    [self.greyView2 addSubview:view2_1];
+    UIView *view2_2 = [[UIView alloc] initWithFrame:CGRectMake(213.0, 0.0, 107.0, cell.frame.size.height)];
+    [view2_2 setBackgroundColor:[[UIColor OPGreyTextColor] colorWithAlphaComponent:0.2]];
+    view2_2.userInteractionEnabled = NO;
+    view2_2.exclusiveTouch = NO;
+    [self.greyView2 addSubview:view2_2];
+    
+    self.greyView3 = [[UIButton alloc] initWithFrame:cell.frame];
+    [self.greyView3 addTarget:self action:@selector(removeGreyView:) forControlEvents:UIControlEventTouchUpInside];
+    UIView *view3_1 = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 213.0, cell.frame.size.height)];
+    [view3_1 setBackgroundColor:[[UIColor OPGreyTextColor] colorWithAlphaComponent:0.2]];
+    view3_1.userInteractionEnabled = NO;
+    view3_1.exclusiveTouch = NO;
+    [self.greyView3 addSubview:view3_1];
+    
     self.navigationController.navigationBar.tintColor = [UIColor OPAquaColor];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:
                                        self.navigationController.navigationBar.titleTextAttributes];
@@ -214,7 +272,7 @@
 - (void) refreshAnimaions {
     
     for (NSInteger i=0; i < [self tableView:self.tableView numberOfRowsInSection:0]; i++) {
-        [((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]) refreshAnimations];
+        //[((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]) refreshAnimations];
     }
     
 }
@@ -257,7 +315,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 8;
+    return NUMBEROFCELLS;
 }
 
 
@@ -294,38 +352,90 @@
     }
     else if (indexPath.item == 5) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"metricCell" forIndexPath:indexPath];
-        [cell metricForCell:[[Metric alloc] initEnergy]];
-        [cell graphValues:self.activityArray dates:self.ArrayOfDates];
+        [cell metricForCell:[[Metric alloc] initVitality]];
+        [cell graphValues:self.sleepArray dates:self.ArrayOfDates];
     }
     else if (indexPath.item == 6) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"metricCell" forIndexPath:indexPath];
-        [cell metricForCell:[[Metric alloc] initSelfControl]];
-        [cell graphValues:self.creativityArray dates:self.ArrayOfDates];
+        [cell metricForCell:[[Metric alloc] initWillpower]];
+        [cell graphValues:self.presenceArray dates:self.ArrayOfDates];
     }
     else if (indexPath.item == 7) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"metricCell" forIndexPath:indexPath];
-        [cell metricForCell:[[Metric alloc] initVitality]];
-        [cell graphValues:self.eatingArray dates:self.ArrayOfDates];
+        [cell metricForCell:[[Metric alloc] initRelaxation]];
+        [cell graphValues:self.creativityArray dates:self.ArrayOfDates];
     }
+    else if (indexPath.item == 8) {
+        OtherValueTableViewCell *otherCell = [tableView dequeueReusableCellWithIdentifier:@"otherValueCell" forIndexPath:indexPath];
+        [otherCell setAveragesOne:[NSNumber numberWithFloat:3.5] Two:[NSNumber numberWithFloat:4.8] Three:[NSNumber numberWithFloat:4.1]];
+        //if (self.greyView) {
+            //otherCell.greyView = self.greyView;
+        //}
+        return otherCell;
+    }
+    
+    
     
 
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return [(NSNumber *)[self.cellHeight objectAtIndex:indexPath.item] floatValue];
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.item < 5) {
         MetricTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"showMetric" sender:cell];
     }
-    
-    
+    else {
+        
+        [CATransaction begin];
+        
+        [self.tableView beginUpdates];
+        
+        NSIndexPath *path = [NSIndexPath indexPathForRow:5 inSection:0];
+        
+        UITableViewCell *cell = (UITableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+        
+        if (cell.frame.size.height == 0) {
+            [self.cellHeight replaceObjectAtIndex:path.item withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+            [self.cellHeight replaceObjectAtIndex:path.item - 1 withObject:[NSNumber numberWithFloat:0]];
+        }
+        else {
+            [self.cellHeight replaceObjectAtIndex:path.item withObject:[NSNumber numberWithFloat:0]];
+            [self.cellHeight replaceObjectAtIndex:path.item - 1 withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+        }
+        /*
+        [UIView transitionWithView:cell.contentView duration:0.25 options:UIViewAnimationOptionTransitionNone animations:^{
+            cell.expandArrow.transform = CGAffineTransformRotate(cell.expandArrow.transform, degreesToRadians(179.9999f));
+        } completion:^(BOOL finished) {
+        }];
+         */
+        path = [NSIndexPath indexPathForRow:6 inSection:0];
+        
+        
+        [CATransaction setCompletionBlock: ^{
+            [tableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        }];
+        
+        [tableView endUpdates];
+        
+        [CATransaction commit];
+
+    }
 }
+
+
+
+
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -379,6 +489,92 @@
     
 }
 
+- (IBAction)otherValueButtonPressed:(id)sender {
+    
+    
+    NSIndexPath *path = [NSIndexPath indexPathForRow:NUMBEROFCELLS - 1 inSection:0];
+    
+    OtherValueTableViewCell *cell = (OtherValueTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+    MetricTableViewCell *popUpCell;
+    
+    [self.tableView beginUpdates];
+    
+    [self.cellHeight replaceObjectAtIndex:4 withObject:[NSNumber numberWithFloat:0]];
+    
+    if ([sender isEqual:cell.button1]) {
+        path = [NSIndexPath indexPathForRow:5 inSection:0];
+        popUpCell = (MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+        [self.tableView addSubview:self.greyView1];
+        [self.cellHeight replaceObjectAtIndex:path.item withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+        [cell selectIndex:0];
+    }
+    else if ([sender isEqual:cell.button2]) {
+        path = [NSIndexPath indexPathForRow:6 inSection:0];
+        popUpCell = (MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+        [self.tableView addSubview:self.greyView2];
+        [self.cellHeight replaceObjectAtIndex:path.item withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+        [cell selectIndex:1];
+    }
+    else if ([sender isEqual:cell.button3]) {
+        path = [NSIndexPath indexPathForRow:7 inSection:0];
+        popUpCell = (MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+        [self.tableView addSubview:self.greyView3];
+        [self.cellHeight replaceObjectAtIndex:path.item withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+        [cell selectIndex:2];
+    }
+
+
+    [self.tableView endUpdates];
+    
+    [popUpCell refreshAnimations];
+
+    /*[self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0],
+     [NSIndexPath indexPathForRow:5 inSection:0],
+     [NSIndexPath indexPathForRow:6 inSection:0]]
+     withRowAnimation:UITableViewRowAnimationNone];
+     */
+}
+
+- (IBAction)chartMyDayPressed:(id)sender {
+    
+    
+    //[self.navigationController.view addGestureRecognizer:self.tapRecognizer];
+    
+    
+    UIViewController *chartPopUp = [self.storyboard instantiateViewControllerWithIdentifier:@"chartPopUp"];
+    //chartPopUp.view.layer.cornerRadius = 10.0;
+    //chartPopUp.view.clipsToBounds = YES;
+    chartPopUp.view.frame = CGRectMake(15.0f, 40.0f, 290.0f, 508.0f);
+    //[self.tableView setUserInteractionEnabled:NO];
+    
+    self.navigationController.useBlurForPopup = YES;
+    self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = NO;
+    [self.navigationController presentPopupViewController:chartPopUp animated:YES completion:nil];
+
+    
+    
+    
+}
+
+- (void)removeGreyView:(id)sender {
+    NSIndexPath *path = [NSIndexPath indexPathForRow:NUMBEROFCELLS - 1 inSection:0];
+    OtherValueTableViewCell *cell = (OtherValueTableViewCell *)[self.tableView cellForRowAtIndexPath:path];
+    [cell selectIndex:-1];
+    [self.tableView beginUpdates];
+    
+    [self.cellHeight replaceObjectAtIndex:4 withObject:[NSNumber numberWithFloat:CELLHEIGHT]];
+    
+    [self.cellHeight replaceObjectAtIndex:path.item - 3 withObject:[NSNumber numberWithFloat:0]];
+    [self.cellHeight replaceObjectAtIndex:path.item - 2 withObject:[NSNumber numberWithFloat:0]];
+    [self.cellHeight replaceObjectAtIndex:path.item - 1 withObject:[NSNumber numberWithFloat:0]];
+    
+    [self.tableView endUpdates];
+    
+    [(UIButton *)sender removeFromSuperview];
+    
+    
+}
+
 
 #pragma mark - SimpleLineGraph Data Source
 
@@ -400,13 +596,13 @@
         return (int)[self.eatingArray count];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]]).graph]) {
-        return (int)[self.activityArray count];
+        return (int)[self.sleepArray count];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]]).graph]) {
-        return (int)[self.creativityArray count];
+        return (int)[self.presenceArray count];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:0]]).graph]) {
-        return (int)[self.eatingArray count];
+        return (int)[self.creativityArray count];
     }
     else return 0;
 }
@@ -429,13 +625,13 @@
         return [[self.eatingArray objectAtIndex:index] floatValue];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]]).graph]) {
-        return [[self.activityArray objectAtIndex:index] floatValue];
+        return [[self.sleepArray objectAtIndex:index] floatValue];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]]).graph]) {
-        return [[self.creativityArray objectAtIndex:index] floatValue];
+        return [[self.presenceArray objectAtIndex:index] floatValue];
     }
     else if ([graph isEqual:((MetricTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:0]]).graph]) {
-        return [[self.eatingArray objectAtIndex:index] floatValue];
+        return [[self.creativityArray objectAtIndex:index] floatValue];
     }
     else return 0;
 }
