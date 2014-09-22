@@ -12,6 +12,8 @@
 
 @interface ChartPopViewController ()
 
+@property (strong, nonatomic) UINavigationController *childNavController;
+
 @end
 
 @implementation ChartPopViewController
@@ -41,14 +43,19 @@
 }
 
 
+- (void)showAssessment {
+    [self.bottomButton setTitle:@"back" forState:UIControlStateNormal];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:@"showDailySpace"]) {
-                
+    if ([segue.identifier isEqualToString:@"showDailySpaceNav"]) {
+        self.childNavController = segue.destinationViewController;
     }
     
 }
@@ -58,6 +65,13 @@
     
     [self.parentViewController dismissPopupViewControllerAnimated:YES completion:nil];
     
+    
+}
+
+- (IBAction)bottomButtonPressed:(id)sender {
+    
+    [self.childNavController popToRootViewControllerAnimated:YES];
+    [self.bottomButton setTitle:@"save" forState:UIControlStateNormal];
     
 }
 

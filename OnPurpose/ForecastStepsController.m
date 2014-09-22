@@ -9,6 +9,7 @@
 #import "ForecastStepsController.h"
 #import "ScaledStepViewController.h"
 #import "UIFont+fonts.h"
+#import "ScoreViewController.h"
 
 @interface ForecastStepsController ()
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.fullscreen = NO;
     
     self.stepsBar.hideCancelButton = YES;
     [self.stepsBar setHidden:YES];
@@ -56,7 +59,12 @@
     
     for(NSString *question in self.assessment.questions) {
         
-        step = [self.storyboard instantiateViewControllerWithIdentifier:@"assesmentStep"];
+        if (self.fullscreen) {
+            step = [self.storyboard instantiateViewControllerWithIdentifier:@"assesmentStep"];
+        }
+        else {
+            step = [self.storyboard instantiateViewControllerWithIdentifier:@"assesmentStepSmall"];
+        }
         //step.questionString = question;
         step.assessment = self.assessment;
         step.step.title = @"";
@@ -68,7 +76,13 @@
         
         questionNumber++;
     }
-
+    
+    ScoreViewController *scoreViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"scoreViewControllerSmall"];
+    //scoreViewController.score = [self.assessment score];
+    scoreViewController.assessment = self.assessment;
+    scoreViewController.graphColor = self.assessment.graphColor;
+    
+    [steps addObject:scoreViewController];
 
     return steps;
 }

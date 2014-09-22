@@ -544,13 +544,18 @@
     UIViewController *chartPopUp = [self.storyboard instantiateViewControllerWithIdentifier:@"chartPopUp"];
     //chartPopUp.view.layer.cornerRadius = 10.0;
     //chartPopUp.view.clipsToBounds = YES;
-    chartPopUp.view.frame = CGRectMake(15.0f, 40.0f, 290.0f, 508.0f);
+    chartPopUp.view.frame = CGRectMake(15.0f, 600.0f, 290.0f, 508.0f);
     //[self.tableView setUserInteractionEnabled:NO];
     
     self.navigationController.useBlurForPopup = YES;
     self.paperFoldNavController.paperFoldView.enableLeftFoldDragging = NO;
     [self.navigationController presentPopupViewController:chartPopUp animated:YES completion:nil];
-
+    
+    [UIView transitionWithView:self duration:.5 options:UIViewAnimationCurveEaseOut animations:^{
+        chartPopUp.view.frame = CGRectMake(15.0f, 30.0f, 290.0f, 508.0f);
+    } completion:^(BOOL finished) {
+        
+    }];
     
     
     

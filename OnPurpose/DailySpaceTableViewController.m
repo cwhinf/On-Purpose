@@ -18,8 +18,9 @@
 #import "CWRatingView.h"
 #import "UIFont+fonts.h"
 #import "UIViewController+CWPopup.h"
+#import "ChartPopViewController.h"
 
-
+#define CELLHEIGHT 81
 
 @interface DailySpaceTableViewController ()
 
@@ -151,7 +152,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 95.0;
+    return CELLHEIGHT;
 }
 
 
@@ -220,6 +221,9 @@
 }
 
 - (IBAction)assessmentPressed:(id)sender {
+    
+    ChartPopViewController *chartPopUpViewController = self.parentViewController.parentViewController;\
+    [chartPopUpViewController showAssessment];
     
     if ([((DailySpaceCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]]).assessmentButton isEqual:sender]){
         
@@ -298,26 +302,31 @@
     
     float score = [[assessment score] floatValue];
     if (score < 1.5) {
-        [cell.buttons setButtonsSelectedButton:cell.button1];
-        [cell.ratingView selectChoice:0];
+        [cell.slider setValue:1.0];
+        //[cell.buttons setButtonsSelectedButton:cell.button1];
+        //[cell.ratingView selectChoice:0];
     }
     else if (score < 2.5) {
-        [cell.buttons setButtonsSelectedButton:cell.button2];
-        [cell.ratingView selectChoice:1];
+        [cell.slider setValue:2.0];
+        //[cell.buttons setButtonsSelectedButton:cell.button2];
+        //[cell.ratingView selectChoice:1];
     }
     else if (score < 3.5) {
-        [cell.buttons setButtonsSelectedButton:cell.button3];
-        [cell.ratingView selectChoice:2];
+        [cell.slider setValue:3.0];
+        //[cell.buttons setButtonsSelectedButton:cell.button3];
+        //[cell.ratingView selectChoice:2];
     }
     else if (score < 4.5) {
-        [cell.buttons setButtonsSelectedButton:cell.button4];
-        [cell.ratingView selectChoice:3];
+        [cell.slider setValue:4.0];
+        //[cell.buttons setButtonsSelectedButton:cell.button4];
+        //[cell.ratingView selectChoice:3];
     }
     else {
-        [cell.buttons setButtonsSelectedButton:cell.button5];
-        [cell.ratingView selectChoice:4];
+        [cell.slider setValue:5.0];
+        //[cell.buttons setButtonsSelectedButton:cell.button5];
+        //[cell.ratingView selectChoice:4];
     }
-    [self performSegueWithIdentifier:@"showScore" sender:assessment];
+    //[self performSegueWithIdentifier:@"showScore" sender:assessment];
 }
 
 #pragma CalendarViewControllerDelegate
@@ -394,6 +403,7 @@
         
         ForecastStepsController *forecastStepsController = segue.destinationViewController;//navController.topViewController;
         forecastStepsController.delegate = self;
+        forecastStepsController.fullscreen = NO;
         
         if ([((DailySpaceCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]]).assessmentButton isEqual:sender]){
             forecastStepsController.assessment = self.presenceAssessment;

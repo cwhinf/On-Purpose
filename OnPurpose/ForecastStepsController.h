@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) Assessment *assessment;
 
+@property (nonatomic) BOOL fullscreen;
 
 @end

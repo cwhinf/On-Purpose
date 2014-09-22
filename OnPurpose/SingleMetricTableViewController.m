@@ -259,7 +259,7 @@
     [popUpLabel setTextAlignment:NSTextAlignmentCenter];
 
     ForecastPopUpViewController *messageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"forecastPopUp"];
-    messageViewController.view.frame = CGRectMake(0.0f, 0.0f, 260.0f, 400.0f);
+    messageViewController.view.frame = CGRectMake(30.0f, 40.0f, 260.0f, 400.0f);
     messageViewController.metric = self.metric;
     [messageViewController averageForRadialView:[NSNumber numberWithDouble:4.8]];
     [self.tableView setUserInteractionEnabled:NO];

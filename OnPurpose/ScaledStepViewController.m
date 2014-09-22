@@ -105,14 +105,14 @@
     self.unselectedButtonImage = UIGraphicsGetImageFromCurrentImageContext();
     
     for (UIButton *button in self.roundButtons) {
-        [button setFont:[UIFont mainFontWithSize:24.0f]];
+        [button setFont:[UIFont mainFontWithSize:18.0f]];
     }
-    [self.buttonYes.titleLabel setFont:[UIFont mainFontWithSize:60.0f]];
-    [self.buttonNo.titleLabel setFont:[UIFont mainFontWithSize:60.0f]];
+    [self.buttonYes.titleLabel setFont:[UIFont mainFontWithSize:40.0f]];
+    [self.buttonNo.titleLabel setFont:[UIFont mainFontWithSize:40.0f]];
     
     
-    [self.nextButton.titleLabel setFont:[UIFont mainFontWithSize:19.0f]];
-    [self.previousButton.titleLabel setFont:[UIFont mainFontWithSize:19.0f]];
+    [self.nextButton.titleLabel setFont:[UIFont mainFontWithSize:14.0f]];
+    [self.previousButton.titleLabel setFont:[UIFont mainFontWithSize:14.0f]];
     /*
     [self.buttonOne.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:24]];
     [self.buttonTwo.titleLabel setFont:[UIFont fontWithName:@"Museo-500" size:24]];

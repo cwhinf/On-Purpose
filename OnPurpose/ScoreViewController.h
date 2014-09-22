@@ -16,6 +16,7 @@
 
 
 @property (strong, nonatomic) NSNumber *score;
+@property (strong, nonatomic) Assessment *assessment;
 
 @property (strong, nonatomic) IBOutlet UIButton *scoreValueLabel;
 @property (strong, nonatomic) IBOutlet UIButton *finishButton;

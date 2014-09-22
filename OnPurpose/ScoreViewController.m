@@ -11,6 +11,7 @@
 #import "MDRadialProgressView.h"
 #import "MDRadialProgressTheme.h"
 #import "UIFont+fonts.h"
+#import "RMStepsController.h"
 
 @interface ScoreViewController ()
 
@@ -39,15 +40,8 @@
     [self.scoreValueLabel setTitleColor:self.graphColor forState:UIControlStateNormal];
     
     
-    [self.scoreValueLabel setFont:[UIFont mainFontWithSize:68.0f]];
+    [self.scoreValueLabel setFont:[UIFont mainFontLightWithSize:48.0f]];
     [self.finishButton.titleLabel setFont:[UIFont mainFontWithSize:38.0f]];
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setMaximumFractionDigits:1];
-    [formatter setMinimumFractionDigits:1];
-    
-    [self.scoreValueLabel setTitle:[formatter stringFromNumber:self.score] forState:UIControlStateNormal];
-    
     
     
     MDRadialProgressTheme *theme = [[MDRadialProgressTheme alloc] init];
@@ -66,6 +60,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    self.score = [self.assessment score];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setMinimumFractionDigits:1];
+    
+    [self.scoreValueLabel setTitle:[formatter stringFromNumber:self.score] forState:UIControlStateNormal];
+    
+    
     [self radialView:self.radialView incrementAverage:self.score];
     
     
@@ -74,6 +78,7 @@
     [attributes setObject:self.graphColor forKey:@"NSColor"];
     [attributes setObject:[UIFont mainFontWithSize:27.0f] forKey:@"NSFont"];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+    
     
 }
 
@@ -97,7 +102,11 @@
 - (IBAction)finishPressed:(id)sender {
     
     //[self.navigationController.parentViewController.navigationController popToRootViewControllerAnimated:YES];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //UINavigationController *navController = self.parentViewController.navigationController;
+    //[navController popToRootViewControllerAnimated:YES];
+    //[self.parentViewController.navigationController popToRootViewControllerAnimated:YES];
+    [self.stepsController showNextStep];
 }
 
 

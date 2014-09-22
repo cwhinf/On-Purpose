@@ -12,7 +12,14 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *chartLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *bottomButton;
+
+@property (strong, nonatomic) IBOutlet UIView *containerView;
+
 - (IBAction)closePressed:(id)sender;
+- (IBAction)bottomButtonPressed:(id)sender;
+
+- (void)showAssessment;
 
 
 @end
