@@ -297,6 +297,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="averageLabel" destination="NqB-77-P3O" id="3su-Qd-VrD"/>
                                     <outlet property="graph" destination="snO-5X-se8" id="9vV-qv-rb3"/>
@@ -414,6 +415,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="averageLabel1" destination="nC9-oP-5Xh" id="ATi-Nl-Oek"/>
                                     <outlet property="averageLabel2" destination="rOw-Z2-mHL" id="VNJ-7W-f7r"/>

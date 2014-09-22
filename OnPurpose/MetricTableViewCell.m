@@ -24,7 +24,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    
+    self.clipsToBounds = YES;
     [self.spaceLetterLabel setFont:[UIFont mainFontWithSize:45.0f]];
     [self.graphName setFont:[UIFont mainFontWithSize:12.0f]];
     [self.averageLabel setFont:[UIFont mainFontWithSize:13.0f]];

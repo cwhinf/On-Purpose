@@ -26,7 +26,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    
+    self.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

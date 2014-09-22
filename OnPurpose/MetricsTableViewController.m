@@ -95,7 +95,7 @@
     self.metricDaysArray = [[NSMutableArray alloc] init];
     
     self.ArrayOfDates = [[NSMutableArray alloc] init];
-    
+    //[PFUser logOut];
 }
 
 
@@ -392,7 +392,7 @@
         MetricTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"showMetric" sender:cell];
     }
-    else {
+    else if (indexPath.item == NUMBEROFCELLS - 1){
         
         [CATransaction begin];
         
