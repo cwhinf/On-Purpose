@@ -45,6 +45,25 @@
     */
     self.slider.popUpViewColor = cellColor;
     //[self.slider setPopUpViewAnimatedColors:@[[UIColor whiteColor], cellColor] withPositions:@[@0, @5]];
+    
+    
+    CGRect sliderRect = CGRectMake(0.0, 0.0, 20.0, 20.0);
+    CGPoint center = CGPointMake(sliderRect.size.width/2, sliderRect.size.height/2);
+    UIGraphicsBeginImageContextWithOptions(sliderRect.size, NO, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    CGContextSetStrokeColorWithColor(context, cellColor.CGColor);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), sliderRect.size.width);
+    CGContextMoveToPoint(context, center.x, center.y);
+    CGContextAddLineToPoint(context, center.x, center.y);
+    CGContextStrokePath(context);
+    
+    //[self.slider setMinimumTrackImage:self.slider.minimumValueImage forState:UIControlStateNormal];
+    //[self.slider setMaximumTrackImage:self.slider.maximumTrackTintColor forState:UIControlStateNormal];
+    [self.slider setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateNormal];
+    
+    
 }
 
 

@@ -49,11 +49,6 @@ static void * ASValueTrackingSliderBoundsContext = &ASValueTrackingSliderBoundsC
 
 #pragma mark - public
 
-- (CGRect)trackRectForBounds:(CGRect)bounds
-{
-    
-    return CGRectInset(bounds, 15.0, 15.0);;
-}
 
 - (void)setAutoAdjustTrackColor:(BOOL)autoAdjust
 {
@@ -102,7 +97,7 @@ static void * ASValueTrackingSliderBoundsContext = &ASValueTrackingSliderBoundsC
         super.minimumTrackTintColor = [[self.popUpView opaqueColor] colorWithAlphaComponent:.5];
     }
     
-    
+    /*
     CGRect sliderRect = CGRectMake(0.0, 0.0, 20.0, 20.0);
     CGPoint center = CGPointMake(sliderRect.size.width/2, sliderRect.size.height/2);
     UIGraphicsBeginImageContextWithOptions(sliderRect.size, NO, 0.0f);
@@ -117,7 +112,7 @@ static void * ASValueTrackingSliderBoundsContext = &ASValueTrackingSliderBoundsC
     
     [self setThumbImage:UIGraphicsGetImageFromCurrentImageContext() forState:UIControlStateNormal];
     UIGraphicsEndImageContext();
-
+     */
     
     
 }
@@ -207,11 +202,11 @@ static void * ASValueTrackingSliderBoundsContext = &ASValueTrackingSliderBoundsC
 
 - (void)popUpViewDidHide;
 {
-    /*
+    
     if ([self.delegate respondsToSelector:@selector(sliderDidHidePopUpView:)]) {
-        [self.delegate sliderDidHidePopUpView:self];
+        //[self.delegate sliderDidHidePopUpView:self];
     }
-     */
+    
 }
 
 // returns the current offset of UISlider value in the range 0.0 – 1.0
@@ -249,6 +244,7 @@ static void * ASValueTrackingSliderBoundsContext = &ASValueTrackingSliderBoundsC
 
     self.textColor = [UIColor whiteColor];
     [self positionAndUpdatePopUpView];
+    
 }
 
 // ensure animation restarts if app is closed then becomes active again

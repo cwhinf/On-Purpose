@@ -85,11 +85,6 @@
     float blue = 0.f;
     
     
-    if (values.count) {
-        
-    }
-    
-    
     //self.metric.graphColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
     
     self.graph.colorTop = [UIColor clearColor];//[UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
